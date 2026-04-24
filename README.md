@@ -1,6 +1,6 @@
 # STEAM100
 
-## Production-grade full-stack analytics dashboard for tracking the **Top 100 games on Steam** using live activity metrics, historical trend data, and user-driven engagement systems.
+Full-stack analytics dashboard for tracking the **Top 100 games on Steam** through live activity metrics, historical trend data, and user-driven engagement systems.
 
 ![Dashboard](assets/screenshots/Dashboard.png)
 
@@ -8,47 +8,49 @@
 
 ## Overview
 
-STEAM100 is a data-focused dashboard application designed to monitor and visualize the performance of Steam’s most active titles. The platform aggregates key metrics such as:
+STEAM100 is a data-centric dashboard application built to monitor and visualize the performance of Steam’s most active titles. The platform consolidates key performance indicators into a single interface, enabling users to evaluate market activity, player engagement, and comparative trends.
+
+Core metrics include:
 
 - Concurrent Players (CCU)
-- Historical 14-day activity trends
-- Engagement ratios derived from playtime data
+- Rolling 14-day activity trends
+- Engagement ratios derived from playtime datasets
 - Community ratings and recommendations
-- Personalized favorites tracking
+- Personalized favorites management
 
-The project was built with a scalable client-server architecture using modern frontend and backend technologies.
+The application follows a modern client-server architecture with a dedicated frontend, REST API backend, and persistent database layer.
 
 ---
 
 ## Key Features
 
 ### Analytics Dashboard
-- Tracks Top 100 Steam games
+- Tracks the Top 100 games on Steam
 - Daily refreshed activity data
 - Sortable performance metrics
-- Pagination and search system
+- Search and pagination support
 
 ### Trend Visualization
-- Historical 14-day sparkline trends
+- 14-day historical sparkline trends
 - Comparative performance indicators
 - Engagement scoring based on average vs median playtime
 
 ### Authentication System
 - JWT-based authentication
-- Google OAuth login
+- Google OAuth integration
 - Protected user actions
 - Persistent login sessions
 
 ### User Features
-- Favorite games system
-- Ratings & recommendation voting
-- Profile management
+- Favorites management
+- Ratings and recommendation voting
+- Profile settings and account controls
 
 ### UI / UX
 - Fully responsive layout
-- Dark mode / Light mode / Retro CRT theme
-- Custom visual identity
-- Data-dense dashboard design
+- Dark, Light, and Retro CRT themes
+- Custom dashboard interface design
+- Data-dense presentation optimized for usability
 
 ---
 
@@ -93,8 +95,8 @@ The project was built with a scalable client-server architecture using modern fr
 ### Security / Middleware
 - Helmet
 - CORS
-- Rate Limiting
-- Validation Middleware
+- Express Rate Limit
+- Request Validation Middleware
 
 ---
 
