@@ -54,15 +54,24 @@ const GameModalStats = ({
             </span>
               
               <div className="stars-inline">
-                {"★★★★★"
-                .split("")
-                .map((_, i) => (
-                <span key={i}>
-                  {i < Math.round(avgRating)
-                  ? "★"
-                  : "☆"}
-                </span>
-              ))}
+                {[1, 2, 3, 4, 5].map((star) => {
+                  const full =
+                  avgRating >= star;
+                  
+                  const half =
+                  avgRating >= star - 0.5 &&
+                  avgRating < star;
+                  
+                  return (
+                  <span key={star}>
+                    {full
+                    ? "★"
+                    : half
+                    ? "⯪"
+                    : "☆"}
+                    </span>
+                    );
+                })}
               </div>
               
               <span className="rating-count-inline">
