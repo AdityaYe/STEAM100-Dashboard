@@ -110,6 +110,8 @@ Frontend (React + Vite)
 REST API (Express + Node.js)
         ↓
 MongoDB Database
+```
+
 ---
 
 ## Live Demo
