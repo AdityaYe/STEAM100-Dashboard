@@ -30,9 +30,12 @@ interface LoginForm {
 type FormField =
   keyof LoginForm;
 
-
 const GOOGLE_URL =
-  "http://localhost:5000/api/auth/google";
+  `${
+    import.meta.env
+      .VITE_API_URL ||
+    "http://localhost:5000"
+  }/api/auth/google`;
 
 const initialForm: LoginForm = {
   username: "",
@@ -53,7 +56,10 @@ const LoginModal = ({
   } =
     useAuthModal();
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [
+    isSubmitting,
+    setIsSubmitting,
+  ] = useState(false);
 
   const isRegister =
     mode === "register";
@@ -89,29 +95,45 @@ const LoginModal = ({
   ) => {
     setMode(nextMode);
   };
-  
-  const handleSubmit = async () => {
-    try {
-      setIsSubmitting(true);
-      
-      const res = isRegister
-      ? await registerUser(form)
-      : await loginUser(form);
-      
-      login(res);
-      setTimeout(() => {
-        onClose();
-}, 0);
-    } catch (err: any) {
-  toast.error(
-    err?.response?.data?.message ||
-    "Authentication failed"
-  );
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-  
+
+  const handleSubmit =
+    async () => {
+      try {
+        setIsSubmitting(
+          true
+        );
+
+        const res =
+          isRegister
+            ? await registerUser(
+                form
+              )
+            : await loginUser(
+                form
+              );
+
+        login(res);
+
+        setTimeout(
+          () => {
+            onClose();
+          },
+          0
+        );
+      } catch (err: any) {
+        toast.error(
+          err?.response
+            ?.data
+            ?.message ||
+            "Authentication failed"
+        );
+      } finally {
+        setIsSubmitting(
+          false
+        );
+      }
+    };
+
   if (!isOpen) {
     return null;
   }
@@ -170,14 +192,19 @@ const LoginModal = ({
         />
 
         <button
-        onClick={handleSubmit}
-        disabled={isSubmitting}
-        className="auth-submit-btn">
+          onClick={
+            handleSubmit
+          }
+          disabled={
+            isSubmitting
+          }
+          className="auth-submit-btn"
+        >
           {isSubmitting
-          ? "PLEASE WAIT..."
-          : isRegister
-          ? "Register"
-          : "Login"}
+            ? "PLEASE WAIT..."
+            : isRegister
+            ? "Register"
+            : "Login"}
         </button>
 
         <a
