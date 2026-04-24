@@ -1,6 +1,6 @@
 # STEAM100
 
-Production-grade full-stack analytics dashboard for tracking the **Top 100 games on Steam** using live activity metrics, historical trend data, and user-driven engagement systems.
+## Production-grade full-stack analytics dashboard for tracking the **Top 100 games on Steam** using live activity metrics, historical trend data, and user-driven engagement systems.
 
 ![Dashboard](assets/screenshots/Dashboard.png)
 
