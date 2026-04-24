@@ -110,3 +110,18 @@ Frontend (React + Vite)
 REST API (Express + Node.js)
         ↓
 MongoDB Database
+---
+
+## Live Demo
+
+Coming Soon
+
+---
+
+## Local Setup
+
+### Clone Repository
+
+```bash
+git clone https://github.com/AdityaYe/steam100-dashboard.git
+cd steam100-dashboard
