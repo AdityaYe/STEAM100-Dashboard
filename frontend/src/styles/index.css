@@ -5704,3 +5704,91 @@ HALF SIZE PAGINATION
 }
 
 }
+
+/* =========================================================
+MOBILE ALIGN + SMALLER PAGINATION
+1. Hearts centered under ADD
+2. Pagination 40% narrower
+3. Gap above pager
+========================================================= */
+
+@media (max-width:768px){
+
+/* ---------------------------------
+HEADER + ROW COLUMN ALIGNMENT
+----------------------------------*/
+.table-header-row,
+.game-row{
+  grid-template-columns:
+    42px   /* add */
+    30px   /* rank */
+    minmax(0,1fr) !important;
+  column-gap:10px !important;
+}
+
+/* ADD header centered */
+.table-header-row > div:first-child{
+  text-align:center !important;
+  justify-self:center !important;
+  width:42px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+/* hearts centered exactly below ADD */
+.game-fav{
+  width:42px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* rank column */
+.table-header-row > div:nth-child(2),
+.game-rank{
+  width:30px !important;
+  text-align:center !important;
+  justify-self:center !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+/* ---------------------------------
+SMALLER PAGINATION
+----------------------------------*/
+.pagination-row{
+  left:calc(56px + 12%) !important;
+  right:12% !important;          /* 40% narrower overall */
+  bottom:10px !important;       /* gap from bottom */
+  height:46px !important;
+
+  padding:5px 6px !important;
+  gap:6px !important;
+  border-radius:14px !important;
+}
+
+/* extra gap above pagination from table */
+.game-main,
+.main-content,
+.content-shell,
+.dashboard-main{
+  padding-bottom:72px !important;
+}
+
+/* buttons compact */
+.pager-btn{
+  height:32px !important;
+  font-size:.66rem !important;
+  padding:0 8px !important;
+}
+
+.pager-status{
+  min-width:66px !important;
+  height:32px !important;
+  font-size:.76rem !important;
+}
+
+}
