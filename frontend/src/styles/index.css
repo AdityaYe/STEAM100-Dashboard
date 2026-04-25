@@ -4604,3 +4604,71 @@ MOBILE FINAL (STABLE)
     font-size:.76rem;
   }
 }
+
+/* =====================================================
+     1. TABLE ENDS AFTER 10TH GAME
+  ===================================================== */
+
+  .game-table-shell,
+  .game-table-inner,
+  .panel.game-table-shell{
+    height:auto !important;
+    min-height:unset !important;
+    max-height:none !important;
+    overflow:hidden !important;
+
+    /* pager breathing room only */
+    padding-bottom:56px !important;
+    margin-bottom:0 !important;
+  }
+
+  /* remove fake bottom space */
+  .game-table-shell::before,
+  .game-table-shell::after,
+  .game-table-inner::before,
+  .game-table-inner::after{
+    display:none !important;
+    content:none !important;
+    height:0 !important;
+  }
+
+  /* last row ends clean */
+  .game-row:last-child{
+    margin-bottom:0 !important;
+    padding-bottom:0 !important;
+    border-bottom:none !important;
+  }
+
+  /* if wrapper after rows exists */
+  .table-grid:last-child,
+  .table-body:last-child{
+    margin-bottom:0 !important;
+    padding-bottom:0 !important;
+  }
+
+  /* =====================================================
+     2. REMOVE LOGOUT BOTTOM LINE + GAP
+  ===================================================== */
+
+  .mt-auto{
+    margin-top:auto !important;
+    padding-bottom:0 !important;
+  }
+
+  .mt-auto > .px-3.py-4.border-b{
+    border-bottom:none !important;
+    padding-bottom:0 !important;
+    margin-bottom:0 !important;
+  }
+
+  .mt-auto > .border-t,
+  .sidebar .border-t,
+  .game-sidebar .border-t{
+    display:none !important;
+    border:none !important;
+    height:0 !important;
+    min-height:0 !important;
+    padding:0 !important;
+    margin:0 !important;
+  }
+}
