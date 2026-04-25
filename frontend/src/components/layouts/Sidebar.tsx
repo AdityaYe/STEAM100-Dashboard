@@ -168,7 +168,6 @@ text-sm font-medium tracking-wider
       style={{
         borderRight:
           "1px solid var(--border)",
-          height: "100dvh"
       }}
     >
       <div
