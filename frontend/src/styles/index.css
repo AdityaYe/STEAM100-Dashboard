@@ -4614,4 +4614,46 @@ MOBILE FINAL
     padding:0 8px !important;
     font-size:.76rem;
   }
+
+  .game-table-inner{
+    margin-bottom:0 !important;
+    padding-bottom:0 !important;
+    border-bottom-left-radius:14px;
+    border-bottom-right-radius:14px;
+  }
+
+  /* outer shell was continuing downward */
+  .game-table-shell,
+  .panel.game-table-shell{
+    height:auto !important;
+    min-height:unset !important;
+    max-height:fit-content !important;
+
+    padding-bottom:58px !important;   /* pager space only */
+    margin-bottom:0 !important;
+
+    overflow:visible !important;
+  }
+
+  /* remove fake bottom lines / panels */
+  .game-table-shell::before,
+  .game-table-shell::after,
+  .game-table-inner::before,
+  .game-table-inner::after{
+    display:none !important;
+    content:none !important;
+    height:0 !important;
+  }
+
+  /* if parent flex item stretching shell */
+  .game-table-shell{
+    align-self:flex-start !important;
+    flex:0 0 auto !important;
+  }
+
+  /* keep pager overlay */
+  .pagination-row{
+    bottom:8px !important;
+    z-index:120 !important;
+  }
 }
