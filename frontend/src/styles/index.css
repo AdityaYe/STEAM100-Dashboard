@@ -5275,3 +5275,164 @@ sidebar fixed + compact header + theme switcher top-right
 }
 
 }
+
+
+/* =========================================================
+MOBILE OVERFLOW + FIXED SIDEBAR + ONLY TABLE SCROLLS
+Replace previous mobile width patch with this
+========================================================= */
+
+@media (max-width: 768px){
+
+/* ---------------------------------------------------------
+1. LOCK PAGE HORIZONTAL OVERFLOW
+--------------------------------------------------------- */
+html,
+body,
+#root{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden !important;
+}
+
+body{
+  margin:0;
+}
+
+
+/* ---------------------------------------------------------
+2. APP LAYOUT
+sidebar fixed, content beside it
+--------------------------------------------------------- */
+.flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen{
+  display:flex !important;
+  width:100vw !important;
+  height:100dvh !important;
+  overflow:hidden !important;
+  padding-left:56px !important;   /* sidebar width */
+}
+
+
+/* ---------------------------------------------------------
+3. SIDEBAR TRUE FIXED / NO SCROLL
+--------------------------------------------------------- */
+.flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen > div:first-child{
+  position:fixed !important;
+  left:0;
+  top:0;
+  width:56px !important;
+  min-width:56px !important;
+  max-width:56px !important;
+  height:100dvh !important;
+  overflow:hidden !important;
+  z-index:60;
+}
+
+
+/* kill internal scrolling */
+.flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen > div:first-child *{
+  overscroll-behavior:none;
+}
+
+
+/* ---------------------------------------------------------
+4. MAIN CONTENT AREA
+--------------------------------------------------------- */
+.flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen > :not(:first-child){
+  width:calc(100vw - 56px) !important;
+  max-width:calc(100vw - 56px) !important;
+  margin-left:0 !important;
+  overflow:hidden !important;
+}
+
+
+/* ---------------------------------------------------------
+5. TOPBAR FIXED, CONTENT BELOW
+--------------------------------------------------------- */
+.topbar{
+  position:sticky !important;
+  top:0;
+  z-index:40;
+  width:100% !important;
+  max-width:100% !important;
+}
+
+
+/* ---------------------------------------------------------
+6. ONLY TABLE AREA SCROLLS
+--------------------------------------------------------- */
+.game-table-shell{
+  width:100% !important;
+  max-width:100% !important;
+  height:calc(100dvh - 150px) !important; /* adjust if needed */
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  padding-right:6px !important;
+}
+
+
+/* hide page scroll */
+.main-content,
+.dashboard-content,
+.content-area{
+  overflow:hidden !important;
+}
+
+
+/* ---------------------------------------------------------
+7. REMOVE RIGHT OVERFLOW FROM TABLE ITEMS
+--------------------------------------------------------- */
+.panel,
+.game-table-inner,
+.table-grid,
+.game-row,
+.pagination-row{
+  width:100% !important;
+  max-width:100% !important;
+  box-sizing:border-box !important;
+}
+
+.game-row{
+  grid-template-columns:
+    34px
+    34px
+    minmax(0,1fr) !important;
+}
+
+.game-info{
+  min-width:0 !important;
+}
+
+.game-name{
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+
+
+/* ---------------------------------------------------------
+8. PAGINATION STAYS INSIDE
+--------------------------------------------------------- */
+.pagination-row{
+  width:100% !important;
+  padding:8px 0 !important;
+}
+
+.pager-btn{
+  min-width:0 !important;
+  padding:8px 10px !important;
+}
+
+
+/* ---------------------------------------------------------
+9. THEME SWITCHER
+--------------------------------------------------------- */
+.theme-toggle,
+.theme-switcher,
+.theme-controls{
+  position:fixed !important;
+  top:10px !important;
+  right:10px !important;
+  z-index:80 !important;
+}
+
+}
