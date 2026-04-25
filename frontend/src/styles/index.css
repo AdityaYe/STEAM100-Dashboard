@@ -4714,4 +4714,26 @@ MOBILE FINAL
     height:auto !important;
     margin-bottom:58px !important;
   }
+
+  .game-table-inner{
+    padding-bottom:42px !important;   /* was larger before */
+  }
+
+  /* restore bottom end line */
+  .game-table-shell,
+  .panel.game-table-shell{
+    border-bottom:1px solid var(--border-color) !important;
+    border-bottom-left-radius:14px !important;
+    border-bottom-right-radius:14px !important;
+  }
+
+  /* ensure line visible */
+  .game-table-inner{
+    margin-bottom:0 !important;
+  }
+
+  /* keep pager overlay spacing */
+  .pagination-row{
+    bottom:8px !important;
+  }
 }
