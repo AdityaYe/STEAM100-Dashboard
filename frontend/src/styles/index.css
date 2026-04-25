@@ -5436,3 +5436,67 @@ sidebar fixed, content beside it
 }
 
 }
+
+/* =========================================================
+MOBILE FIXED PAGINATION BAR
+Always visible at bottom of screen
+========================================================= */
+
+@media (max-width: 768px){
+
+/* leave room for fixed pager */
+.game-table-shell,
+.game-table-inner{
+  padding-bottom:88px !important;
+}
+
+/* fixed pagination */
+.pagination-row{
+  position:fixed !important;
+  left:56px !important;                 /* sidebar width */
+  right:0 !important;
+  bottom:0 !important;
+  width:calc(100vw - 56px) !important;
+  height:72px !important;
+
+  display:grid !important;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:10px;
+
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom)) !important;
+  margin:0 !important;
+
+  z-index:95 !important;
+
+  backdrop-filter:blur(10px);
+}
+
+/* buttons */
+.pager-btn{
+  height:46px !important;
+  padding:0 12px !important;
+  font-size:.82rem !important;
+  letter-spacing:.12em !important;
+  width:100% !important;
+}
+
+/* center page indicator */
+.pager-status{
+  min-width:96px !important;
+  height:46px !important;
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+  padding:0 14px !important;
+  font-size:.9rem !important;
+}
+
+/* prevent horizontal overflow */
+.pagination-row,
+.pager-btn,
+.pager-status{
+  box-sizing:border-box !important;
+}
+
+}
