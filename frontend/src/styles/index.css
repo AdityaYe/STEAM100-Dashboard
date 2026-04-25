@@ -132,11 +132,6 @@ ROWS
   transition:all .18s ease;
 }
 
-[data-theme="light"] .game-row.is-favorite{
-  background:#f7fbff;
-}
-
-
 /* ==========================================================
 TEXT HIERARCHY
 ========================================================== */
@@ -1061,10 +1056,6 @@ ROWS
 
 [data-theme="dark"] .game-row:hover{
   background:#172133;
-}
-
-[data-theme="dark"] .game-row.is-favorite{
-  background:#132033;
 }
 
 /* ==========================================================

@@ -13,7 +13,7 @@ export const updateProfile = asyncHandler(
     const user = await User.findByIdAndUpdate(
       req.user._id,
       { username: username.trim() },
-      { new: true }
+      { returnDocument: "after" }
     ).select("-password");
 
     res.json({
