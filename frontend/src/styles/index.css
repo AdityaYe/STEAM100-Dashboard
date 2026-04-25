@@ -4736,4 +4736,13 @@ MOBILE FINAL
   .pagination-row{
     bottom:8px !important;
   }
+
+  [data-theme="light"] .game-row,
+[data-theme="retro"] .game-row{
+  border-bottom:1px solid rgba(120,140,170,.28);
+}
+
+[data-theme="dark"] .game-row{
+  border-bottom:1px solid rgba(120,170,255,.18);
+}
 }
