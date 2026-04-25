@@ -4699,4 +4699,19 @@ MOBILE FINAL
     height:46px !important;
     z-index:120 !important;
   }
+
+  .mobile-content-wrap{
+    display:block !important;
+  }
+
+  .mobile-content-wrap > *{
+    height:auto !important;
+    min-height:0 !important;
+  }
+
+  .game-table-shell,
+  .game-table-inner{
+    height:auto !important;
+    margin-bottom:58px !important;
+  }
 }

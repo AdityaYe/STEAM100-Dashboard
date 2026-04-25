@@ -36,7 +36,7 @@ const MainLayout = () => {
           />
         </div>
 
-        <div className="flex-1 overflow-y-auto px-5 pb-5 pt-4 min-w-0 w-full">
+        <div className="flex-1 overflow-y-auto px-5 pb-5 pt-4 min-w-0 w-full mobile-content-wrap">
           <Outlet
             context={{
               selectedGenres,
