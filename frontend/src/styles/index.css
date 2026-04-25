@@ -5143,3 +5143,135 @@ Uses your current Sidebar.tsx structure
     border-bottom:none !important;
   }
 }
+
+/* =========================================================
+MOBILE FINAL POLISH PATCH
+sidebar fixed + compact header + theme switcher top-right
+========================================================= */
+
+@media (max-width: 768px){
+
+/* ---------------------------------------------------------
+1. SIDEBAR FIXED TO VIEWPORT HEIGHT
+--------------------------------------------------------- */
+.flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen > div:first-child{
+  position:fixed !important;
+  top:0;
+  left:0;
+  height:100dvh !important;
+  max-height:100dvh !important;
+  overflow:hidden !important;
+  z-index:50;
+}
+
+.flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen{
+  padding-left:56px !important;
+}
+
+
+/* tighter vertical spacing inside sidebar */
+.flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen > div:first-child .px-3.py-4{
+  padding-top:10px !important;
+  padding-bottom:10px !important;
+}
+
+.flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen > div:first-child button{
+  height:42px !important;
+}
+
+
+/* ---------------------------------------------------------
+2. THEME SWITCHER SMALL + TOP RIGHT
+--------------------------------------------------------- */
+.theme-toggle,
+.theme-switcher,
+.floating-theme-toggle,
+.theme-controls{
+  position:fixed !important;
+  right:10px !important;
+  top:10px !important;
+  bottom:auto !important;
+  left:auto !important;
+  transform:none !important;
+  z-index:70 !important;
+  gap:6px !important;
+  padding:6px !important;
+}
+
+.theme-toggle button,
+.theme-switcher button,
+.theme-controls button{
+  width:42px !important;
+  height:42px !important;
+  min-width:42px !important;
+  min-height:42px !important;
+  font-size:11px !important;
+}
+
+.theme-toggle .crt-btn,
+.theme-switcher .crt-btn{
+  width:48px !important;
+}
+
+
+/* ---------------------------------------------------------
+3. TABLE TOP HEADER COMPACT
+--------------------------------------------------------- */
+.table-head{
+  padding:10px 14px !important;
+  margin:0 !important;
+}
+
+.table-title{
+  font-size:1rem !important;
+  line-height:1.1 !important;
+  margin:0 !important;
+}
+
+.table-subtitle{
+  font-size:.66rem !important;
+  margin-top:4px !important;
+  line-height:1.1 !important;
+}
+
+.game-table-shell{
+  padding-top:8px !important;
+}
+
+.game-table-inner{
+  padding-top:0 !important;
+}
+
+
+/* ---------------------------------------------------------
+4. TABLE HEADER ROW COMPACT
+--------------------------------------------------------- */
+.table-header-row{
+  min-height:34px !important;
+  padding-top:0 !important;
+  padding-bottom:0 !important;
+  font-size:.72rem !important;
+}
+
+
+/* ---------------------------------------------------------
+5. PAGINATION SAFE SPACE BELOW
+--------------------------------------------------------- */
+.pagination-row{
+  margin-top:10px !important;
+  padding-right:6px !important;
+  padding-bottom:10px !important;
+}
+
+
+/* ---------------------------------------------------------
+6. CONTENT WIDTH AFTER FIXED SIDEBAR
+--------------------------------------------------------- */
+.topbar,
+.panel,
+.game-table-shell,
+.pagination-row{
+  width:calc(100vw - 56px) !important;
+}
+
+}
