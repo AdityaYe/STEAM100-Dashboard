@@ -4677,62 +4677,106 @@ div[style*="border-bottom"]{
 }
 
 /* ==========================================
-   MOBILE TOPBAR PROFILE PATCH
+   MOBILE TOPBAR PROFILE (EXACT SELECTORS)
 ========================================== */
 
 @media (max-width:768px){
 
-  /* search text smaller */
-  .search-box input,
+  /* topbar spacing */
+  .topbar{
+    padding: 10px 14px !important;
+    min-height: auto;
+    gap: 10px;
+  }
+
+  .topbar-actions{
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* brand */
+  .topbar-title{
+    font-size: 22px !important;
+    letter-spacing: .16em !important;
+  }
+
+  .topbar-subtitle{
+    font-size: 9px !important;
+    letter-spacing: .12em !important;
+  }
+
+  /* search */
+  .search-box{
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    height: 36px;
+    padding: 0 10px;
+    gap: 8px;
+  }
+
   .search-input{
-    font-size:10px !important;
-    letter-spacing:.08em;
+    font-size: .82rem !important;   /* same family as row text */
+    letter-spacing: .08em;
   }
 
-  .search-box input::placeholder,
   .search-input::placeholder{
-    font-size:10px !important;
+    font-size: .82rem !important;
   }
 
-  /* profile button compact */
-  .profile-btn,
-  .user-btn,
-  .account-btn,
-  .topbar-profile{
-    width:38px !important;
-    min-width:38px !important;
-    height:38px !important;
-    padding:0 !important;
-    border-radius:50% !important;
-    justify-content:center !important;
-    gap:0 !important;
+  /* profile wrapper */
+  .profile-wrap{
+    flex-shrink: 0;
+  }
+
+  /* avatar-only trigger */
+  .profile-trigger{
+    width: 38px !important;
+    min-width: 38px !important;
+    height: 38px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    justify-content: center !important;
+    gap: 0 !important;
   }
 
   /* hide username text */
-  .profile-btn span,
-  .user-btn span,
-  .account-btn span,
-  .topbar-profile span,
-  .profile-name,
-  .username-text{
-    display:none !important;
+  .profile-trigger-name{
+    display: none !important;
   }
 
-  /* hide dropdown arrow if needed */
-  .profile-btn svg:last-child,
-  .user-btn svg:last-child,
-  .topbar-profile svg:last-child{
-    display:none !important;
+  /* hide chevron */
+  .profile-trigger > svg:last-child{
+    display: none !important;
   }
 
-  /* avatar centered */
-  .profile-avatar,
-  .avatar-circle,
-  .user-avatar{
-    width:30px !important;
-    height:30px !important;
-    font-size:12px !important;
-    margin:0 !important;
+  /* avatar sizing */
+  .profile-trigger .avatar-shell{
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 14px !important;
+  }
+
+  /* login button if logged out */
+  .login-btn{
+    min-width: 92px;
+    height: 36px;
+    font-size: .72rem;
+    letter-spacing: .10em;
+    padding: 0 10px;
+  }
+
+  /* dropdown better on mobile */
+  .profile-dropdown{
+    width: 190px;
+    right: 0;
+    top: calc(100% + 8px);
+  }
+
+  .profile-dropdown-item{
+    height: 40px;
+    font-size: .75rem;
+    letter-spacing: .05em;
   }
 }
 
@@ -4740,24 +4784,119 @@ div[style*="border-bottom"]{
 /* extra small phones */
 @media (max-width:430px){
 
-  .profile-btn,
-  .user-btn,
-  .account-btn,
-  .topbar-profile{
-    width:34px !important;
-    min-width:34px !important;
-    height:34px !important;
+  .topbar-title{
+    font-size: 20px !important;
   }
 
-  .profile-avatar,
-  .avatar-circle,
-  .user-avatar{
-    width:26px !important;
-    height:26px !important;
+  .topbar-subtitle{
+    font-size: 8px !important;
+  }
+
+  .search-box{
+    height: 34px;
+    padding: 0 8px;
+  }
+
+  .search-input,
+  .search-input::placeholder{
+    font-size: .76rem !important;
+  }
+
+  .profile-trigger{
+    width: 34px !important;
+    min-width: 34px !important;
+    height: 34px !important;
+  }
+
+  .profile-trigger .avatar-shell{
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 12px !important;
+  }
+
+  .login-btn{
+    min-width: 82px;
+    height: 34px;
+    font-size: .68rem;
+  }
+}
+
+/* ==========================================
+   FINAL MOBILE CLEANUP
+========================================== */
+
+@media (max-width:768px){
+
+  /* ----------------------------------
+     REMOVE ACTIVE BLUE BAR COMPLETELY
+  ---------------------------------- */
+
+  .sidebar-item.active::before,
+  .sidebar-item.is-active::before,
+  .sidebar .active::before,
+  .sidebar .is-active::before{
+    display:none !important;
+    content:none !important;
+  }
+
+  .sidebar-item.active,
+  .sidebar-item.is-active,
+  .sidebar .active,
+  .sidebar .is-active{
+    border-left:none !important;
+    box-shadow:none !important;
+  }
+
+  /* ----------------------------------
+     PAGINATION SMALLER
+  ---------------------------------- */
+
+  .pagination-row{
+    gap:8px !important;
+    padding:8px 6px !important;
+    margin-top:10px !important;
+  }
+
+  .pager-btn{
+    min-width:auto !important;
+    height:40px !important;
+    padding:0 12px !important;
     font-size:11px !important;
+    letter-spacing:.08em;
+    border-radius:12px !important;
   }
 
-  .search-box input{
-    font-size:9px !important;
+  .pager-status{
+    min-width:78px !important;
+    height:40px !important;
+    padding:0 10px !important;
+    font-size:12px !important;
+    border-radius:12px !important;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+}
+
+
+/* extra small phones */
+@media (max-width:430px){
+
+  .pagination-row{
+    gap:6px !important;
+    padding:6px 4px !important;
+  }
+
+  .pager-btn{
+    height:36px !important;
+    padding:0 10px !important;
+    font-size:10px !important;
+  }
+
+  .pager-status{
+    height:36px !important;
+    min-width:68px !important;
+    font-size:11px !important;
   }
 }
