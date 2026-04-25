@@ -4224,7 +4224,7 @@ TABLET
 }
 
 /* =========================================================
-MOBILE FINAL (STABLE)
+MOBILE FINAL
 ========================================================= */
 
 @media (max-width:768px){
@@ -4233,9 +4233,9 @@ MOBILE FINAL (STABLE)
   body,
   #root{
     min-height:100%;
+    max-width:100vw;
     overflow-x:hidden !important;
     overflow-y:auto;
-    max-width:100vw;
     -webkit-overflow-scrolling:touch;
   }
 
@@ -4255,84 +4255,92 @@ MOBILE FINAL (STABLE)
   .flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen{
     display:flex !important;
     width:100vw !important;
-    min-height:100vh !important;
+    height:100dvh !important;
+    min-height:100dvh !important;
     padding-left:56px !important;
     overflow:hidden !important;
   }
 
   /* =====================================================
-     SIDEBAR (FIXED + NON SCROLLABLE)
+     REAL SIDEBAR ROOT ONLY
   ===================================================== */
 
-  .game-sidebar,
-  .sidebar,
-  aside,
-  .flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen > div:first-child{
+  .h-screen.flex.flex-col.panel.transition-all.duration-300{
     position:fixed !important;
-    top:0;
-    left:0;
-    bottom:0;
+    top:0 !important;
+    left:0 !important;
+    bottom:0 !important;
 
     width:56px !important;
     min-width:56px !important;
     max-width:56px !important;
-    height:100vh !important;
+
+    height:100dvh !important;
+    min-height:100dvh !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:flex-start !important;
 
     overflow:hidden !important;
-    overflow-y:hidden !important;
-    overflow-x:hidden !important;
-
-    overscroll-behavior:none !important;
-    touch-action:none !important;
-
     z-index:100 !important;
   }
 
-  /* hide genre/filter block exactly */
-  .sidebar > .px-3.py-4.border-b:nth-of-type(2),
-  .panel > .px-3.py-4.border-b:nth-of-type(2){
+  /* top block */
+  .h-screen.flex.flex-col.panel.transition-all.duration-300
+  > .px-3.py-4.border-b:first-of-type{
+    flex-shrink:0 !important;
+  }
+
+  /* hide genres/filter section */
+  .h-screen.flex.flex-col.panel.transition-all.duration-300
+  > .px-3.py-4.border-b:nth-of-type(2){
     display:none !important;
   }
 
-  .sidebar-profile-meta,
-  .sidebar-toggle,
-  .collapse-toggle,
-  .arrow,
-  .sidebar .border-t,
-  .game-sidebar .border-t{
+  /* bottom pinned */
+  .h-screen.flex.flex-col.panel.transition-all.duration-300
+  > .mt-auto{
+    margin-top:auto !important;
+    padding-bottom:0 !important;
+    flex-shrink:0 !important;
+  }
+
+  /* remove bottom line/gap */
+  .h-screen.flex.flex-col.panel.transition-all.duration-300
+  > .mt-auto
+  > .px-3.py-4.border-b{
+    border-bottom:none !important;
+    padding-bottom:0 !important;
+    margin-bottom:0 !important;
+  }
+
+  .h-screen.flex.flex-col.panel.transition-all.duration-300
+  > .mt-auto
+  > .border-t{
     display:none !important;
   }
 
-  .sidebar button,
-  .sidebar a,
-  .sidebar-item{
-    height:44px !important;
-    min-height:44px !important;
+  /* icon only buttons */
+  .h-screen.flex.flex-col.panel.transition-all.duration-300 button{
+    height:42px !important;
+    min-height:42px !important;
     padding:0 !important;
     justify-content:center !important;
     gap:0 !important;
   }
 
-  .sidebar button span,
-  .sidebar a span,
-  .sidebar-item span{
+  .h-screen.flex.flex-col.panel.transition-all.duration-300 button span,
+  .sidebar-profile-meta,
+  .sidebar-toggle,
+  .collapse-toggle,
+  .arrow{
     display:none !important;
   }
 
-  .sidebar svg,
-  .game-sidebar svg{
+  .h-screen.flex.flex-col.panel.transition-all.duration-300 svg{
     width:20px !important;
     height:20px !important;
-  }
-
-  .active-item,
-  .sidebar .active,
-  .sidebar-item.active{
-    width:100%;
-    border-radius:0;
-    justify-content:center;
-    background:var(--panel-2) !important;
-    box-shadow:none;
   }
 
   /* =====================================================
@@ -4452,7 +4460,7 @@ MOBILE FINAL (STABLE)
   }
 
   /* =====================================================
-     TABLE CARD HEIGHT FIX
+     TABLE CARD
   ===================================================== */
 
   .game-table-shell,
@@ -4463,8 +4471,10 @@ MOBILE FINAL (STABLE)
     min-height:0 !important;
     max-height:none !important;
     overflow:hidden !important;
-    padding-bottom:56px !important;
-    margin-bottom:0 !important;
+
+    /* exact pager room */
+    padding-bottom:0 !important;
+    margin-bottom:58px !important;
   }
 
   .game-table-shell::before,
@@ -4473,10 +4483,11 @@ MOBILE FINAL (STABLE)
   .game-table-inner::after{
     display:none !important;
     content:none !important;
+    height:0 !important;
   }
 
   /* =====================================================
-     TABLE HEADER = ADD / # / NAME ONLY
+     TABLE HEADER
   ===================================================== */
 
   .table-header-row{
@@ -4542,9 +4553,9 @@ MOBILE FINAL (STABLE)
   }
 
   .game-row:last-child{
-    border-bottom:none !important;
     margin-bottom:0 !important;
     padding-bottom:0 !important;
+    border-bottom:none !important;
   }
 
   .game-thumb{
@@ -4604,111 +4615,3 @@ MOBILE FINAL (STABLE)
     font-size:.76rem;
   }
 }
-
-/* =====================================================
-     TABLE ENDS JUST ABOVE PAGINATION
-  ===================================================== */
-
-  .game-table-shell,
-  .game-table-inner,
-  .panel.game-table-shell{
-    height:auto !important;
-    min-height:0 !important;
-    max-height:none !important;
-    overflow:hidden !important;
-
-    /* exact room for pager */
-    padding-bottom:0 !important;
-    margin-bottom:58px !important;
-  }
-
-  /* remove fake extra space */
-  .game-table-shell::before,
-  .game-table-shell::after,
-  .game-table-inner::before,
-  .game-table-inner::after{
-    display:none !important;
-    content:none !important;
-    height:0 !important;
-  }
-
-  /* clean final row */
-  .game-row:last-child{
-    margin-bottom:0 !important;
-    padding-bottom:0 !important;
-    border-bottom:none !important;
-  }
-
-  .table-grid:last-child,
-  .table-body:last-child{
-    margin-bottom:0 !important;
-    padding-bottom:0 !important;
-  }
-
-  /* pager */
-  .pagination-row{
-    height:46px !important;
-    bottom:8px !important;
-  }
-
-  /* =====================================================
-     REAL SIDEBAR ROOT ONLY
-     (prevents desktop leakage)
-  ===================================================== */
-
-  .h-screen.flex.flex-col.panel.transition-all.duration-300{
-    display:flex !important;
-    flex-direction:column !important;
-    justify-content:flex-start !important;
-    height:100dvh !important;
-    min-height:100dvh !important;
-    overflow:hidden !important;
-  }
-
-  /* top section fixed */
-  .h-screen.flex.flex-col.panel.transition-all.duration-300
-  > .px-3.py-4.border-b:first-of-type{
-    flex-shrink:0 !important;
-  }
-
-  /* genres hidden */
-  .h-screen.flex.flex-col.panel.transition-all.duration-300
-  > .px-3.py-4.border-b:nth-of-type(2){
-    display:none !important;
-  }
-
-  /* bottom area pinned */
-  .h-screen.flex.flex-col.panel.transition-all.duration-300
-  > .mt-auto{
-    margin-top:auto !important;
-    padding-bottom:0 !important;
-    flex-shrink:0 !important;
-  }
-
-  /* logout wrapper cleanup */
-  .h-screen.flex.flex-col.panel.transition-all.duration-300
-  > .mt-auto
-  > .px-3.py-4.border-b{
-    border-bottom:none !important;
-    padding-bottom:0 !important;
-    margin-bottom:0 !important;
-  }
-
-  /* remove bottom collapse line / gap */
-  .h-screen.flex.flex-col.panel.transition-all.duration-300
-  > .mt-auto
-  > .border-t{
-    display:none !important;
-    border:none !important;
-    height:0 !important;
-    min-height:0 !important;
-    padding:0 !important;
-    margin:0 !important;
-  }
-
-  /* logout button always visible */
-  .h-screen.flex.flex-col.panel.transition-all.duration-300
-  > .mt-auto button{
-    height:42px !important;
-    min-height:42px !important;
-  }
