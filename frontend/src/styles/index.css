@@ -5500,3 +5500,103 @@ Always visible at bottom of screen
 }
 
 }
+
+/* =========================================================
+MOBILE FINAL LOCK PATCH
+1. Remove empty space under 10th row
+2. Sidebar fully fixed / non-scrollable
+========================================================= */
+
+@media (max-width: 768px){
+
+/* -------------------------------
+PAGE LAYOUT
+--------------------------------*/
+html,
+body,
+#root{
+  height:100% !important;
+  overflow:hidden !important;
+}
+
+.flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen{
+  height:100vh !important;
+  overflow:hidden !important;
+}
+
+/* only content area scrolls */
+.game-main,
+.main-content,
+.dashboard-main,
+.content-shell{
+  height:100vh !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  padding-bottom:82px !important;
+  -webkit-overflow-scrolling:touch;
+}
+
+/* -------------------------------
+SIDEBAR HARD LOCK
+--------------------------------*/
+.game-sidebar,
+.sidebar,
+aside{
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  bottom:0 !important;
+  width:56px !important;
+  height:100vh !important;
+
+  overflow:hidden !important;
+  overscroll-behavior:none !important;
+  touch-action:none !important;
+
+  z-index:100 !important;
+}
+
+/* inner sidebar also locked */
+.game-sidebar *,
+.sidebar *,
+aside *{
+  overscroll-behavior:none !important;
+}
+
+/* -------------------------------
+REMOVE EXTRA SPACE BELOW TABLE
+--------------------------------*/
+.game-table-shell,
+.game-table-inner{
+  height:auto !important;
+  min-height:unset !important;
+  padding-bottom:88px !important;
+}
+
+.game-table-inner > .game-row:last-child{
+  margin-bottom:0 !important;
+}
+
+.game-table-shell::after,
+.game-table-inner::after{
+  display:none !important;
+  content:none !important;
+}
+
+/* rows compact */
+.game-row{
+  min-height:60px !important;
+}
+
+/* -------------------------------
+FIXED PAGER
+--------------------------------*/
+.pagination-row{
+  position:fixed !important;
+  left:56px !important;
+  right:0 !important;
+  bottom:0 !important;
+  z-index:110 !important;
+}
+
+}
