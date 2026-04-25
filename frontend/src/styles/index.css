@@ -4587,3 +4587,177 @@ div[style*="border-bottom"]{
     column-gap:3px !important;
   }
 }
+
+/* ==========================================
+   MOBILE POLISH PATCH
+========================================== */
+
+@media (max-width:768px){
+
+  /* remove left clipping */
+  .game-table-shell,
+  .game-table-inner,
+  .table-grid,
+  .game-row{
+    overflow:visible !important;
+  }
+
+  .table-header-row,
+  .game-row{
+    padding-left:14px !important;
+    padding-right:8px !important;
+  }
+
+  .game-fav{
+    margin-left:2px;
+    justify-self:start !important;
+  }
+
+  /* softer selected sidebar item */
+  .sidebar .active,
+  .sidebar .is-active,
+  .sidebar-item.active{
+    background:rgba(147,197,253,.08) !important;
+    border:none !important;
+    box-shadow:none !important;
+  }
+
+  .sidebar .active::before,
+  .sidebar .is-active::before,
+  .sidebar-item.active::before{
+    display:none !important;
+  }
+
+  /* rows auto height */
+  .game-row{
+    min-height:auto !important;
+    height:auto !important;
+    padding-top:10px !important;
+    padding-bottom:10px !important;
+    align-items:center;
+  }
+
+  .game-info{
+    min-width:0;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+
+  .game-meta{
+    min-width:0;
+  }
+
+  .game-name{
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:unset !important;
+    line-height:1.2;
+    word-break:break-word;
+  }
+
+  .game-thumb{
+    flex-shrink:0;
+  }
+}
+
+
+/* extra small phones */
+@media (max-width:430px){
+
+  .table-header-row,
+  .game-row{
+    padding-left:12px !important;
+    padding-right:6px !important;
+  }
+
+  .game-name{
+    font-size:10px !important;
+  }
+}
+
+/* ==========================================
+   MOBILE TOPBAR PROFILE PATCH
+========================================== */
+
+@media (max-width:768px){
+
+  /* search text smaller */
+  .search-box input,
+  .search-input{
+    font-size:10px !important;
+    letter-spacing:.08em;
+  }
+
+  .search-box input::placeholder,
+  .search-input::placeholder{
+    font-size:10px !important;
+  }
+
+  /* profile button compact */
+  .profile-btn,
+  .user-btn,
+  .account-btn,
+  .topbar-profile{
+    width:38px !important;
+    min-width:38px !important;
+    height:38px !important;
+    padding:0 !important;
+    border-radius:50% !important;
+    justify-content:center !important;
+    gap:0 !important;
+  }
+
+  /* hide username text */
+  .profile-btn span,
+  .user-btn span,
+  .account-btn span,
+  .topbar-profile span,
+  .profile-name,
+  .username-text{
+    display:none !important;
+  }
+
+  /* hide dropdown arrow if needed */
+  .profile-btn svg:last-child,
+  .user-btn svg:last-child,
+  .topbar-profile svg:last-child{
+    display:none !important;
+  }
+
+  /* avatar centered */
+  .profile-avatar,
+  .avatar-circle,
+  .user-avatar{
+    width:30px !important;
+    height:30px !important;
+    font-size:12px !important;
+    margin:0 !important;
+  }
+}
+
+
+/* extra small phones */
+@media (max-width:430px){
+
+  .profile-btn,
+  .user-btn,
+  .account-btn,
+  .topbar-profile{
+    width:34px !important;
+    min-width:34px !important;
+    height:34px !important;
+  }
+
+  .profile-avatar,
+  .avatar-circle,
+  .user-avatar{
+    width:26px !important;
+    height:26px !important;
+    font-size:11px !important;
+  }
+
+  .search-box input{
+    font-size:9px !important;
+  }
+}
