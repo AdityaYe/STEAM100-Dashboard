@@ -4900,3 +4900,136 @@ div[style*="border-bottom"]{
     font-size:11px !important;
   }
 }
+@media (max-width: 768px){
+
+  /* ---------------------------------------
+     sidebar shell
+  --------------------------------------- */
+  .game-sidebar,
+  aside,
+  .sidebar{
+    width:72px !important;
+    min-width:72px !important;
+    max-width:72px !important;
+    overflow:hidden;
+  }
+
+  /* ---------------------------------------
+     top profile area tighter
+  --------------------------------------- */
+  .sidebar-profile-section{
+    padding:10px 6px !important;
+    margin:0 !important;
+  }
+
+  .sidebar-profile-display,
+  .sidebar-profile-collapsed{
+    justify-content:center !important;
+    gap:0 !important;
+  }
+
+  .sidebar-profile-meta{
+    display:none !important;
+  }
+
+  /* ---------------------------------------
+     nav buttons compact
+  --------------------------------------- */
+  .sidebar button,
+  .sidebar a,
+  .game-sidebar button,
+  .game-sidebar a{
+    min-height:44px !important;
+    height:44px !important;
+    padding:0 !important;
+    justify-content:center !important;
+    gap:0 !important;
+  }
+
+  .sidebar button span:not(.arrow),
+  .sidebar a span:not(.arrow),
+  .game-sidebar button span:not(.arrow),
+  .game-sidebar a span:not(.arrow){
+    display:none !important;
+  }
+
+  /* ---------------------------------------
+     remove blue active line
+  --------------------------------------- */
+  .sidebar button .absolute.left-0,
+  .game-sidebar button .absolute.left-0,
+  .active-item > .absolute,
+  .active-item span[style*="backgroundColor"]{
+    display:none !important;
+  }
+
+  /* active state = soft bg only */
+  .active-item{
+    background:rgba(255,255,255,.06) !important;
+    box-shadow:none !important;
+    border:none !important;
+  }
+
+  /* ---------------------------------------
+     hide filter / genres section fully
+  --------------------------------------- */
+  .sidebar .px-3.py-4.border-b:nth-of-type(2),
+  .game-sidebar .px-3.py-4.border-b:nth-of-type(2){
+    display:none !important;
+  }
+
+  /* if custom classes exist */
+  .sidebar-genres,
+  .genre-section,
+  .filter-section{
+    display:none !important;
+  }
+
+  /* ---------------------------------------
+     bottom auth area tighter
+  --------------------------------------- */
+  .mt-auto .px-3.py-4.border-b{
+    padding:8px 6px !important;
+  }
+
+  /* hide register text layout issues */
+  .mt-auto button span{
+    display:none !important;
+  }
+
+  /* ---------------------------------------
+     remove collapse / arrow section fully
+  --------------------------------------- */
+  .sidebar-toggle,
+  .collapse-toggle,
+  .mt-auto > .border-t,
+  .game-sidebar .border-t{
+    display:none !important;
+  }
+
+  /* ---------------------------------------
+     cleaner separators
+  --------------------------------------- */
+  .sidebar hr,
+  .game-sidebar hr{
+    margin:8px 0 !important;
+    opacity:.35;
+  }
+
+  /* ---------------------------------------
+     icons smaller
+  --------------------------------------- */
+  .sidebar svg,
+  .game-sidebar svg{
+    width:20px !important;
+    height:20px !important;
+  }
+
+  /* ---------------------------------------
+     prevent extra scroll height
+  --------------------------------------- */
+  .game-sidebar,
+  .sidebar{
+    padding-bottom:8px !important;
+  }
+}
