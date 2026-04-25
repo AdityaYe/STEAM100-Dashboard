@@ -5792,3 +5792,106 @@ SMALLER PAGINATION
 }
 
 }
+
+/* =========================================================
+MOBILE FINAL FIX
+1. Enable pull-to-refresh
+2. Pagination fits screen perfectly
+3. Hard stop after row 10
+========================================================= */
+
+@media (max-width:768px){
+
+/* ---------------------------------
+ALLOW NORMAL PAGE SCROLL / REFRESH
+----------------------------------*/
+html,
+body,
+#root{
+  height:auto !important;
+  min-height:100% !important;
+  overflow-x:hidden !important;
+  overflow-y:auto !important;
+  overscroll-behavior-y:auto !important;
+  -webkit-overflow-scrolling:touch !important;
+}
+
+/* remove forced internal scrolling */
+.game-main,
+.main-content,
+.dashboard-main,
+.content-shell{
+  height:auto !important;
+  min-height:100vh !important;
+  overflow:visible !important;
+  padding-bottom:72px !important;
+}
+
+/* ---------------------------------
+STRICT TABLE END AFTER ROW 10
+----------------------------------*/
+.game-table-shell,
+.game-table-inner{
+  height:auto !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+  padding-bottom:0 !important;
+  margin-bottom:68px !important;
+}
+
+.game-table-inner > .game-row:last-child{
+  margin-bottom:0 !important;
+  padding-bottom:0 !important;
+  border-bottom:none !important;
+}
+
+.game-table-shell::after,
+.game-table-inner::after,
+.panel.game-table-shell::after{
+  display:none !important;
+  content:none !important;
+  height:0 !important;
+}
+
+/* ---------------------------------
+PAGINATION PERFECT WIDTH
+----------------------------------*/
+.pagination-row{
+  position:fixed !important;
+  left:68px !important;       /* sidebar + gap */
+  right:8px !important;       /* fits screen */
+  bottom:8px !important;
+
+  width:auto !important;
+  max-width:none !important;
+
+  height:46px !important;
+  padding:5px 6px !important;
+  gap:6px !important;
+  border-radius:14px !important;
+
+  z-index:120 !important;
+}
+
+.pager-btn{
+  min-width:0 !important;
+  height:32px !important;
+  font-size:.66rem !important;
+  padding:0 8px !important;
+}
+
+.pager-status{
+  min-width:64px !important;
+  height:32px !important;
+  font-size:.76rem !important;
+  padding:0 8px !important;
+}
+
+/* prevent horizontal page overflow */
+body,
+.game-table-shell,
+.pagination-row{
+  max-width:100vw !important;
+}
+
+}
