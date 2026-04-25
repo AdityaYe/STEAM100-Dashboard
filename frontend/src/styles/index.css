@@ -5033,3 +5033,113 @@ div[style*="border-bottom"]{
     padding-bottom:8px !important;
   }
 }
+
+/* =========================================================
+SIDEBAR MOBILE FINAL PATCH
+Uses your current Sidebar.tsx structure
+========================================================= */
+
+/* ---------------------------------------------------------
+1. HIDE FILTER / GENRE BLOCK ON MOBILE
+--------------------------------------------------------- */
+@media (max-width: 768px){
+
+  /* second middle block that contains filter + genres */
+  .panel > div:nth-child(2){
+    display:none !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+2. REMOVE BOTTOM COLLAPSE TOGGLE AREA ON MOBILE
+--------------------------------------------------------- */
+@media (max-width: 768px){
+
+  /* last border-top collapse section */
+  .mt-auto > div:last-child{
+    display:none !important;
+  }
+
+  /* remove extra spacing */
+  .mt-auto{
+    margin-top:auto;
+    padding-bottom:8px;
+  }
+}
+
+
+/* ---------------------------------------------------------
+3. FULL WIDTH ACTIVE ITEM
+--------------------------------------------------------- */
+@media (max-width: 768px){
+
+  .active-item{
+    width:100% !important;
+    border-radius:0 !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+    justify-content:center !important;
+    background:var(--panel-2) !important;
+  }
+
+  .active-item.glow{
+    box-shadow:none !important;
+  }
+
+  /* remove tiny inner selected box look */
+  .active-item svg{
+    position:relative;
+    z-index:2;
+  }
+
+  /* blue line full height cleaner */
+  .active-item span.absolute{
+    left:0 !important;
+    width:3px !important;
+    border-radius:0 !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+4. TIGHTER MOBILE SIDEBAR
+--------------------------------------------------------- */
+@media (max-width: 768px){
+
+  .flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen > div:first-child{
+    width:56px !important;
+    min-width:56px !important;
+  }
+
+  .sidebar-profile-section{
+    padding-bottom:10px !important;
+    margin-bottom:8px !important;
+  }
+
+  .sidebar-profile-collapsed{
+    display:flex;
+    justify-content:center;
+  }
+
+  .sidebar-profile-collapsed .avatar,
+  .sidebar-profile-collapsed button,
+  .sidebar-profile-collapsed div{
+    transform:scale(.92);
+  }
+
+  button[class*="h-12"]{
+    height:46px !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+5. REMOVE EXTRA DIVIDER BELOW LOGOUT ON MOBILE
+--------------------------------------------------------- */
+@media (max-width: 768px){
+
+  .mt-auto > div:first-child{
+    border-bottom:none !important;
+  }
+}
