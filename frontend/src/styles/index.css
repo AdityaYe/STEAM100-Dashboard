@@ -5895,3 +5895,71 @@ body,
 }
 
 }
+
+/* =========================================================
+REMOVE EXTRA LAST ROW / END TABLE EXACTLY AT 10TH GAME
+========================================================= */
+
+@media (max-width:768px){
+
+/* outer containers shrink to content */
+.game-table-shell,
+.game-table-inner,
+.panel.game-table-shell{
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  padding-bottom:0 !important;
+  margin-bottom:62px !important; /* space before pagination */
+  overflow:hidden !important;
+}
+
+/* remove fake spacer rows / fillers */
+.game-table-shell::before,
+.game-table-shell::after,
+.game-table-inner::before,
+.game-table-inner::after,
+.panel.game-table-shell::before,
+.panel.game-table-shell::after{
+  content:none !important;
+  display:none !important;
+  height:0 !important;
+}
+
+/* make rows natural height */
+.game-row{
+  min-height:0 !important;
+}
+
+/* remove line after 10th row */
+.game-row:last-child{
+  border-bottom:none !important;
+  margin-bottom:0 !important;
+  padding-bottom:0 !important;
+}
+
+/* remove inner divider after last row if used */
+.game-row:last-child::after,
+.game-row:last-child::before{
+  display:none !important;
+  content:none !important;
+}
+
+/* bottom edge of inner table should end at row 10 */
+.game-table-inner{
+  border-bottom:none !important;
+}
+
+/* outer shell ends cleanly after last row */
+.game-table-shell{
+  display:block !important;
+}
+
+/* if rows are wrapped in another rows container */
+.table-grid:last-child,
+.table-body:last-child{
+  margin-bottom:0 !important;
+  padding-bottom:0 !important;
+}
+
+}
