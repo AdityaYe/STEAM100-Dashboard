@@ -4606,23 +4606,23 @@ MOBILE FINAL (STABLE)
 }
 
 /* =====================================================
-     1. TABLE ENDS AFTER 10TH GAME
+     TABLE ENDS JUST ABOVE PAGINATION
   ===================================================== */
 
   .game-table-shell,
   .game-table-inner,
   .panel.game-table-shell{
     height:auto !important;
-    min-height:unset !important;
+    min-height:0 !important;
     max-height:none !important;
     overflow:hidden !important;
 
-    /* pager breathing room only */
-    padding-bottom:56px !important;
-    margin-bottom:0 !important;
+    /* exact room for pager */
+    padding-bottom:0 !important;
+    margin-bottom:58px !important;
   }
 
-  /* remove fake bottom space */
+  /* remove fake extra space */
   .game-table-shell::before,
   .game-table-shell::after,
   .game-table-inner::before,
@@ -4632,38 +4632,72 @@ MOBILE FINAL (STABLE)
     height:0 !important;
   }
 
-  /* last row ends clean */
+  /* clean final row */
   .game-row:last-child{
     margin-bottom:0 !important;
     padding-bottom:0 !important;
     border-bottom:none !important;
   }
 
-  /* if wrapper after rows exists */
   .table-grid:last-child,
   .table-body:last-child{
     margin-bottom:0 !important;
     padding-bottom:0 !important;
   }
 
-  /* =====================================================
-     2. REMOVE LOGOUT BOTTOM LINE + GAP
-  ===================================================== */
-
-  .mt-auto{
-    margin-top:auto !important;
-    padding-bottom:0 !important;
+  /* pager */
+  .pagination-row{
+    height:46px !important;
+    bottom:8px !important;
   }
 
-  .mt-auto > .px-3.py-4.border-b{
+  /* =====================================================
+     REAL SIDEBAR ROOT ONLY
+     (prevents desktop leakage)
+  ===================================================== */
+
+  .h-screen.flex.flex-col.panel.transition-all.duration-300{
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:flex-start !important;
+    height:100dvh !important;
+    min-height:100dvh !important;
+    overflow:hidden !important;
+  }
+
+  /* top section fixed */
+  .h-screen.flex.flex-col.panel.transition-all.duration-300
+  > .px-3.py-4.border-b:first-of-type{
+    flex-shrink:0 !important;
+  }
+
+  /* genres hidden */
+  .h-screen.flex.flex-col.panel.transition-all.duration-300
+  > .px-3.py-4.border-b:nth-of-type(2){
+    display:none !important;
+  }
+
+  /* bottom area pinned */
+  .h-screen.flex.flex-col.panel.transition-all.duration-300
+  > .mt-auto{
+    margin-top:auto !important;
+    padding-bottom:0 !important;
+    flex-shrink:0 !important;
+  }
+
+  /* logout wrapper cleanup */
+  .h-screen.flex.flex-col.panel.transition-all.duration-300
+  > .mt-auto
+  > .px-3.py-4.border-b{
     border-bottom:none !important;
     padding-bottom:0 !important;
     margin-bottom:0 !important;
   }
 
-  .mt-auto > .border-t,
-  .sidebar .border-t,
-  .game-sidebar .border-t{
+  /* remove bottom collapse line / gap */
+  .h-screen.flex.flex-col.panel.transition-all.duration-300
+  > .mt-auto
+  > .border-t{
     display:none !important;
     border:none !important;
     height:0 !important;
@@ -4672,48 +4706,9 @@ MOBILE FINAL (STABLE)
     margin:0 !important;
   }
 
-   /* =========================================
-     LOGOUT ALWAYS VISIBLE
-  ========================================= */
-
-  .flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen > div:first-child{
-    display:flex !important;
-    flex-direction:column !important;
-    justify-content:space-between !important;
-    height:100vh !important;
-  }
-
-  .flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen > div:first-child .mt-auto{
-    margin-top:auto !important;
-    display:flex !important;
-    flex-direction:column !important;
-    justify-content:flex-end !important;
-    padding-bottom:0 !important;
-  }
-
-  .flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen > div:first-child .mt-auto button{
+  /* logout button always visible */
+  .h-screen.flex.flex-col.panel.transition-all.duration-300
+  > .mt-auto button{
     height:42px !important;
     min-height:42px !important;
-  }
-
-  /* =========================================
-     TABLE ENDS JUST ABOVE PAGINATION
-  ========================================= */
-
-  .pagination-row{
-    height:46px !important;
-    bottom:8px !important;
-  }
-
-  .game-table-shell,
-  .game-table-inner,
-  .panel.game-table-shell{
-    padding-bottom:0 !important;
-    margin-bottom:58px !important; /* space for pager only */
-  }
-
-  .game-row:last-child{
-    margin-bottom:0 !important;
-    padding-bottom:0 !important;
-    border-bottom:none !important;
   }
