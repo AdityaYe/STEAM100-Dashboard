@@ -4671,3 +4671,52 @@ MOBILE FINAL (STABLE)
     padding:0 !important;
     margin:0 !important;
   }
+
+   /* =====================================================
+     1. LOGOUT ALWAYS VISIBLE
+  ===================================================== */
+
+  .game-sidebar,
+  .sidebar,
+  aside{
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:space-between !important;
+  }
+
+  .mt-auto{
+    margin-top:auto !important;
+    flex-shrink:0 !important;
+  }
+
+  .mt-auto > .px-3.py-4.border-b{
+    padding-top:0 !important;
+    padding-bottom:6px !important;
+  }
+
+  .sidebar button,
+  .sidebar a{
+    height:42px !important;
+    min-height:42px !important;
+  }
+
+  /* =====================================================
+     2. TABLE ENDS ABOVE PAGINATION
+  ===================================================== */
+
+  .pagination-row{
+    height:46px !important;
+    bottom:8px !important;
+  }
+
+  .game-table-shell,
+  .game-table-inner,
+  .panel.game-table-shell{
+    padding-bottom:54px !important;   /* exact room above pager */
+    margin-bottom:0 !important;
+  }
+
+  .game-row:last-child{
+    margin-bottom:0 !important;
+    padding-bottom:0 !important;
+  }
