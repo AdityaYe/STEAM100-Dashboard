@@ -74,6 +74,9 @@ const Sidebar = ({
     setIsCollapsed,
   ] = useState(true);
 
+  const isMobile = window.innerWidth <= 768;
+  const collapsed = isMobile ? true : isCollapsed;
+
   const rowClass = `
 w-full h-12 flex items-center
 text-sm font-medium tracking-wider
@@ -81,7 +84,7 @@ text-sm font-medium tracking-wider
 
   const getAlignClass =
     () =>
-      isCollapsed
+      collapsed
         ? "justify-center"
         : "gap-3 px-3";
 
@@ -158,7 +161,7 @@ text-sm font-medium tracking-wider
   return (
     <div
       className={`h-screen flex flex-col panel transition-all duration-300 ${
-        isCollapsed
+        collapsed
           ? "w-16"
           : "w-64"
       }`}
@@ -182,7 +185,7 @@ text-sm font-medium tracking-wider
                 "var(--border)",
             }}
           >
-            {isCollapsed ? (
+            {collapsed? (
               <div className="sidebar-profile-collapsed">
                 <Avatar size="sm" />
               </div>
@@ -244,7 +247,7 @@ text-sm font-medium tracking-wider
 
                 <Icon size={20} />
 
-                {!isCollapsed && (
+                {!collapsed && (
                   <span>
                     {
                       label
@@ -267,32 +270,32 @@ text-sm font-medium tracking-wider
         <div
           onClick={() => {
             if (
-              isCollapsed
+              collapsed
             ) {
               openSidebar();
             }
           }}
           className={`flex items-center cursor-pointer select-none transition-opacity ${
-            isCollapsed
+            collapsed
               ? "justify-center"
               : "gap-2 px-2"
           } text-sm font-medium tracking-wider opacity-70 hover:opacity-100`}
           title={
-            isCollapsed
+            collapsed
               ? "Open Genres"
               : "Genres"
           }
         >
           <Filter size={16} />
 
-          {!isCollapsed && (
+          {!collapsed && (
             <span>
               GENRES
             </span>
           )}
         </div>
 
-        {!isCollapsed && (
+        {!collapsed && (
           <div className="mt-2 space-y-1">
             {GENRES.map(
               (
@@ -363,7 +366,7 @@ text-sm font-medium tracking-wider
             >
               <LogOut size={20} />
 
-              {!isCollapsed && (
+              {!collapsed && (
                 <span>
                   Logout
                 </span>
@@ -379,7 +382,7 @@ text-sm font-medium tracking-wider
               >
                 <LogIn size={20} />
 
-                {!isCollapsed && (
+                {!collapsed && (
                   <span>
                     Login
                   </span>
@@ -394,7 +397,7 @@ text-sm font-medium tracking-wider
               >
                 <UserPlus size={20} />
 
-                {!isCollapsed && (
+                {!collapsed && (
                   <span>
                     Register
                   </span>
@@ -411,7 +414,7 @@ text-sm font-medium tracking-wider
               "var(--border)",
           }}
         >
-          {isCollapsed ? (
+          {collapsed ? (
             <div
               onClick={
                 openSidebar
