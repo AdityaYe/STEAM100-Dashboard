@@ -4248,7 +4248,10 @@ MOBILE FINAL (STABLE)
     letter-spacing:.02em;
   }
 
-  /* APP LAYOUT */
+  /* =====================================================
+     APP LAYOUT
+  ===================================================== */
+
   .flex.w-full.h-screen.overflow-hidden.crt.relative.min-h-screen{
     display:flex !important;
     width:100vw !important;
@@ -4258,7 +4261,7 @@ MOBILE FINAL (STABLE)
   }
 
   /* =====================================================
-     SIDEBAR
+     SIDEBAR (FIXED + NON SCROLLABLE)
   ===================================================== */
 
   .game-sidebar,
@@ -4269,18 +4272,34 @@ MOBILE FINAL (STABLE)
     top:0;
     left:0;
     bottom:0;
+
     width:56px !important;
     min-width:56px !important;
     max-width:56px !important;
     height:100vh !important;
+
     overflow:hidden !important;
+    overflow-y:hidden !important;
+    overflow-x:hidden !important;
+
+    overscroll-behavior:none !important;
+    touch-action:none !important;
+
     z-index:100 !important;
+  }
+
+  /* hide genre/filter block exactly */
+  .sidebar > .px-3.py-4.border-b:nth-of-type(2),
+  .panel > .px-3.py-4.border-b:nth-of-type(2){
+    display:none !important;
   }
 
   .sidebar-profile-meta,
   .sidebar-toggle,
   .collapse-toggle,
-  .arrow{
+  .arrow,
+  .sidebar .border-t,
+  .game-sidebar .border-t{
     display:none !important;
   }
 
@@ -4302,8 +4321,8 @@ MOBILE FINAL (STABLE)
 
   .sidebar svg,
   .game-sidebar svg{
-    width:20px;
-    height:20px;
+    width:20px !important;
+    height:20px !important;
   }
 
   .active-item,
@@ -4433,7 +4452,7 @@ MOBILE FINAL (STABLE)
   }
 
   /* =====================================================
-     TABLE CARD
+     TABLE CARD HEIGHT FIX
   ===================================================== */
 
   .game-table-shell,
@@ -4442,9 +4461,10 @@ MOBILE FINAL (STABLE)
     width:100% !important;
     height:auto !important;
     min-height:0 !important;
+    max-height:none !important;
     overflow:hidden !important;
-    padding-bottom:0 !important;
-    margin-bottom:62px !important;
+    padding-bottom:56px !important;
+    margin-bottom:0 !important;
   }
 
   .game-table-shell::before,
@@ -4456,10 +4476,39 @@ MOBILE FINAL (STABLE)
   }
 
   /* =====================================================
-     TABLE GRID
+     TABLE HEADER = ADD / # / NAME ONLY
   ===================================================== */
 
-  .table-header-row,
+  .table-header-row{
+    width:100% !important;
+    grid-template-columns:
+      42px
+      30px
+      minmax(0,1fr) !important;
+    column-gap:10px !important;
+    box-sizing:border-box;
+    min-height:34px !important;
+    padding:0 14px !important;
+    font-size:.72rem;
+    overflow:hidden !important;
+  }
+
+  .table-header-row > div:nth-child(4),
+  .table-header-row > div:nth-child(5),
+  .table-header-row > div:nth-child(6){
+    display:none !important;
+  }
+
+  .table-header-row > div{
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+  }
+
+  /* =====================================================
+     ROWS
+  ===================================================== */
+
   .game-row{
     width:100% !important;
     grid-template-columns:
@@ -4468,12 +4517,9 @@ MOBILE FINAL (STABLE)
       minmax(0,1fr) !important;
     column-gap:10px !important;
     box-sizing:border-box;
-  }
-
-  .table-header-row{
-    min-height:34px !important;
-    padding:0 14px !important;
-    font-size:.72rem;
+    min-height:58px !important;
+    padding:10px 14px !important;
+    align-items:center;
   }
 
   .table-header-row > div:first-child,
@@ -4495,16 +4541,10 @@ MOBILE FINAL (STABLE)
     padding:0;
   }
 
-  .game-row{
-    min-height:58px !important;
-    padding:10px 14px !important;
-    align-items:center;
-  }
-
   .game-row:last-child{
-    border-bottom:none;
-    margin-bottom:0;
-    padding-bottom:0;
+    border-bottom:none !important;
+    margin-bottom:0 !important;
+    padding-bottom:0 !important;
   }
 
   .game-thumb{
@@ -4536,6 +4576,7 @@ MOBILE FINAL (STABLE)
     left:68px !important;
     right:8px !important;
     bottom:8px !important;
+
     width:auto !important;
     height:46px !important;
 
@@ -4561,52 +4602,5 @@ MOBILE FINAL (STABLE)
     height:32px !important;
     padding:0 8px !important;
     font-size:.76rem;
-  }
-}
-
-/* =========================================================
-EXTRA SMALL PHONES
-========================================================= */
-
-@media (max-width:430px){
-
-  html{
-    font-size:13px;
-  }
-
-  .topbar-title,
-  .brand-title,
-  .logo-text{
-    font-size:20px !important;
-  }
-
-  .topbar-subtitle,
-  .brand-subtitle{
-    font-size:8px;
-  }
-
-  .profile-trigger{
-    width:34px !important;
-    min-width:34px !important;
-    height:34px !important;
-  }
-
-  .profile-trigger .avatar-shell{
-    width:26px !important;
-    height:26px !important;
-    font-size:12px;
-  }
-
-  .search-box{
-    height:34px !important;
-  }
-
-  .game-thumb{
-    width:30px !important;
-    height:20px !important;
-  }
-
-  .game-name{
-    font-size:10px !important;
   }
 }
