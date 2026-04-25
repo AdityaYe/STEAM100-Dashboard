@@ -4378,3 +4378,145 @@ div[style*="border-bottom"]{
     padding:8px !important;
   }
 }
+
+/* =====================================================
+   TRUE PHONE OPTIMIZATION
+===================================================== */
+
+@media (max-width: 768px){
+
+  html{
+    font-size:14px;
+  }
+
+  body{
+    letter-spacing:.02em;
+  }
+
+  /* sidebar narrower */
+  .sidebar,
+  .sidebar.is-open,
+  .sidebar.is-collapsed{
+    width:46px !important;
+    min-width:46px !important;
+    max-width:46px !important;
+  }
+
+  /* topbar */
+  .topbar{
+    padding:8px !important;
+    gap:8px;
+  }
+
+  .topbar-title,
+  .brand-title,
+  .logo-text{
+    font-size:11px !important;
+    letter-spacing:.12em;
+  }
+
+  .topbar-subtitle,
+  .brand-subtitle{
+    font-size:9px !important;
+  }
+
+  .search-box,
+  .topbar button{
+    height:32px !important;
+  }
+
+  .search-box input{
+    font-size:11px !important;
+  }
+
+  /* panels */
+  .panel{
+    padding:8px !important;
+  }
+
+  .table-title{
+    font-size:12px !important;
+  }
+
+  .table-subtitle{
+    font-size:9px !important;
+  }
+
+  /* rows */
+  .game-row{
+    min-height:48px !important;
+    padding:0 6px !important;
+    column-gap:6px !important;
+  }
+
+  .table-header-row{
+    min-height:34px;
+    padding:0 6px !important;
+    font-size:9px !important;
+  }
+
+  .game-fav{
+    font-size:13px !important;
+  }
+
+  .game-rank{
+    font-size:10px !important;
+  }
+
+  .game-thumb{
+    width:34px !important;
+    height:22px !important;
+    border-radius:4px;
+  }
+
+  .game-name{
+    font-size:10px !important;
+    line-height:1.1;
+  }
+
+  .game-publisher{
+    display:none !important;
+  }
+
+  /* floating theme buttons */
+  .theme-switcher,
+  .theme-dock{
+    transform:scale(.82);
+    transform-origin:bottom right;
+  }
+}
+
+
+/* extra small phones */
+@media (max-width: 430px){
+
+  html{
+    font-size:13px;
+  }
+
+  .sidebar{
+    width:42px !important;
+    min-width:42px !important;
+  }
+
+  .game-row{
+    min-height:44px !important;
+  }
+
+  .game-thumb{
+    width:30px !important;
+    height:20px !important;
+  }
+
+  .game-name{
+    font-size:9px !important;
+  }
+
+  .table-title{
+    font-size:11px !important;
+  }
+
+  .table-subtitle{
+    font-size:8px !important;
+  }
+}
