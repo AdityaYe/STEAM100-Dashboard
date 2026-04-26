@@ -5465,13 +5465,13 @@ GAME MODAL
     justify-content:center !important;
     gap:4px !important;
 
-    font-size:20px !important;   /* bigger 0.0 */
+    font-size:50px !important;   /* bigger 0.0 */
     font-weight:700 !important;
     line-height:1 !important;
   }
 
   .rating-number-inline small{
-    font-size: 30px !important;
+    font-size:10px !important;   /* smaller /5 */
     margin-bottom:6px !important;
     line-height:1 !important;
   }
