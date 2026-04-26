@@ -5052,17 +5052,7 @@ GAME MODAL
     justify-content:center !important;
     gap:6px !important;
   }
-
-  .rating-number-inline{
-    font-size:34px !important;
-    line-height:1 !important;
-  }
-
-  .rating-number-inline small{
-    font-size:16px !important;
-    margin-left:3px !important;
-  }
-
+  
   .stars-inline{
     display:flex !important;
     gap:1px !important;
@@ -5208,25 +5198,6 @@ GAME MODAL
     padding:8px 0 !important;
   }
 
-  /* main score large */
-  .rating-number-inline{
-    font-size:42px !important;
-    line-height:1 !important;
-    font-weight:700 !important;
-    display:flex !important;
-    align-items:flex-end !important;
-    gap:4px !important;
-  }
-
-  /* /5 smaller */
-  .rating-number-inline small{
-    font-size:18px !important;
-    line-height:1.1 !important;
-    opacity:.75 !important;
-    font-weight:500 !important;
-    margin-bottom:5px !important;
-  }
-
   /* stars larger */
   .stars-inline{
     font-size:22px !important;
@@ -5301,21 +5272,6 @@ GAME MODAL
     align-items:center !important;
     justify-content:center !important;
     gap:8px !important;
-  }
-
-  /* 0.0 */
-  .rating-number-inline{
-    font-size:42px !important;
-    line-height:1 !important;
-    font-weight:700 !important;
-  }
-
-  /* /5 smaller */
-  .rating-number-inline small{
-    font-size:18px !important;
-    opacity:.8 !important;
-    margin-left:4px !important;
-    vertical-align:middle !important;
   }
 
   /* stars bigger */
@@ -5398,24 +5354,6 @@ GAME MODAL
     justify-content:center !important;
     gap:8px !important;
     padding:8px 0 !important;
-  }
-
-  /* 0.0 */
-  .rating-number-inline{
-    font-size:100px !important;
-    line-height:1 !important;
-    font-weight:700 !important;
-    display:flex !important;
-    align-items:flex-end !important;
-    gap:4px !important;
-  }
-
-  /* /5 */
-  .rating-number-inline small{
-    font-size:18px !important;
-    line-height:1.1 !important;
-    opacity:.82 !important;
-    margin-bottom:5px !important;
   }
 
   /* stars row */
