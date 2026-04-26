@@ -5294,3 +5294,70 @@ GAME MODAL
   .chart-panel svg text{
     font-size:10px !important;
   }
+
+   /* row layout */
+  .ratings-inline{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:8px !important;
+  }
+
+  /* 0.0 */
+  .rating-number-inline{
+    font-size:42px !important;
+    line-height:1 !important;
+    font-weight:700 !important;
+  }
+
+  /* /5 smaller */
+  .rating-number-inline small{
+    font-size:18px !important;
+    opacity:.8 !important;
+    margin-left:4px !important;
+    vertical-align:middle !important;
+  }
+
+  /* stars bigger */
+  .stars-inline{
+    display:flex !important;
+    gap:3px !important;
+    line-height:1 !important;
+  }
+
+  .stars-inline span{
+    font-size:24px !important;
+  }
+
+  .chart-container{
+    min-height:220px !important;
+    padding:12px !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:space-between !important;
+    overflow:hidden !important;
+  }
+
+  /* chart area */
+  .chart-container .recharts-responsive-container{
+    height:140px !important;
+    min-height:140px !important;
+    flex-shrink:0 !important;
+  }
+
+  /* title below chart */
+  .chart-label{
+    margin-top:10px !important;
+    font-size:11px !important;
+    line-height:1.25 !important;
+    text-align:left !important;
+    white-space:normal !important;
+    word-break:break-word !important;
+  }
+
+  /* chart axis text smaller */
+  .chart-container svg text{
+    font-size:9px !important;
+  }
