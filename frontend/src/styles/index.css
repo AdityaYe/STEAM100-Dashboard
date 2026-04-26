@@ -5392,55 +5392,58 @@ GAME MODAL
     padding-top:0 !important;
   }
 
-  /* =====================================================
-     RATING VALUE
-  ===================================================== */
+  .ratings-inline{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:8px !important;
+    padding:8px 0 !important;
+  }
 
+  /* 0.0 */
   .rating-number-inline{
-    font-size:46px !important;
+    font-size:44px !important;
     line-height:1 !important;
     font-weight:700 !important;
-    display:inline-block !important;
+    display:flex !important;
+    align-items:flex-end !important;
+    gap:4px !important;
   }
 
   /* /5 */
-  .rating-number-inline + span,
-  .rating-number-inline ~ span{
+  .rating-number-inline small{
     font-size:18px !important;
-    opacity:.8 !important;
+    line-height:1.1 !important;
+    opacity:.82 !important;
+    margin-bottom:5px !important;
   }
 
-  /* =====================================================
-     STARS (force visible)
-  ===================================================== */
-
-  .stars,
-  .rating-stars,
-  .star-row{
+  /* stars row */
+  .stars-inline{
     display:flex !important;
-    justify-content:center !important;
     align-items:center !important;
-    gap:4px !important;
-    font-size:22px !important;
+    justify-content:center !important;
+    gap:3px !important;
+
+    font-size:24px !important;
     line-height:1 !important;
-    opacity:1 !important;
-    overflow:visible !important;
+
     min-height:24px !important;
-  }
-
-  .stars *,
-  .rating-stars *,
-  .star-row *{
-    font-size:22px !important;
-    line-height:1 !important;
-    opacity:1 !important;
-    transform:none !important;
-  }
-
-  /* if clipped by parent */
-  .rating-box,
-  .rating-panel,
-  .score-wrap{
     overflow:visible !important;
-    padding-bottom:10px !important;
+  }
+
+  .stars-inline span{
+    display:inline-block !important;
+    font-size:24px !important;
+    line-height:1 !important;
+    transform:none !important;
+    opacity:1 !important;
+  }
+
+  /* rating count */
+  .rating-count-inline{
+    font-size:11px !important;
+    opacity:.72 !important;
+    line-height:1 !important;
   }
