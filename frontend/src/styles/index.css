@@ -5403,7 +5403,7 @@ GAME MODAL
 
   /* 0.0 */
   .rating-number-inline{
-    font-size:44px !important;
+    font-size:100px !important;
     line-height:1 !important;
     font-weight:700 !important;
     display:flex !important;
@@ -5482,7 +5482,7 @@ GAME MODAL
     align-items:center !important;
     gap:2px !important;
 
-    font-size:24px !important;
+    font-size:18px !important;
     line-height:1 !important;
 
     min-height:24px !important;
@@ -5496,7 +5496,7 @@ GAME MODAL
   }
 
   .rating-count-inline{
-    font-size:12px !important;
+    font-size:10px !important;
     line-height:1 !important;
     opacity:.8 !important;
   }
