@@ -5194,3 +5194,85 @@ GAME MODAL
     font-size:16px !important;
     border-radius:10px !important;
   }
+
+  /* =====================================================
+     RATING SCALE FIX
+  ===================================================== */
+
+  /* main numeric score larger */
+  .game-modal-shell .rating-score{
+    font-size:42px !important;
+    line-height:1 !important;
+    font-weight:700 !important;
+  }
+
+  /* /5 smaller */
+  .game-modal-shell .rating-score small,
+  .game-modal-shell .rating-score span:last-child,
+  .game-modal-shell .score-denominator{
+    font-size:18px !important;
+    opacity:.82 !important;
+    vertical-align:middle !important;
+  }
+
+  /* stars larger than before */
+  .game-modal-shell .rating-stars{
+    font-size:22px !important;
+    gap:3px !important;
+    line-height:1 !important;
+  }
+
+  /* =====================================================
+     LOWER TWO CHARTS
+  ===================================================== */
+
+  .game-modal-shell .chart-mini-grid,
+  .game-modal-shell .bottom-chart-grid,
+  .game-modal-shell .mini-chart-wrap{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:12px !important;
+  }
+
+  /* give charts more height */
+  .game-modal-shell .chart-panel-small,
+  .game-modal-shell .mini-chart,
+  .game-modal-shell .chart-mini-card{
+    min-height:220px !important;
+    padding:12px !important;
+    position:relative !important;
+  }
+
+  /* move labels lower and keep room */
+  .game-modal-shell .chart-panel-small .label,
+  .game-modal-shell .mini-chart .label,
+  .game-modal-shell .chart-mini-card .label{
+    position:absolute !important;
+    left:12px !important;
+    right:12px !important;
+    bottom:12px !important;
+
+    font-size:11px !important;
+    line-height:1.25 !important;
+    white-space:normal !important;
+    text-align:left !important;
+  }
+
+  /* chart drawing area above text */
+  .game-modal-shell .chart-panel-small canvas,
+  .game-modal-shell .chart-panel-small svg,
+  .game-modal-shell .mini-chart canvas,
+  .game-modal-shell .mini-chart svg,
+  .game-modal-shell .chart-mini-card canvas,
+  .game-modal-shell .chart-mini-card svg{
+    height:145px !important;
+    max-height:145px !important;
+    margin-bottom:42px !important;
+  }
+
+  /* axis text smaller */
+  .game-modal-shell .chart-panel-small svg text,
+  .game-modal-shell .mini-chart svg text,
+  .game-modal-shell .chart-mini-card svg text{
+    font-size:9px !important;
+  }
