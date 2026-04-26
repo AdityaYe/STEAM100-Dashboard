@@ -5447,3 +5447,107 @@ GAME MODAL
     opacity:.72 !important;
     line-height:1 !important;
   }
+
+  /* ---------- RATINGS BLOCK ---------- */
+
+  .ratings-inline{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:8px !important;
+    margin-top:10px !important;
+  }
+
+  .rating-number-inline{
+    display:flex !important;
+    align-items:flex-end !important;
+    justify-content:center !important;
+    gap:4px !important;
+
+    font-size:42px !important;   /* bigger 0.0 */
+    font-weight:700 !important;
+    line-height:1 !important;
+  }
+
+  .rating-number-inline small{
+    font-size:18px !important;   /* smaller /5 */
+    margin-bottom:6px !important;
+    line-height:1 !important;
+  }
+
+  .stars-inline{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:2px !important;
+
+    font-size:24px !important;
+    line-height:1 !important;
+
+    min-height:24px !important;
+    overflow:visible !important;
+  }
+
+  .stars-inline span{
+    font-size:24px !important;
+    line-height:1 !important;
+    display:inline-block !important;
+  }
+
+  .rating-count-inline{
+    font-size:12px !important;
+    line-height:1 !important;
+    opacity:.8 !important;
+  }
+
+  /* ---------- LEFT / RIGHT STACK FIX ---------- */
+
+  .game-left,
+  .game-right{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .game-left{
+    margin-bottom:16px !important; /* prevents overlap */
+  }
+
+  .game-right{
+    margin-top:0 !important;
+  }
+
+  /* ---------- RECOMMEND BAR ---------- */
+
+  .recommend-bar{
+    height:42px !important;
+    margin-top:10px !important;
+  }
+
+  /* ---------- GENERIC STARS ---------- */
+
+  .stars,
+  .review-stars{
+    font-size:18px !important;
+    line-height:1 !important;
+    gap:2px !important;
+  }
+
+  /* ---------- REVIEW BUTTONS ---------- */
+
+  .review-section-body{
+    gap:8px !important;
+    padding-top:10px !important;
+    flex-wrap:wrap !important;
+  }
+
+  .review-thumbs{
+    padding-left:0 !important;
+    gap:8px !important;
+    flex-wrap:wrap !important;
+  }
+
+  .thumb-btn{
+    width:38px !important;
+    height:38px !important;
+  }
