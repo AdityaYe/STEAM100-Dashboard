@@ -1,5 +1,7 @@
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({
+  path: `.env.${process.env.NODE_ENV || "local"}`
+});
 
 import express from "express";
 import cors from "cors";
