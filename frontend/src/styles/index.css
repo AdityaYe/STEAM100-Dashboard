@@ -4674,7 +4674,6 @@ OPTIONAL WRAPPER FIX
   height:auto !important;
   min-height:0 !important;
 }
-}
 
 /* =====================================================
 GAME MODAL
@@ -5465,7 +5464,7 @@ GAME MODAL
     justify-content:center !important;
     gap:4px !important;
 
-    font-size:100px !important;   /* bigger 0.0 */
+    font-size:40px !important;   /* bigger 0.0 */
     font-weight:700 !important;
     line-height:1 !important;
   }
@@ -5551,3 +5550,4 @@ GAME MODAL
     width:38px !important;
     height:38px !important;
   }
+}
