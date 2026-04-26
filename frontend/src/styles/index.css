@@ -4675,6 +4675,11 @@ OPTIONAL WRAPPER FIX
   min-height:0 !important;
 }
 }
+
+/* =====================================================
+GAME MODAL
+===================================================== */
+
  /* overlay */
   .modal-overlay{
     padding:10px !important;
@@ -4875,4 +4880,64 @@ OPTIONAL WRAPPER FIX
     min-width:0 !important;
   }
 
+  /* =====================================================
+     STOP GLOBAL TEXT LEAK
+     previous .game-name was affecting table rows
+  ===================================================== */
+
+  .game-row .game-name{
+    font-size:10px !important;
+    line-height:1.2 !important;
+    letter-spacing:normal !important;
+    word-break:break-word !important;
+    white-space:normal !important;
+  }
+
+  .game-modal-shell .game-header .game-name,
+  .game-modal-shell .game-top .game-name{
+    font-size:18px !important;
+    line-height:1.2 !important;
+    word-break:normal !important;
+  }
+
+  /* =====================================================
+     ENABLE MODAL SCROLL
+  ===================================================== */
+
+  .modal-overlay{
+    position:fixed !important;
+    inset:0 !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+    padding:10px !important;
+  }
+
+  .game-modal-shell{
+    max-height:none !important;
+    height:auto !important;
+    overflow:visible !important;
+    margin-bottom:20px !important;
+  }
+
+  .game-modal-layout{
+    overflow:visible !important;
+    min-height:auto !important;
+  }
+
+  .game-main{
+    overflow:visible !important;
+    max-height:none !important;
+    height:auto !important;
+  }
+
+  /* if any internal panels block scroll */
+  .game-body,
+  .chart-panel,
+  .stats-panel,
+  .review-panel{
+    overflow:visible !important;
+    height:auto !important;
+    max-height:none !important;
+  }
 
