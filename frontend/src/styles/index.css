@@ -5195,84 +5195,102 @@ GAME MODAL
     border-radius:10px !important;
   }
 
+  
   /* =====================================================
-     RATING SCALE FIX
+     RATINGS
   ===================================================== */
 
-  /* main numeric score larger */
-  .game-modal-shell .rating-score{
+  .ratings-inline{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:6px !important;
+    padding:8px 0 !important;
+  }
+
+  /* main score large */
+  .rating-number-inline{
     font-size:42px !important;
     line-height:1 !important;
     font-weight:700 !important;
+    display:flex !important;
+    align-items:flex-end !important;
+    gap:4px !important;
   }
 
   /* /5 smaller */
-  .game-modal-shell .rating-score small,
-  .game-modal-shell .rating-score span:last-child,
-  .game-modal-shell .score-denominator{
+  .rating-number-inline small{
     font-size:18px !important;
-    opacity:.82 !important;
-    vertical-align:middle !important;
+    line-height:1.1 !important;
+    opacity:.75 !important;
+    font-weight:500 !important;
+    margin-bottom:5px !important;
   }
 
-  /* stars larger than before */
-  .game-modal-shell .rating-stars{
+  /* stars larger */
+  .stars-inline{
     font-size:22px !important;
-    gap:3px !important;
+    line-height:1 !important;
+    display:flex !important;
+    gap:2px !important;
+  }
+
+  /* total count small */
+  .rating-count-inline{
+    font-size:12px !important;
+    opacity:.72 !important;
     line-height:1 !important;
   }
 
   /* =====================================================
      LOWER TWO CHARTS
+     targets inline style grid in JSX
   ===================================================== */
 
-  .game-modal-shell .chart-mini-grid,
-  .game-modal-shell .bottom-chart-grid,
-  .game-modal-shell .mini-chart-wrap{
+  .chart-panel > div:last-child{
     display:grid !important;
     grid-template-columns:1fr 1fr !important;
     gap:12px !important;
+    margin-top:12px !important;
   }
 
-  /* give charts more height */
-  .game-modal-shell .chart-panel-small,
-  .game-modal-shell .mini-chart,
-  .game-modal-shell .chart-mini-card{
+  /* two mini chart cards */
+  .chart-panel > div:last-child > div{
     min-height:220px !important;
-    padding:12px !important;
-    position:relative !important;
+    height:220px !important;
+    padding:10px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:space-between !important;
+    overflow:hidden !important;
   }
 
-  /* move labels lower and keep room */
-  .game-modal-shell .chart-panel-small .label,
-  .game-modal-shell .mini-chart .label,
-  .game-modal-shell .chart-mini-card .label{
-    position:absolute !important;
-    left:12px !important;
-    right:12px !important;
-    bottom:12px !important;
-
-    font-size:11px !important;
-    line-height:1.25 !important;
-    white-space:normal !important;
-    text-align:left !important;
-  }
-
-  /* chart drawing area above text */
-  .game-modal-shell .chart-panel-small canvas,
-  .game-modal-shell .chart-panel-small svg,
-  .game-modal-shell .mini-chart canvas,
-  .game-modal-shell .mini-chart svg,
-  .game-modal-shell .chart-mini-card canvas,
-  .game-modal-shell .chart-mini-card svg{
-    height:145px !important;
+  /* chart inside mini cards */
+  .chart-panel > div:last-child svg,
+  .chart-panel > div:last-child canvas{
     max-height:145px !important;
-    margin-bottom:42px !important;
+    height:145px !important;
   }
 
-  /* axis text smaller */
-  .game-modal-shell .chart-panel-small svg text,
-  .game-modal-shell .mini-chart svg text,
-  .game-modal-shell .chart-mini-card svg text{
-    font-size:9px !important;
+  /* chart labels / titles */
+  .chart-panel > div:last-child text,
+  .chart-panel > div:last-child .section-header,
+  .chart-panel > div:last-child h3,
+  .chart-panel > div:last-child p{
+    font-size:10px !important;
+    line-height:1.2 !important;
+  }
+
+  /* =====================================================
+     BIG MAIN CHART TITLE SMALLER
+  ===================================================== */
+
+  .chart-panel > div:nth-of-type(2){
+    min-height:260px !important;
+  }
+
+  .chart-panel text,
+  .chart-panel svg text{
+    font-size:10px !important;
   }
