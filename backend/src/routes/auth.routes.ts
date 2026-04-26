@@ -29,8 +29,10 @@ const router = Router();
 const JWT_SECRET =
   process.env.JWT_SECRET as string;
 
-const CLIENT_URL =
-  process.env.CLIENT_URL ||
+const PROD_URL =
+  process.env.CLIENT_URL;
+
+const LOCAL_URL =
   "http://localhost:5173";
 
 router.post(
@@ -92,24 +94,30 @@ router.get(
   "/google/callback",
   passport.authenticate(
     "google",
-    {
-      session: false,
-    }
+    { session: false }
   ),
   (req, res) => {
-    const user =
-      req.user as any;
+    const user = req.user as any;
 
     const token = jwt.sign(
       { id: user._id },
       JWT_SECRET,
-      {
-        expiresIn: "7d",
-      }
+      { expiresIn: "7d" }
     );
 
+    const referer =
+      req.get("referer") || "";
+
+    const isLocal =
+      referer.includes("localhost");
+
+    const redirectUrl =
+      isLocal
+        ? LOCAL_URL
+        : PROD_URL || LOCAL_URL;
+
     res.redirect(
-      `${CLIENT_URL}/?token=${token}`
+      `${redirectUrl}/?token=${token}`
     );
   }
 );
