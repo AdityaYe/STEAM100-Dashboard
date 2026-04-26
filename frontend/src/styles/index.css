@@ -4675,3 +4675,204 @@ OPTIONAL WRAPPER FIX
   min-height:0 !important;
 }
 }
+ /* overlay */
+  .modal-overlay{
+    padding:10px !important;
+    align-items:flex-start !important;
+    overflow-y:auto !important;
+  }
+
+  /* modal shell */
+  .game-modal-shell{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    max-height:calc(100dvh - 20px) !important;
+    min-height:auto !important;
+
+    margin:0 auto !important;
+    border-radius:18px !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+    overflow:hidden !important;
+  }
+
+  /* top bar */
+  .modal-topbar{
+    position:sticky !important;
+    top:0 !important;
+    z-index:30 !important;
+
+    min-height:48px !important;
+    padding:8px 10px !important;
+  }
+
+  .modal-close-btn{
+    width:38px !important;
+    height:38px !important;
+    min-width:38px !important;
+    border-radius:10px !important;
+    font-size:22px !important;
+    margin-left:auto !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+
+  /* layout */
+  .game-modal-layout{
+    display:flex !important;
+    flex-direction:column !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+  }
+
+  /* hide left games sidebar on mobile */
+  .game-sidebar{
+    display:none !important;
+  }
+
+  /* main scroll area */
+  .game-main{
+    width:100% !important;
+    min-width:0 !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    padding:12px !important;
+  }
+
+  /* top section */
+  .game-top{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:12px !important;
+  }
+
+  .game-img{
+    width:100% !important;
+    height:auto !important;
+    max-height:180px !important;
+    object-fit:cover !important;
+    border-radius:14px !important;
+  }
+
+  .game-content{
+    width:100% !important;
+  }
+
+  .game-header{
+    display:flex !important;
+    align-items:flex-start !important;
+    justify-content:space-between !important;
+    gap:10px !important;
+    margin-bottom:10px !important;
+  }
+
+  .game-header .game-name,
+  .game-name{
+    font-size:18px !important;
+    line-height:1.2 !important;
+  }
+
+  .price{
+    font-size:14px !important;
+    white-space:nowrap !important;
+  }
+
+  /* info grid */
+  .game-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:10px !important;
+  }
+
+  .cell{
+    padding:10px !important;
+    min-height:auto !important;
+  }
+
+  .label{
+    font-size:10px !important;
+    margin-bottom:6px !important;
+    display:block !important;
+  }
+
+  .value{
+    font-size:13px !important;
+    line-height:1.3 !important;
+    word-break:break-word !important;
+  }
+
+  .icon-row{
+    gap:10px !important;
+    font-size:18px !important;
+  }
+
+  /* links */
+  .external-actions{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:10px !important;
+  }
+
+  .action-link-btn{
+    height:42px !important;
+    justify-content:center !important;
+    gap:8px !important;
+    padding:0 10px !important;
+  }
+
+  /* lower body */
+  .game-body{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:12px !important;
+    margin-top:12px !important;
+  }
+
+  /* generic cards */
+  .chart-panel,
+  .stats-panel,
+  .review-panel,
+  .rating-panel,
+  .recommend-panel{
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  /* ratings section */
+  .rating-score{
+    font-size:44px !important;
+    line-height:1 !important;
+  }
+
+  .rating-stars{
+    font-size:22px !important;
+    gap:4px !important;
+    flex-wrap:wrap !important;
+  }
+
+  /* chart */
+  .chart-panel canvas,
+  .chart-panel svg,
+  .recharts-responsive-container{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .chart-panel{
+    overflow:hidden !important;
+  }
+
+  /* tooltip */
+  .recharts-tooltip-wrapper{
+    max-width:220px !important;
+  }
+
+  /* text overflow */
+  .game-main *{
+    min-width:0 !important;
+  }
+
+
