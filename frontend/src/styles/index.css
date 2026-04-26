@@ -4941,3 +4941,256 @@ GAME MODAL
     max-height:none !important;
   }
 
+.game-modal-shell{
+    font-size:12px !important;
+  }
+
+  /* all text inside modal */
+  .game-modal-shell *{
+    letter-spacing:.08em !important;
+  }
+
+  /* headings / labels */
+  .game-modal-shell h1,
+  .game-modal-shell h2,
+  .game-modal-shell h3,
+  .game-modal-shell .section-title,
+  .game-modal-shell .label{
+    font-size:11px !important;
+    line-height:1.2 !important;
+  }
+
+  /* values / normal text */
+  .game-modal-shell p,
+  .game-modal-shell span,
+  .game-modal-shell .value,
+  .game-modal-shell .meta,
+  .game-modal-shell .stat{
+    font-size:12px !important;
+    line-height:1.25 !important;
+  }
+
+  /* game title */
+  .game-modal-shell .game-name,
+  .game-modal-shell .game-header .game-name{
+    font-size:16px !important;
+    line-height:1.15 !important;
+  }
+
+  /* rating score */
+  .game-modal-shell .rating-score{
+    font-size:34px !important;
+    line-height:1 !important;
+  }
+
+  /* stars */
+  .game-modal-shell .rating-stars{
+    font-size:18px !important;
+    gap:2px !important;
+  }
+
+  /* buttons */
+  .game-modal-shell button,
+  .game-modal-shell .action-link-btn,
+  .game-modal-shell a{
+    font-size:11px !important;
+  }
+
+  /* chart labels / ticks / tooltip */
+  .game-modal-shell .recharts-text,
+  .game-modal-shell .recharts-cartesian-axis-tick-value,
+  .game-modal-shell .recharts-tooltip-wrapper,
+  .game-modal-shell svg text{
+    font-size:10px !important;
+  }
+
+  /* close button icon */
+  .game-modal-shell .modal-close-btn{
+    font-size:18px !important;
+  }
+
+  /* =====================================================
+     LEFT / RIGHT STACK
+  ===================================================== */
+
+  .game-left,
+  .game-right{
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  .stats-grid{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:10px !important;
+  }
+
+  /* =====================================================
+     GENERIC SECTION
+  ===================================================== */
+
+  .section.bordered{
+    padding:10px !important;
+    border-radius:14px !important;
+  }
+
+  .section-header{
+    font-size:11px !important;
+    line-height:1.1 !important;
+    letter-spacing:.14em !important;
+    padding:10px 12px !important;
+    margin-bottom:10px !important;
+  }
+
+  /* =====================================================
+     RATINGS
+  ===================================================== */
+
+  .ratings-inline{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:6px !important;
+  }
+
+  .rating-number-inline{
+    font-size:34px !important;
+    line-height:1 !important;
+  }
+
+  .rating-number-inline small{
+    font-size:16px !important;
+    margin-left:3px !important;
+  }
+
+  .stars-inline{
+    display:flex !important;
+    gap:1px !important;
+    font-size:18px !important;
+    line-height:1 !important;
+  }
+
+  .rating-count-inline{
+    font-size:11px !important;
+    opacity:.8;
+  }
+
+  /* =====================================================
+     RECOMMENDATION BAR
+  ===================================================== */
+
+  .recommend-bar{
+    height:44px !important;
+    border-radius:12px !important;
+    overflow:hidden !important;
+  }
+
+  .recommend-yes,
+  .recommend-no{
+    font-size:12px !important;
+    gap:6px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:0 6px !important;
+  }
+
+  .recommend-yes svg,
+  .recommend-no svg{
+    font-size:14px !important;
+    flex-shrink:0;
+  }
+
+  /* =====================================================
+     CHART PANEL
+  ===================================================== */
+
+  .chart-panel{
+    margin-top:12px !important;
+    padding:10px !important;
+  }
+
+  .chart-panel > div:nth-child(2){
+    min-height:220px !important;
+  }
+
+  .chart-panel > div:last-child{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:10px !important;
+    margin-top:10px !important;
+  }
+
+  .chart-panel > div:last-child > div{
+    min-height:150px !important;
+  }
+
+  /* chart text */
+  .chart-panel svg text,
+  .chart-panel .recharts-text{
+    font-size:10px !important;
+  }
+
+  /* =====================================================
+     DESCRIPTION
+  ===================================================== */
+
+  .description-content{
+    font-size:12px !important;
+    line-height:1.45 !important;
+    max-height:none !important;
+  }
+
+  /* =====================================================
+     FAVORITE BUTTON
+  ===================================================== */
+
+  .favorite-btn{
+    width:100% !important;
+    min-height:42px !important;
+    font-size:12px !important;
+    border-radius:12px !important;
+  }
+
+  /* =====================================================
+     REVIEW AREA
+  ===================================================== */
+
+  .review-section-body{
+    font-size:12px !important;
+    line-height:1.3 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:10px !important;
+  }
+
+  .review-stars{
+    display:flex !important;
+    justify-content:center !important;
+    gap:6px !important;
+    flex-wrap:wrap !important;
+  }
+
+  .review-stars button{
+    font-size:24px !important;
+    width:34px !important;
+    height:34px !important;
+    line-height:1 !important;
+    padding:0 !important;
+  }
+
+  .review-thumbs{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:10px !important;
+    flex-wrap:wrap !important;
+  }
+
+  .thumb-btn{
+    width:42px !important;
+    height:42px !important;
+    font-size:16px !important;
+    border-radius:10px !important;
+  }
