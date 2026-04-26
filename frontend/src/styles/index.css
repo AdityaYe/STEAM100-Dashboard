@@ -5456,7 +5456,7 @@ GAME MODAL
     align-items:center !important;
     justify-content:center !important;
     gap:8px !important;
-    margin-top:10px !important;
+    margin-top: 5px !important;
   }
 
   .rating-number-inline{
@@ -5465,13 +5465,13 @@ GAME MODAL
     justify-content:center !important;
     gap:4px !important;
 
-    font-size:42px !important;   /* bigger 0.0 */
+    font-size:20px !important;   /* bigger 0.0 */
     font-weight:700 !important;
     line-height:1 !important;
   }
 
   .rating-number-inline small{
-    font-size:18px !important;   /* smaller /5 */
+    font-size: 30px !important;
     margin-bottom:6px !important;
     line-height:1 !important;
   }
