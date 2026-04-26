@@ -5361,3 +5361,86 @@ GAME MODAL
   .chart-container svg text{
     font-size:9px !important;
   }
+
+   /* =====================================================
+     STACK REAL COLUMNS CORRECTLY
+  ===================================================== */
+
+  .game-body{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:14px !important;
+    align-items:stretch !important;
+  }
+
+  .game-left,
+  .game-right{
+    width:100% !important;
+    max-width:100% !important;
+    flex:none !important;
+    display:block !important;
+    min-height:auto !important;
+    clear:both !important;
+  }
+
+  .game-left{
+    margin-bottom:2px !important;
+  }
+
+  .game-right{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+
+  /* =====================================================
+     RATING VALUE
+  ===================================================== */
+
+  .rating-number-inline{
+    font-size:46px !important;
+    line-height:1 !important;
+    font-weight:700 !important;
+    display:inline-block !important;
+  }
+
+  /* /5 */
+  .rating-number-inline + span,
+  .rating-number-inline ~ span{
+    font-size:18px !important;
+    opacity:.8 !important;
+  }
+
+  /* =====================================================
+     STARS (force visible)
+  ===================================================== */
+
+  .stars,
+  .rating-stars,
+  .star-row{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:4px !important;
+    font-size:22px !important;
+    line-height:1 !important;
+    opacity:1 !important;
+    overflow:visible !important;
+    min-height:24px !important;
+  }
+
+  .stars *,
+  .rating-stars *,
+  .star-row *{
+    font-size:22px !important;
+    line-height:1 !important;
+    opacity:1 !important;
+    transform:none !important;
+  }
+
+  /* if clipped by parent */
+  .rating-box,
+  .rating-panel,
+  .score-wrap{
+    overflow:visible !important;
+    padding-bottom:10px !important;
+  }
