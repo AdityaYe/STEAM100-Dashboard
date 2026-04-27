@@ -1,9 +1,11 @@
+import { useEffect, useState } from "react";
+
 import {
   Settings,
   LogOut,
 } from "lucide-react";
 
-import { useAuth } from "./AuthContext";
+import { useAuth } from "../../features/auth/AuthContext";
 
 interface Props {
   onManage: () => void;
@@ -12,11 +14,45 @@ interface Props {
 const ProfileMenu = ({
   onManage,
 }: Props) => {
-  const { logout } =
+  const { user, logout } =
     useAuth();
+
+  const [
+    isCompact,
+    setIsCompact,
+  ] = useState(
+    window.innerWidth <= 1024
+  );
+
+  useEffect(() => {
+    const handleResize =
+      () => {
+        setIsCompact(
+          window.innerWidth <=
+            1024
+        );
+      };
+
+    window.addEventListener(
+      "resize",
+      handleResize
+    );
+
+    return () =>
+      window.removeEventListener(
+        "resize",
+        handleResize
+      );
+  }, []);
 
   return (
     <div className="profile-dropdown">
+      {isCompact && user && (
+        <div className="profile-dropdown-user">
+          {user.username}
+        </div>
+      )}
+
       <button
         className="profile-dropdown-item"
         onClick={onManage}

@@ -53,6 +53,7 @@ const GameModalStats = ({
               <small>/5</small>
             </span>
               
+              <div className="stars-row">
               <div className="stars-inline">
                 {[1, 2, 3, 4, 5].map((star) => {
                   const full =
@@ -77,8 +78,9 @@ const GameModalStats = ({
               <span className="rating-count-inline">
                 ({total})
               </span>
-          </div>
+            </div>
         </div>
+      </div>
 
         <div className="section bordered">
           <div className="section-header">

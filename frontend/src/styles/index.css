@@ -888,6 +888,146 @@ PROFILE UI
   opacity: .92;
 }
 
+/* Sidebar */
+
+.sidebar-root{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:var(--panel);
+  border-right:1px solid var(--border);
+  overflow:hidden;
+  flex-shrink:0;
+  position:relative;
+  z-index:50;
+}
+
+/* width states */
+.sidebar-root.w-16{
+  width:64px;
+  min-width:64px;
+}
+
+.sidebar-root.w-64{
+  width:256px;
+  min-width:256px;
+}
+
+/* generic section */
+.sidebar-section{
+  padding:14px 12px;
+  border-bottom:1px solid var(--border);
+}
+
+/* top block */
+.sidebar-top{
+  display:flex;
+  flex-direction:column;
+}
+
+/* profile */
+.sidebar-profile-section{
+  padding-bottom:14px;
+  margin-bottom:14px;
+  border-bottom:1px solid var(--border);
+}
+
+.sidebar-profile-display{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.sidebar-profile-collapsed{
+  display:flex;
+  justify-content:center;
+}
+
+.sidebar-profile-name{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+}
+
+.sidebar-profile-sub{
+  font-size:10px;
+  opacity:.65;
+  letter-spacing:.14em;
+  margin-top:2px;
+}
+
+/* nav button */
+.sidebar-nav-btn{
+  width:100%;
+  min-height:46px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:0 12px;
+  position:relative;
+  transition:.18s ease;
+}
+
+.sidebar-root.w-16 .sidebar-nav-btn{
+  justify-content:center;
+  padding:0;
+}
+
+.sidebar-nav-btn.active-item{
+  background:rgba(255,255,255,.03);
+}
+
+
+/* genres */
+.sidebar-genres-trigger{
+  min-height:42px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:0 10px;
+  opacity:.75;
+}
+
+.sidebar-root.w-16 .sidebar-genres-trigger{
+  justify-content:center;
+  padding:0;
+}
+
+/* bottom area */
+.sidebar-bottom{
+  margin-top:auto;
+  display:flex;
+  flex-direction:column;
+}
+
+/* auth row */
+.sidebar-auth{
+  padding:14px 12px;
+  border-bottom:1px solid var(--border);
+}
+
+/* collapse row */
+.sidebar-collapse{
+  min-height:54px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+.sidebar-root.w-64 .sidebar-collapse{
+  justify-content:space-between;
+  padding:0 16px;
+}
+
+/* arrows */
+.sidebar-toggle{
+  display:flex;
+  gap:4px;
+}
+
+
 .sidebar button {
   align-items: center;
 }
@@ -4114,6 +4254,45 @@ div[style*="border-bottom"]{
     0 0 18px rgba(0,255,140,.35);
 }
 
+/* =====================================================
+PROFILE MENU USERNAME HEADER
+===================================================== */
+
+.profile-dropdown-user{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+
+  padding:0 0 10px;
+  margin:0 0 10px;
+
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.06em;
+  color:rgba(255,255,255,.92);
+
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+
+/* retro theme optional glow */
+[data-theme="retro"] .profile-dropdown-user{
+  color:#b8ffe8;
+  border-bottom:1px solid rgba(0,255,180,.18);
+  text-shadow:0 0 6px rgba(0,255,180,.18);
+}
+
+/* dark theme */
+[data-theme="dark"] .profile-dropdown-user{
+  color:#f3f4f6;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* light theme */
+[data-theme="light"] .profile-dropdown-user{
+  color:#111827;
+  border-bottom:1px solid rgba(15,23,42,.10);
+}
+
 /* =========================================================
    ANIMATIONS
 ========================================================= */
@@ -4144,90 +4323,511 @@ Matches screenshot target state.
 DESKTOP
 ========================================================= */
 
-@media (max-width:1600px){
-  .game-sidebar{width:22%;}
-  .game-left{width:61%;}
-  .game-right{width:39%;}
-  .chart-panel > div:nth-of-type(2){height:165px;}
-  .chart-panel > div:last-child > div{height:96px;}
+@media (min-width:1280px) and (max-width:1599px){
+
 }
 
 /* =========================================================
 LAPTOP
 ========================================================= */
 
-@media (max-width:1280px){
+@media (min-width:1024px) and (max-width:1279px){
 
-  .topbar{
-    flex-wrap:wrap;
-    align-items:flex-start;
-    gap:16px;
-    min-height:auto;
-    padding:18px 28px;
-  }
-
-  .topbar-brand,
-  .topbar-actions{
-    width:100%;
-  }
-
-  .topbar-actions{
-    margin-left:0;
-    justify-content:space-between;
-    gap:14px;
-  }
-
-  .search-box{
-    flex:1;
-    min-width:260px;
-  }
-
-  .game-body{
-    flex-direction:column;
-  }
-
-  .game-left,
-  .game-right{
-    width:100%;
-  }
 }
 
 /* =========================================================
 TABLET
 ========================================================= */
 
-@media (max-width:1100px){
+@media (min-width:768px) and (max-width:1023px){
+ /* =====================================================
+TABLE
+===================================================== */
 
-  .table-header-row > div:nth-child(4),
-  .game-row > .game-trend{
-    display:none;
-  }
-
-  .table-header-row,
-  .game-row{
-    grid-template-columns:52px 42px minmax(0,1fr) 170px 90px;
-    column-gap:14px;
-  }
+.game-row{
+  display:grid !important;
+  grid-template-columns:52px 44px minmax(240px,1fr) 120px !important;
+  column-gap:22px;
 }
 
-@media (max-width:900px){
+.game-info{
+  grid-column:3;
+  display:flex !important;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+  overflow:hidden;
+}
 
-  .table-header-row > div:nth-child(6),
-  .game-row > .game-eng{
-    display:none;
-  }
+.game-thumb{
+  display:block !important;
+  width:72px;
+  height:40px;
+  flex-shrink:0;
+}
 
-  .table-header-row,
-  .game-row{
-    grid-template-columns:52px 42px minmax(0,1fr) 150px;
-  }
+.game-meta{
+  display:flex !important;
+  flex-direction:column;
+  min-width:0;
+}
+
+.game-name,
+.game-publisher{
+  display:block !important;
+}
+
+.game-name{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.game-ccu{
+  grid-column:4;
+  justify-content:flex-end;
+}
+
+.table-header-row > div:nth-child(4),
+.table-header-row > div:nth-child(6),
+.game-trend,
+.game-eng{
+  display:none !important;
+}
+
+.table-header-row > div:nth-child(5){
+  grid-column:4;
+  white-space:nowrap;
+  margin-left: 120px;
+}
+
+.game-name{
+  font-size:15px;
+  line-height:1.2;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* =====================================================
+TOPBAR
+===================================================== */
+
+.topbar{
+  display:grid;
+  grid-template-columns:minmax(180px,1fr) auto;
+  align-items:center;
+  column-gap:14px;
+  width:100%;
+  padding:16px 18px;
+}
+
+.topbar-brand,
+.topbar-actions{
+  min-width:0;
+}
+
+.topbar-actions{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:10px;
+}
+
+/* ---------------------------------
+BRAND
+--------------------------------- */
+
+.topbar-title{
+  font-size:28px;
+  line-height:1;
+}
+
+.topbar-subtitle{
+  margin-top:6px;
+  font-size:9px;
+  letter-spacing:.18em;
+}
+
+/* ---------------------------------
+SEARCH
+--------------------------------- */
+
+.search-box{
+  width:260px;
+  max-width:260px;
+  min-width:180px;
+  flex-shrink:1;
+}
+
+.search-input{
+  width:100%;
+}
+
+/* ---------------------------------
+PROFILE WRAP
+--------------------------------- */
+
+.profile-wrap{
+  position:relative;
+  flex-shrink:0;
+  overflow:visible;
+}
+
+/* ---------------------------------
+PROFILE BUTTON
+--------------------------------- */
+
+.profile-trigger{
+  width:46px;
+  height:46px;
+  min-width:46px;
+  padding:0;
+  border-radius:999px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:0;
+
+  position:relative;
+}
+
+/* hide username */
+.profile-trigger-name{
+  display:none !important;
+}
+
+/* hide chevron visually but keep click safe */
+.profile-trigger > svg:last-child{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  pointer-events:none;
+}
+
+/* ---------------------------------
+LOGIN BUTTON
+--------------------------------- */
+
+.login-btn{
+  width:46px;
+  height:46px;
+  min-width:46px;
+  padding:0;
+  border-radius:999px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:0;
+}
+
+.login-btn svg{
+  margin:0;
+}
+
+/* ---------------------------------
+DROPDOWN
+--------------------------------- */
+
+.profile-dropdown{
+  top:calc(100% + 10px);
+  right:0;
+  left:auto;
+}
+
+
+/* =====================================================
+SIDEBAR
+===================================================== */
+
+.sidebar-root{
+  width:auto;
+  min-width:auto;
+}
+
+.sidebar-collapse{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:58px;
+  cursor:pointer;
+}
+
+.sidebar-toggle{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+}
+
+.sidebar-toggle svg,
+.sidebar-toggle img,
+.sidebar-toggle span{
+  pointer-events:none;
+}
+
+/* =====================================================
+PAGINATION
+===================================================== */
+
+.pagination-row{
+  margin-top:14px;
+}
+
+/* =====================================================
+MODAL
+===================================================== */
+
+.game-modal-shell{
+  width:96vw;
+  max-width:96vw;
+  height:90vh;
+  max-height:94vh;
+  overflow:hidden;
+}
+
+.modal-topbar{
+  flex-shrink:0;
+}
+
+.game-modal-layout{
+  display:block;
+  height:calc(94vh - 52px);
+}
+
+.game-sidebar{
+  display:none;
+}
+
+.game-main{
+  width:100%;
+  height:100%;
+  padding:14px;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+
+/* ---------- top ---------- */
+
+.game-top{
+  display:grid;
+  grid-template-columns:42% minmax(0,1fr);
+  gap:14px;
+  align-items:start;
+}
+
+.game-img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.game-content,
+.cell{
+  min-width:0;
+}
+
+.game-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.price{
+  flex-shrink:0;
+}
+
+.game-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:4px 4px;
+}
+
+.value{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.icon-row{
+  display:flex;
+  gap:10px;
+}
+
+.external-actions{
+  grid-column:2 / span 2;
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+}
+
+/* ---------- body ---------- */
+
+.game-main .game-body{
+  display:grid;
+  grid-template-columns:minmax(0,58%) minmax(300px,42%);
+  gap:18px;
+  margin-top:16px;
+  align-items:start;
+  width:100%;
+}
+
+.game-main .game-body > .game-left,
+.game-main .game-body > .game-right{
+  min-width:0;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.game-main .game-body > .game-right > .section{
+  width:100%;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.game-left > .chart-panel > div[style*="gridTemplateColumns"]{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.description-content{
+  font-size:14px;
+  line-height:1.55;
+  max-height:320px;
+  overflow:auto;
+}
+
+.review-section-body{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-items:flex-start;
+}
+
+.review-thumbs{
+  padding-left:0;
+  flex-wrap:wrap;
+}
+
+.favorite-btn,
+.action-link-btn{
+  min-height:42px;
+}
+
+.chart-container{
+  min-height:180px;
+}
+
+/* =====================================================
+RATINGS FIX
+fit inside card
+===================================================== */
+
+.ratings-inline{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  margin-top: 10px;
+}
+
+.stars-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  white-space:nowrap;
+}
+
+.stars-inline{
+  display:flex;
+  gap:2px;
+}
+
+.stars-inline span{
+  font-size:18px;
+  line-height:1;
+}
+
+.rating-count-inline{
+  font-size:10px;
+  opacity:.8;
+  line-height:1;
+}
+
+/* =====================================================
+REVIEW FIX
+fit buttons inside card
+===================================================== */
+
+.review-section-body{
+  margin-top: 10px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.review-stars{
+  display:flex;
+  align-items:center;
+  gap:1px;
+  flex-wrap:nowrap;
+}
+
+.review-section-body > .review-stars{
+  margin-top:-36px;
+  margin-left:46px; 
+}
+
+.review-stars button{
+  width:32px;
+  height:32px;
+  font-size:24px;
+  line-height:1;
+  padding:0;
+}
+
+.review-thumbs{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  padding-left:0;
+  width:100%;
+  margin-top: 4px;
+}
+
+.thumb-btn{
+  width:36px;
+  height:36px;
+  flex-shrink:0;
+}
+
+/* text labels wrap safely */
+.review-section-body,
+.review-thumbs{
+  overflow:hidden;
+}
+
 }
 
 /* =========================================================
 MOBILE FINAL
 ========================================================= */
 
-@media (max-width:768px){
+@media (max-width:767px){
 
   html,
   body,
@@ -4261,58 +4861,127 @@ MOBILE FINAL
      REAL SIDEBAR ROOT ONLY
   ===================================================== */
 
-  .h-screen.flex.flex-col.panel.transition-all.duration-300{
+  .sidebar-root{
     position:fixed;
     top:0;
     left:0;
     bottom:0;
-
     width:56px;
     min-width:56px;
-    max-width:56px;
-
-    height:100dvh;
-    min-height:100dvh;
     z-index:100;
   }
 
-  /* hide genres/filter section */
-  .h-screen.flex.flex-col.panel.transition-all.duration-300
-  > .px-3.py-4.border-b:nth-of-type(2){
+  .sidebar-root .sidebar-section{
+    padding:12px 8px;
+  }
+
+  .sidebar-root .sidebar-nav-btn{
+    min-height:44px;
+    justify-content:center;
+    padding:0;
+    gap:0;
+  }
+
+  .sidebar-root .sidebar-nav-btn span,
+  .sidebar-root .sidebar-profile-meta,
+  .sidebar-root .sidebar-collapse span,
+  .sidebar-root .sidebar-genres-trigger span{
     display:none;
   }
 
-  .h-screen.flex.flex-col.panel.transition-all.duration-300
-  > .mt-auto
-  > .border-t{
+  .sidebar-root .sidebar-auth{
+    padding:10px 8px;
+  }
+
+  .sidebar-root .sidebar-collapse{
+    min-height:48px;
+    justify-content:center;
+    padding:0;
+
+  }
+
+  .sidebar-genres-trigger,
+  .sidebar-section:has(.sidebar-genres-trigger){
     display:none;
   }
+
+
+  .sidebar-auth{
+  display:none;
+}
 
   /* =====================================================
      TOPBAR
   ===================================================== */
 
-  .topbar{
-    position:sticky;
-    z-index:40;
-    width:100%;
-    padding:10px 14px !important;
-    gap:10px;
-  }
+ .topbar{
+  position:sticky;
+  z-index:40;
+  width:100%;
+  padding:10px 14px;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:10px;
+}
 
-  .topbar-title,
-  .brand-title,
-  .logo-text{
-    font-size:22px;
-    font-weight:700;
-    letter-spacing:.16em;
-  }
+.topbar-title,
+.brand-title,
+.logo-text{
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:.16em;
+}
 
-  .topbar-subtitle,
-  .brand-subtitle{
-    font-size:9px;
-    opacity:.75;
-  }
+.topbar-subtitle,
+.brand-subtitle{
+  font-size:9px;
+  opacity:.75;
+}
+
+.topbar-actions{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.search-box{
+  flex:1;
+  min-width:0;
+  height:36px;
+  padding:0 10px;
+}
+
+.search-input{
+  width:100%;
+}
+
+.profile-wrap{
+  flex-shrink:0;
+}
+
+.profile-trigger{
+  width:38px;
+  height:38px;
+  min-width:38px;
+  padding:0;
+  gap:0;
+  justify-content:center;
+  border-radius:50%;
+}
+
+.profile-trigger-name,
+.profile-trigger span,
+.profile-trigger > svg:last-child{
+  display:none;
+}
+
+.profile-trigger .avatar-shell{
+  width:30px;
+  height:30px;
+  font-size:14px;
+}
 
   /* =====================================================
      SEARCH
@@ -4408,7 +5077,7 @@ ROWS
   column-gap:10px;
   box-sizing:border-box;
   min-height:58px;
-  padding:10px 14px !important;
+  padding:10px 14px;
   align-items:center;
 }
 
@@ -4442,91 +5111,98 @@ PAGINATION
 /* =====================================================
 GAME MODAL
 ===================================================== */
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  padding:10px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  align-items:flex-start;
+  -webkit-overflow-scrolling:touch;
+}
 
- /* overlay */
-  .modal-overlay{
-    padding:10px;
-    align-items:flex-start;
-    overflow-y:auto;
-  }
+.game-modal-shell{
+  width:100%;
+  max-width:100%;
+  height:auto;
+  max-height:100dvh;
+  margin:0 auto 20px;
+  border-radius:18px;
+  overflow:visible;
+  font-size:12px;
+}
 
-  /* modal shell */
-  .game-modal-shell{
-    width:100%;
-    max-width:100%;
-    height:auto;
-    max-height:calc(100dvh - 20px);
-    min-height:auto;
+.modal-topbar{
+  position:sticky;
+  top:0;
+  z-index:30;
+  min-height:48px;
+  padding:8px 10px;
+}
 
-    margin:0 auto;
-    border-radius:18px;
+.modal-close-btn{
+  width:38px;
+  height:38px;
+  min-width:38px;
+  border-radius:10px;
+  font-size:18px;
+}
 
-    display:flex;
-    flex-direction:column;
-    overflow:hidden;
-  }
+.game-sidebar{
+  display:none;
+}
 
-  /* top bar */
-  .modal-topbar{
-    position:sticky;
-    top:0;
-    z-index:30;
+.game-main{
+  width:100%;
+  padding:12px;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
 
-    min-height:48px;
-    padding:8px 10px;
-  }
+.game-top,
+.game-body{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
 
-  .modal-close-btn{
-    width:38p;
-    height:38px !important;
-    min-width:38px;
-    border-radius:10px;
-  }
+.game-left,
+.game-right{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+}
 
-  .game-sidebar{
-    display:none;
-  }
+.game-left{ gap:6px; }
+.game-right{ gap:18px; }
 
-  /* main scroll area */
-  .game-main{
-    width:100%;
-    min-width:0;
-    overflow-y:auto;
-    overflow-x:hidden;
-    padding:12px;
-  }
+.game-img{
+  width:100%;
+  max-height:180px;
+  object-fit:cover;
+  border-radius:14px;
+}
 
-  /* top section */
-  .game-top{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-  }
+.game-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+}
 
-  .game-img{
-    width:100%;
-    height:auto;
-    max-height:180px;
-    object-fit:cover;
-    border-radius:14px;
-  }
+.external-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
 
-  .game-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:10px;
-  }
+.game-name{
+  font-size:16px;
+  line-height:1.15;
+  white-space:normal;
+  overflow:visible;
+  text-overflow:unset;
+}
 
-  .label{
-    margin-bottom:4px;
-  }
-
-  /* links */
-  .external-actions{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-  }
   /* =====================================================
      ENABLE MODAL SCROLL
   ===================================================== */
@@ -4716,38 +5392,77 @@ GAME MODAL
   .game-right{
   display:flex;
   flex-direction:column;
-  gap:18px;   /* adjust 14px / 18px / 24px */
+  gap:18px;
 }
 
   /* ---------- RATINGS BLOCK ---------- */
 
-  .ratings-inline{
-    gap:2px;
-    margin-top: 10px;
-  }
+.ratings-inline{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  margin-top:10px;
+}
 
-    .section .ratings-inline .rating-number-inline{
-    font-size:20px !important;
-    font-weight:700;
-    line-height:1 ;
-  }
+/* score row */
+.section .ratings-inline .rating-number-inline{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:3px;
 
-  .rating-number-inline small{
-    font-size:10px;
-    line-height:1;
-  }
+  font-size:20px !important;
+  font-weight:700;
+  line-height:1;
+}
 
-  .stars-inline span{
-    font-size:20px !important;
-    line-height:1;
-    display:inline-block;
-  }
+.rating-number-inline small{
+  font-size:10px;
+  line-height:1;
+  margin:0;
+}
 
-  .rating-count-inline{
-    font-size:10px;
-    line-height:1;
-    opacity:.8;
-  }
+/* stars + count wrapper */
+.stars-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  white-space:nowrap;
+  line-height:1;
+}
+
+/* stars only */
+.stars-inline{
+  display:flex;
+  align-items:center;
+  gap:2px;
+  flex-wrap:nowrap;
+}
+
+.stars-inline span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:20px !important;
+  line-height:1;
+  flex-shrink:0;
+}
+
+/* count */
+.rating-count-inline{
+  display:inline-flex;
+  align-items:center;
+
+  font-size:10px;
+  line-height:1;
+  opacity:.8;
+  white-space:nowrap;
+  flex-shrink:0;
+}
 
   /* ---------- REVIEW BUTTONS ---------- */
 

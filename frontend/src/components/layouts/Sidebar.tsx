@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {
   Home,
@@ -15,13 +15,11 @@ import {
 } from "react-router-dom";
 
 import Avatar from "../../features/auth/Avatar";
-
 import { useAuth } from "../../features/auth/AuthContext";
 import { useAuthModal } from "../../features/auth/AuthModalContext";
 
 type Props = {
   selectedGenres: string[];
-
   setSelectedGenres: React.Dispatch<
     React.SetStateAction<string[]>
   >;
@@ -55,14 +53,10 @@ const Sidebar = ({
   selectedGenres,
   setSelectedGenres,
 }: Props) => {
-  const navigate =
-    useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const location =
-    useLocation();
-
-  const { user, logout } =
-    useAuth();
+  const { user, logout } = useAuth();
 
   const {
     setOpen,
@@ -74,65 +68,65 @@ const Sidebar = ({
     setIsCollapsed,
   ] = useState(true);
 
-  const isMobile = window.innerWidth <= 768;
-  const collapsed = isMobile ? true : isCollapsed;
+  const [
+    width,
+    setWidth,
+  ] = useState(window.innerWidth);
 
-  const rowClass = `
-w-full h-12 flex items-center
-text-sm font-medium tracking-wider
-`;
+  useEffect(() => {
+    const resize = () =>
+      setWidth(window.innerWidth);
 
-  const getAlignClass =
-    () =>
-      collapsed
-        ? "justify-center"
-        : "gap-3 px-3";
+    window.addEventListener(
+      "resize",
+      resize
+    );
 
-  const openLogin =
-    () => {
-      setMode("login");
-      setOpen(true);
-    };
-
-  const openRegister =
-    () => {
-      setMode("register");
-      setOpen(true);
-    };
-
-  const openSidebar =
-    () =>
-      setIsCollapsed(
-        false
+    return () =>
+      window.removeEventListener(
+        "resize",
+        resize
       );
+  }, []);
 
-  const closeSidebar =
-    () =>
-      setIsCollapsed(
-        true
-      );
+  /* breakpoints */
+  const isMobile = width <= 767;
+  const isTablet =
+    width >= 768 &&
+    width <= 1024;
+
+  /* behavior */
+  const collapsed = isMobile
+    ? true
+    : isCollapsed;
+
+  const openLogin = () => {
+    setMode("login");
+    setOpen(true);
+  };
+
+  const openRegister = () => {
+    setMode("register");
+    setOpen(true);
+  };
+
+  const openSidebar = () =>
+    setIsCollapsed(false);
+
+  const closeSidebar = () =>
+    setIsCollapsed(true);
 
   const isActive = (
     path: string
   ) => {
     if (path === "/") {
       return (
-        location.pathname === path
-      );
-    }
-
-    if (
-      path ===
-      "/?sortBy=favorites"
-    ) {
-      return location.search.includes(
-        "sortBy=favorites"
+        location.pathname === "/"
       );
     }
 
     return (
-      location.pathname ===
-      path
+      location.pathname === path
     );
   };
 
@@ -144,9 +138,7 @@ text-sm font-medium tracking-wider
         genre
       )
         ? selectedGenres.filter(
-            (item) =>
-              item !==
-              genre
+            (g) => g !== genre
           )
         : [
             ...selectedGenres,
@@ -160,32 +152,17 @@ text-sm font-medium tracking-wider
 
   return (
     <div
-      className={`h-screen flex flex-col panel transition-all duration-300 ${
+      className={`sidebar-root h-screen flex flex-col transition-all duration-300 ${
         collapsed
           ? "w-16"
           : "w-64"
       }`}
-      style={{
-        borderRight:
-          "1px solid var(--border)",
-      }}
     >
-      <div
-        className="px-3 py-4 border-b"
-        style={{
-          borderColor:
-            "var(--border)",
-        }}
-      >
+      {/* TOP */}
+      <div className="sidebar-top sidebar-section">
         {user && (
-          <div
-            className="sidebar-profile-section border-b"
-            style={{
-              borderColor:
-                "var(--border)",
-            }}
-          >
-            {collapsed? (
+          <div className="sidebar-profile-section">
+            {collapsed ? (
               <div className="sidebar-profile-collapsed">
                 <Avatar size="sm" />
               </div>
@@ -195,14 +172,11 @@ text-sm font-medium tracking-wider
 
                 <div className="sidebar-profile-meta">
                   <div className="sidebar-profile-name">
-                    {
-                      user.username
-                    }
+                    {user.username}
                   </div>
 
                   <div className="sidebar-profile-sub">
-                    SIGNED
-                    IN
+                    SIGNED IN
                   </div>
                 </div>
               </div>
@@ -210,81 +184,44 @@ text-sm font-medium tracking-wider
           </div>
         )}
 
+        {/* NAV */}
         {NAV_ITEMS.map(
           ({
             icon: Icon,
             label,
             path,
-          }) => {
-            const active =
-              isActive(
-                path
-              );
+          }) => (
+            <button
+              key={label}
+              onClick={() =>
+                navigate(path)
+              }
+              className={`sidebar-nav-btn ${
+                isActive(path)
+                  ? "active-item glow"
+                  : "hover-retro"
+              }`}
+            >
+              <Icon size={20} />
 
-            return (
-              <button
-                key={label}
-                onClick={() =>
-                  navigate(
-                    path
-                  )
-                }
-                className={`${rowClass} ${getAlignClass()} relative ${
-                  active
-                    ? "active-item glow"
-                    : "hover-retro"
-                }`}
-              >
-                {active && (
-                  <span
-                    className="absolute left-0 top-0 bottom-0 w:2px"
-                    style={{
-                      backgroundColor:
-                        "var(--accent)",
-                    }}
-                  />
-                )}
-
-                <Icon size={20} />
-
-                {!collapsed && (
-                  <span>
-                    {
-                      label
-                    }
-                  </span>
-                )}
-              </button>
-            );
-          }
+              {!collapsed && (
+                <span>
+                  {label}
+                </span>
+              )}
+            </button>
+          )
         )}
       </div>
 
-      <div
-        className="px-3 py-4 border-b"
-        style={{
-          borderColor:
-            "var(--border)",
-        }}
-      >
+      {/* GENRES */}
+      <div className="sidebar-section">
         <div
           onClick={() => {
-            if (
-              collapsed
-            ) {
+            if (collapsed)
               openSidebar();
-            }
           }}
-          className={`flex items-center cursor-pointer select-none transition-opacity ${
-            collapsed
-              ? "justify-center"
-              : "gap-2 px-2"
-          } text-sm font-medium tracking-wider opacity-70 hover:opacity-100`}
-          title={
-            collapsed
-              ? "Open Genres"
-              : "Genres"
-          }
+          className="sidebar-genres-trigger cursor-pointer"
         >
           <Filter size={16} />
 
@@ -298,9 +235,7 @@ text-sm font-medium tracking-wider
         {!collapsed && (
           <div className="mt-2 space-y-1">
             {GENRES.map(
-              (
-                genre
-              ) => {
+              (genre) => {
                 const checked =
                   selectedGenres.includes(
                     genre
@@ -308,15 +243,11 @@ text-sm font-medium tracking-wider
 
                 return (
                   <label
-                    key={
-                      genre
-                    }
+                    key={genre}
                     className="w-full flex items-center justify-between px-3 py-2 text-sm tracking-wider cursor-pointer hover-retro"
                   >
                     <span>
-                      {
-                        genre
-                      }
+                      {genre}
                     </span>
 
                     <input
@@ -349,143 +280,105 @@ text-sm font-medium tracking-wider
         )}
       </div>
 
-      <div className="mt-auto flex flex-col">
-        <div
-          className="px-3 py-4 border-b"
-          style={{
-            borderColor:
-              "var(--border)",
-          }}
-        >
-          {user ? (
+      {/* BOTTOM */}
+      <div className="sidebar-bottom">
+        {/* AUTH */}
+
+        {!isTablet && (
+          <div className="sidebar-auth">
+            {user ? (
+              <button
+                onClick={logout}
+                className="sidebar-nav-btn hover-retro"
+              >
+                <LogOut size={20} />
+
+                {!collapsed && (
+                  <span>
+                    Logout
+                  </span>
+                )}
+              </button>
+            ) : (
+              <div className="space-y-2">
+                <button
+                  onClick={
+                    openLogin
+                  }
+                  className="sidebar-nav-btn hover-retro"
+                >
+                  <LogIn size={20} />
+
+                  {!collapsed && (
+                    <span>
+                      Login
+                    </span>
+                  )}
+                </button>
+
+                <button
+                  onClick={
+                    openRegister
+                  }
+                  className="sidebar-nav-btn hover-retro"
+                >
+                  <UserPlus size={20} />
+
+                  {!collapsed && (
+                    <span>
+                      Register
+                    </span>
+                  )}
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* TABLET LOGIN ICON */}
+        {isTablet &&
+          !user && (
             <button
               onClick={
-                logout
+                openLogin
               }
-              className={`${rowClass} ${getAlignClass()} hover-retro`}
+              className="sidebar-nav-btn hover-retro"
             >
-              <LogOut size={20} />
-
-              {!collapsed && (
-                <span>
-                  Logout
-                </span>
-              )}
+              <LogIn size={20} />
             </button>
-          ) : (
-            <div className="space-y-2">
-              <button
-                onClick={
-                  openLogin
-                }
-                className={`${rowClass} ${getAlignClass()} hover-retro`}
-              >
-                <LogIn size={20} />
-
-                {!collapsed && (
-                  <span>
-                    Login
-                  </span>
-                )}
-              </button>
-
-              <button
-                onClick={
-                  openRegister
-                }
-                className={`${rowClass} ${getAlignClass()} hover-retro`}
-              >
-                <UserPlus size={20} />
-
-                {!collapsed && (
-                  <span>
-                    Register
-                  </span>
-                )}
-              </button>
-            </div>
           )}
-        </div>
 
-        <div
-          className="border-t"
-          style={{
-            borderColor:
-              "var(--border)",
-          }}
-        >
-          {collapsed ? (
-            <div
-              onClick={
-                openSidebar
-              }
-              className="w-full h-13 flex items-center justify-center cursor-pointer"
-            >
-              <div className="flex gap-1 sidebar-toggle">
-                <span
-                  className="arrow arrow-right"
-                  style={{
-                    "--dir":
-                      "45deg",
-                  } as any}
-                />
-
-                <span
-                  className="arrow arrow-right delay-1"
-                  style={{
-                    "--dir":
-                      "45deg",
-                  } as any}
-                />
-
-                <span
-                  className="arrow arrow-right delay-2"
-                  style={{
-                    "--dir":
-                      "45deg",
-                  } as any}
-                />
+        {/* COLLAPSE */}
+        {!isMobile && (
+          <div
+            className="sidebar-collapse hover-retro"
+            onClick={
+              collapsed
+                ? openSidebar
+                : closeSidebar
+            }
+          >
+            {collapsed ? (
+              <div className="sidebar-toggle">
+                <span className="arrow arrow-right" />
+                <span className="arrow arrow-right delay-1" />
+                <span className="arrow arrow-right delay-2" />
               </div>
-            </div>
-          ) : (
-            <div
-              onClick={
-                closeSidebar
-              }
-              className="w-full h-13 px-4 py-3 flex items-center justify-between cursor-pointer hover-retro"
-            >
-              <span className="text-sm font-medium tracking-wider">
-                Collapse
-              </span>
+            ) : (
+              <>
+                <span>
+                  Collapse
+                </span>
 
-              <div className="flex gap-1 sidebar-toggle">
-                <span
-                  className="arrow arrow-left"
-                  style={{
-                    "--dir":
-                      "-135deg",
-                  } as any}
-                />
-
-                <span
-                  className="arrow arrow-left delay-1"
-                  style={{
-                    "--dir":
-                      "-135deg",
-                  } as any}
-                />
-
-                <span
-                  className="arrow arrow-left delay-2"
-                  style={{
-                    "--dir":
-                      "-135deg",
-                  } as any}
-                />
-              </div>
-            </div>
-          )}
-        </div>
+                <div className="sidebar-toggle">
+                  <span className="arrow arrow-left" />
+                  <span className="arrow arrow-left delay-1" />
+                  <span className="arrow arrow-left delay-2" />
+                </div>
+              </>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
