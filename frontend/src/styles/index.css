@@ -4346,7 +4346,7 @@ DESKTOP
 @media (min-width:1600px) and (min-height:900px){
 .game-modal-shell{
   width:min(1780px,96vw);
-  height:90vh;
+  height:88vh;
 }
 
 }
