@@ -4341,129 +4341,16 @@ DESKTOP
 .game-main{
   height:100%;
 }
-
-
 }
 
 @media (min-width:1600px) and (min-height:900px){
-
-/* modal perfect size */
 .game-modal-shell{
   width:min(1780px,96vw);
-  height:78vh;
-}
-
-/* left side fills naturally */
-.game-left{
-  display:flex;
-  flex-direction:column;
-}
-
-/* right side split perfectly */
-.game-right{
-  display:grid;
-  grid-template-rows:
-    auto 
-    auto  
-    1fr;  
-  gap:16px;
-  height:100%;
-}
-
-.ratings-inline{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  margin-top:14px;
-}
-
-/* main number row */
-.section .ratings-inline .rating-number-inline{
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  gap:4px;
-
-  font-size:28px !important;
-  line-height:1;
-  font-weight:700;
-}
-
-.rating-number-inline small{
-  font-size:18px;
-  line-height:1;
-  margin:0;
-}
-
-/* second row = stars + count */
-.stars-row{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-
-  white-space:nowrap;
-  line-height:1;
-  width:100%;
-}
-
-/* stars group */
-.stars-inline{
-  display:flex;
-  align-items:center;
-  gap:3px;
-  flex-wrap:nowrap;
-}
-
-.stars-inline span{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  font-size:24px !important;
-  line-height:1;
-  flex-shrink:0;
-}
-
-/* count */
-.rating-count-inline{
-  display:inline-flex;
-  align-items:center;
-
-  font-size:16px;
-  line-height:1;
-  opacity:.82;
-  white-space:nowrap;
-  flex-shrink:0;
-}
-
-.game-right{
-  display:grid !important;
-  grid-template-rows:
-    1fr 
-    auto 
-    auto;  
-
-  gap:16px;
-  height:100%;
-  align-content:stretch;
-}
-
-.game-right .section:nth-child(1){
-  min-height:0;
-  height:100%;
-}
-.game-right .section:nth-child(2),
-.game-right .section:nth-child(3){
-  align-self:end;
-}
-.game-right .section:last-child{
-  min-height:120px;
+  height:90vh;
 }
 
 }
+
 /* =========================================================
 LAPTOP
 ========================================================= */

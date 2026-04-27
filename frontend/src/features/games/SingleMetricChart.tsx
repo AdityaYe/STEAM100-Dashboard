@@ -56,7 +56,7 @@ const SingleMetricChart =({
       <div className="w-full h-full">
         <ResponsiveContainer
           width="100%"
-          height={110}
+          height="100%"
         >
           <LineChart
             data={data}
