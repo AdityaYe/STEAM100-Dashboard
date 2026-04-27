@@ -4511,21 +4511,24 @@ LOGIN BUTTON
 --------------------------------- */
 
 .login-btn{
-  width:46px;
+  width:auto !important;
+  min-width:110px !important;
   height:46px;
-  min-width:46px;
-  padding:0;
+  padding:0 16px !important;
   border-radius:999px;
 
   display:flex;
   align-items:center;
   justify-content:center;
+  gap:8px;
 
-  font-size:0;
+  font-size:14px !important;
+  letter-spacing:.08em;
 }
 
 .login-btn svg{
   margin:0;
+  flex-shrink:0;
 }
 
 /* ---------------------------------
@@ -4542,32 +4545,6 @@ DROPDOWN
 /* =====================================================
 SIDEBAR
 ===================================================== */
-
-.sidebar-root{
-  width:auto;
-  min-width:auto;
-}
-
-.sidebar-collapse{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:58px;
-  cursor:pointer;
-}
-
-.sidebar-toggle{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:4px;
-}
-
-.sidebar-toggle svg,
-.sidebar-toggle img,
-.sidebar-toggle span{
-  pointer-events:none;
-}
 
 /* =====================================================
 PAGINATION

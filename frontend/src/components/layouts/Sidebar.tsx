@@ -91,10 +91,6 @@ const Sidebar = ({
 
   /* breakpoints */
   const isMobile = width <= 767;
-  const isTablet =
-    width >= 768 &&
-    width <= 1024;
-
   /* behavior */
   const collapsed = isMobile
     ? true
@@ -284,7 +280,6 @@ const Sidebar = ({
       <div className="sidebar-bottom">
         {/* AUTH */}
 
-        {!isTablet && (
           <div className="sidebar-auth">
             {user ? (
               <button
@@ -333,20 +328,6 @@ const Sidebar = ({
               </div>
             )}
           </div>
-        )}
-
-        {/* TABLET LOGIN ICON */}
-        {isTablet &&
-          !user && (
-            <button
-              onClick={
-                openLogin
-              }
-              className="sidebar-nav-btn hover-retro"
-            >
-              <LogIn size={20} />
-            </button>
-          )}
 
         {/* COLLAPSE */}
         {!isMobile && (
