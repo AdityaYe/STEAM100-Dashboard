@@ -48,6 +48,8 @@ The application follows a modern client-server architecture with a dedicated fro
 
 ### UI / UX
 - Fully responsive layout
+- Built for mobile, tablet, desktop, and high-resolution displays
+- Adaptive tables, navigation, and modal layouts across screen sizes
 - Dark, Light, and Retro CRT themes
 - Custom dashboard interface design
 - Data-dense presentation optimized for usability
