@@ -630,6 +630,12 @@ const Dashboard = () => {
             order={
               order
             }
+            selectedGenres={
+              selectedGenres
+            }
+            setSelectedGenres={
+              setSelectedGenres
+            }
             page={page}
           />
         </div>

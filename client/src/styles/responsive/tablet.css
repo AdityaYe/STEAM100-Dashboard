@@ -1,0 +1,465 @@
+/* =========================================================
+TABLET
+========================================================= */
+
+@media (min-width:768px) and (max-width:1023px){
+ /* =====================================================
+TABLE
+===================================================== */
+
+.game-row{
+  display:grid !important;
+  grid-template-columns:52px 44px minmax(240px,1fr) 120px !important;
+  column-gap:22px;
+}
+
+.game-info{
+  grid-column:3;
+  display:flex !important;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+  overflow:hidden;
+}
+
+.game-thumb{
+  display:block !important;
+  width:72px;
+  height:40px;
+  flex-shrink:0;
+}
+
+.game-meta{
+  display:flex !important;
+  flex-direction:column;
+  min-width:0;
+}
+
+.game-name,
+.game-publisher{
+  display:block !important;
+}
+
+.game-name{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.game-ccu{
+  grid-column:4;
+  justify-content:flex-end;
+}
+
+.table-header-row > div:nth-child(4),
+.table-header-row > div:nth-child(6),
+.game-trend,
+.game-eng{
+  display:none !important;
+}
+
+.table-header-row > div:nth-child(5){
+  grid-column:4;
+  white-space:nowrap;
+  margin-left: 120px;
+}
+
+.game-name{
+  font-size:15px;
+  line-height:1.2;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* =====================================================
+TOPBAR
+===================================================== */
+
+.topbar{
+  display:grid;
+  grid-template-columns:minmax(180px,1fr) auto;
+  align-items:center;
+  column-gap:14px;
+  width:100%;
+  padding:16px 18px;
+}
+
+.topbar-brand,
+.topbar-actions{
+  min-width:0;
+}
+
+.topbar-actions{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:10px;
+}
+
+/* ---------------------------------
+BRAND
+--------------------------------- */
+
+.topbar-title{
+  font-size:28px;
+  line-height:1;
+}
+
+.topbar-subtitle{
+  margin-top:6px;
+  font-size:9px;
+  letter-spacing:.18em;
+}
+
+/* ---------------------------------
+SEARCH
+--------------------------------- */
+
+.search-box{
+  width:260px;
+  max-width:260px;
+  min-width:180px;
+  flex-shrink:1;
+}
+
+.search-input{
+  width:100%;
+}
+
+/* ---------------------------------
+PROFILE WRAP
+--------------------------------- */
+
+.profile-wrap{
+  position:relative;
+  flex-shrink:0;
+  overflow:visible;
+}
+
+/* ---------------------------------
+PROFILE BUTTON
+--------------------------------- */
+
+.profile-trigger{
+  width:46px;
+  height:46px;
+  min-width:46px;
+  padding:0;
+  border-radius:999px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:0;
+
+  position:relative;
+}
+
+/* hide username */
+.profile-trigger-name{
+  display:none !important;
+}
+
+/* hide chevron visually but keep click safe */
+.profile-trigger > svg:last-child{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  pointer-events:none;
+}
+
+/* ---------------------------------
+LOGIN BUTTON
+--------------------------------- */
+
+.login-btn{
+  width:auto !important;
+  min-width:110px !important;
+  height:46px;
+  padding:0 16px !important;
+  border-radius:999px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  font-size:14px !important;
+  letter-spacing:.08em;
+}
+
+.login-btn svg{
+  margin:0;
+  flex-shrink:0;
+}
+
+/* ---------------------------------
+DROPDOWN
+--------------------------------- */
+
+.profile-dropdown{
+  top:calc(100% + 10px);
+  right:0;
+  left:auto;
+}
+
+
+/* =====================================================
+SIDEBAR
+===================================================== */
+
+/* =====================================================
+PAGINATION
+===================================================== */
+
+.pagination-row{
+  margin-top:14px;
+}
+
+/* =====================================================
+MODAL
+===================================================== */
+
+.game-modal-shell{
+  width:96vw;
+  max-width:96vw;
+  height:90vh;
+  max-height:94vh;
+  overflow:hidden;
+}
+
+.modal-topbar{
+  flex-shrink:0;
+}
+
+.game-modal-layout{
+  display:block;
+  height:calc(94vh - 52px);
+}
+
+.game-sidebar{
+  display:none;
+}
+
+.game-main{
+  width:100%;
+  height:100%;
+  padding:14px;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+
+/* ---------- top ---------- */
+
+.game-top{
+  display:grid;
+  grid-template-columns:42% minmax(0,1fr);
+  gap:14px;
+  align-items:start;
+}
+
+.game-img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.game-content,
+.cell{
+  min-width:0;
+}
+
+.game-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.price{
+  flex-shrink:0;
+}
+
+.game-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:4px 4px;
+}
+
+.value{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.icon-row{
+  display:flex;
+  gap:10px;
+}
+
+.external-actions{
+  grid-column:2 / span 2;
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+}
+
+/* ---------- body ---------- */
+
+.game-main .game-body{
+  display:grid;
+  grid-template-columns:minmax(0,58%) minmax(300px,42%);
+  gap:18px;
+  margin-top:16px;
+  align-items:start;
+  width:100%;
+}
+
+.game-main .game-body > .game-left,
+.game-main .game-body > .game-right{
+  min-width:0;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.game-main .game-body > .game-right > .section{
+  width:100%;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.game-left > .chart-panel > div[style*="gridTemplateColumns"]{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.description-content{
+  font-size:14px;
+  line-height:1.55;
+  max-height:320px;
+  overflow:auto;
+}
+
+.review-section-body{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-items:flex-start;
+}
+
+.review-thumbs{
+  padding-left:0;
+  flex-wrap:wrap;
+}
+
+.favorite-btn,
+.action-link-btn{
+  min-height:42px;
+}
+
+.chart-container{
+  min-height:180px;
+}
+
+/* =====================================================
+RATINGS FIX
+fit inside card
+===================================================== */
+
+.ratings-inline{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  margin-top: 10px;
+}
+
+.stars-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  white-space:nowrap;
+}
+
+.stars-inline{
+  display:flex;
+  gap:2px;
+}
+
+.stars-inline span{
+  font-size:18px;
+  line-height:1;
+}
+
+.rating-count-inline{
+  font-size:10px;
+  opacity:.8;
+  line-height:1;
+}
+
+/* =====================================================
+REVIEW FIX
+fit buttons inside card
+===================================================== */
+
+.review-section-body{
+  margin-top: 10px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.review-stars{
+  display:flex;
+  align-items:center;
+  gap:1px;
+  flex-wrap:nowrap;
+}
+
+.review-section-body > .review-stars{
+  margin-top:-36px;
+  margin-left:46px; 
+}
+
+.review-stars button{
+  width:32px;
+  height:32px;
+  font-size:24px;
+  line-height:1;
+  padding:0;
+}
+
+.review-thumbs{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  padding-left:0;
+  width:100%;
+  margin-top: 4px;
+}
+
+.thumb-btn{
+  width:36px;
+  height:36px;
+  flex-shrink:0;
+}
+
+/* text labels wrap safely */
+.review-section-body,
+.review-thumbs{
+  overflow:hidden;
+}
+
+}
+

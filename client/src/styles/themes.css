@@ -1,0 +1,1657 @@
+/* THEMES*/
+
+/*LIGHT THEME*/
+
+[data-theme="light"]{
+
+  /* refined palette */
+  --bg:#f5f8fc;
+  --panel:#ffffff;
+  --border:#d8e3f2;
+
+  --text-primary:#1e293b;
+  --text-secondary:#64748b;
+
+  --accent:#7fb6f6;
+  --accent-alt:#60a5fa;
+  --hover:#f2f7ff;
+}
+
+/* ==========================================================
+APP BACKGROUND
+========================================================== */
+
+[data-theme="light"] body,
+[data-theme="light"] #root{
+  background:
+    linear-gradient(180deg,#f7faff 0%, #f4f8fd 100%);
+}
+
+
+/* ==========================================================
+PANELS / TABLES / SIDEBAR
+========================================================== */
+
+[data-theme="light"] .panel,
+[data-theme="light"] .sidebar,
+[data-theme="light"] .topbar,
+[data-theme="light"] .dashboard-panel{
+  background:rgba(255,255,255,.82);
+  backdrop-filter: blur(10px);
+  border:1px solid var(--border);
+  box-shadow:
+    0 6px 18px rgba(148,163,184,.08);
+}
+
+
+/* ==========================================================
+TOPBAR
+========================================================== */
+
+[data-theme="light"] .topbar{
+  border-radius:0 0 14px 14px;
+}
+
+[data-theme="light"] .search-box,
+[data-theme="light"] .login-btn{
+  background:#ffffff;
+  border:1px solid var(--border);
+}
+
+[data-theme="light"] .login-btn:hover,
+[data-theme="light"] .search-box:hover{
+  border-color:#bfd6f8;
+  background:#f8fbff;
+}
+
+
+/* ==========================================================
+TABLE HEADER
+========================================================== */
+
+[data-theme="light"] .table-head{
+  background:linear-gradient(
+    180deg,
+    #ffffff,
+    #fbfdff
+  );
+}
+
+[data-theme="light"] .table-header-row{
+  background:#f8fbff;
+}
+
+
+/* ==========================================================
+ROWS
+========================================================== */
+
+[data-theme="light"] .game-row{
+  background:transparent;
+  transition:all .18s ease;
+}
+
+/* ==========================================================
+TEXT HIERARCHY
+========================================================== */
+
+[data-theme="light"] .game-name,
+[data-theme="light"] .table-title,
+[data-theme="light"] .topbar-title{
+  color:#1f2a44;
+}
+
+[data-theme="light"] .game-publisher,
+[data-theme="light"] .table-subtitle,
+[data-theme="light"] .topbar-subtitle,
+[data-theme="light"] .table-header-row{
+  color:#6b7a90;
+}
+
+
+/* ==========================================================
+THUMBNAILS
+========================================================== */
+
+[data-theme="light"] .game-thumb{
+  border:1px solid #dfe8f6;
+}
+
+
+/* ==========================================================
+SIDEBAR LINKS
+========================================================== */
+
+[data-theme="light"] .sidebar button,
+[data-theme="light"] .sidebar-item{
+  border-radius:10px;
+}
+
+[data-theme="light"] .sidebar button:hover,
+[data-theme="light"] .sidebar-item:hover{
+  background:#f3f8ff;
+}
+
+
+/* ==========================================================
+SPARKLINES
+========================================================== */
+
+[data-theme="light"] svg{
+  filter: drop-shadow(0 0 1px rgba(96,165,250,.25));
+}
+
+[data-theme="light"] .modal-topbar {
+   position: relative;
+   padding-right: 56px; /* reserve space for button */
+   overflow: hidden;
+   background: linear-gradient(
+    90deg,
+    #dbeafe 0%,
+    #bfdbfe 100%
+  ) !important;
+
+  border-bottom: 1px solid #cfe0ff;
+}
+
+/* LOGIN MODAL */
+
+[data-theme="light"] .auth-modal-overlay{
+  background: rgba(15, 23, 42, 0.38);
+}
+
+[data-theme="light"] .auth-modal{
+  box-shadow: 0 24px 60px rgba(0,0,0,.18);
+}
+
+[data-theme="light"] .auth-modal-topbar{
+  background: linear-gradient(
+    180deg,
+    #dbeafe 0%,
+    #bfdbfe 100%
+  );
+}
+
+[data-theme="light"] .auth-close-btn{
+  background: #f0f7ff;
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+[data-theme="light"] .auth-close-btn:hover{
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+[data-theme="light"] .auth-submit-btn{
+  border-color: #dbeafe;
+  background: linear-gradient(
+    180deg,
+    #bfdbfe,
+    #93c5fd
+  );
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .auth-submit-btn:hover{
+  background: #eff6ff;
+  color: #2563eb;
+  border-color: #93c5fd;
+  box-shadow: none;
+}
+
+[data-theme="light"] .auth-google-btn{
+  background: #ffffff;
+  color: #334155;
+  border-color: #dbeafe;
+}
+
+[data-theme="light"] .auth-google-btn:hover{
+  color: #2563eb;
+  border-color: #93c5fd;
+}
+
+[data-theme="light"] .auth-switch-action:hover{
+  color: #2563eb;
+}
+
+[data-theme="light"] .switch-on{
+  border-color: #93c5fd;
+  background: rgba(147,197,253,.18);
+}
+
+[data-theme="light"] .switch-on .switch-thumb{
+  background: #60a5fa;
+}
+
+/* ---------------------------------------------------------
+   CLOSE BUTTON
+--------------------------------------------------------- */
+[data-theme="light"] .modal-close-btn {
+
+  position: absolute;
+  top: 50%;
+  right: 4px;
+
+  background: #f0f7ff !important;
+  color: #2563eb !important;
+
+  border: 1px solid #bfdbfe;
+  box-sizing: border-box;
+
+  transform: translateY(-50%);
+
+  margin: 0;
+  z-index: 5;
+
+  width: 22px;
+  height: 22px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+[data-theme="light"] .modal-close-btn:hover {
+  background: #dbeafe !important;
+  color: #1d4ed8 !important;
+}
+
+/* ---------------------------------------------------------
+   MODAL ROOT
+--------------------------------------------------------- */
+[data-theme="light"] .game-modal-shell {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.10);
+}
+
+/* ---------------------------------------------------------
+   ACTIVE LEFT GAME ITEM
+--------------------------------------------------------- */
+[data-theme="light"] .game-list-item.active-item,
+[data-theme="light"] .game-list-item.glow {
+  background: #eff6ff !important;
+  border-left: 3px solid #93c5fd !important;
+}
+
+/* ---------------------------------------------------------
+   SECTION HEADERS
+--------------------------------------------------------- */
+[data-theme="light"] .section-header {
+  background: #f0f7ff !important;
+  color: #3b82f6 !important;
+  border: 1px solid #dbeafe !important;
+}
+
+/* ---------------------------------------------------------
+   FREE PRICE BADGE
+--------------------------------------------------------- */
+[data-theme="light"] .price {
+  background: #93c5fd !important;
+  color: #000000 !important;
+
+  border: 1px solid #bfdbfe !important;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------
+   STORE / STREAM BUTTONS
+--------------------------------------------------------- */
+[data-theme="light"] .action-link-btn {
+  background: #ffffff !important;
+  color: #334155 !important;
+
+  border: 1px solid #dbeafe !important;
+  border-radius: 10px;
+}
+
+[data-theme="light"] .action-link-btn:hover {
+  background: #eff6ff !important;
+  color: #2563eb !important;
+  border-color: #93c5fd !important;
+}
+
+/* GAMEROW */
+
+[data-theme="light"] .game-row:hover{
+  background:#f8fbff;
+}
+
+/* ---------------------------------------------------------
+   FAVORITE BUTTON
+--------------------------------------------------------- */
+[data-theme="light"] .favorite-btn {
+  background: linear-gradient(
+    180deg,
+    #bfdbfe,
+    #93c5fd
+  ) !important;
+
+  border: 1px solid #bfdbfe !important;
+  font-weight: 700;
+}
+
+[data-theme="light"] .favorite-btn:hover {
+  transform: translateY(-1px);
+
+  background: #ffffff !important;
+
+  color: #ff6bd6;
+  border-color: #ff6bd6;
+
+  box-shadow:
+    0 0 6px rgba(255,107,214,.22),
+    0 0 14px rgba(255,107,214,.12),
+    inset 0 0 8px rgba(255,107,214,.05);
+}
+
+[data-theme="light"] .favorite-btn.active {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,90,205,.58),
+      rgba(180,35,140,.46)
+    );
+
+  color: #ffeaff;
+  border-color: #ff6bd6;
+
+  box-shadow:
+    0 0 10px rgba(255,107,214,.10);
+}
+
+[data-theme="light"] .favorite-btn.active:hover {
+  transform: translateY(-1px);
+
+  background: #ffffff !important;
+
+  color: #ff8ce4;
+  border-color: #ff8ce4;
+
+  box-shadow:
+    0 0 8px rgba(255,140,228,.26),
+    0 0 16px rgba(255,140,228,.14),
+    inset 0 0 8px rgba(255,140,228,.06);
+}
+
+/* ---------------------------------------------------------
+   RATINGS
+--------------------------------------------------------- */
+[data-theme="light"] .rating-number-inline,
+[data-theme="light"] .stars-inline {
+  color: #3b82f6 !important;
+}
+
+[data-theme="light"] .rating-count-inline {
+  color: #64748b !important;
+}
+
+/* ---------------------------------------------------------
+   RECOMMENDATION BAR
+--------------------------------------------------------- */
+[data-theme="light"] .recommend-bar {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+[data-theme="light"] .recommend-fill-positive {
+  background: #dcfce7 !important;
+  color: #15803d !important;
+  font-weight: 700;
+}
+
+[data-theme="light"] .recommend-fill-negative {
+  background: #fee2e2 !important;
+  color: #dc2626 !important;
+  font-weight: 700;
+}
+
+[data-theme="light"] .recommend-fill-positive *,
+[data-theme="light"] .recommend-fill-negative * {
+  color: inherit !important;
+}
+
+/* ---------------------------------------------------------
+   CHART PANEL
+--------------------------------------------------------- */
+[data-theme="light"] .chart-panel {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* ---------------------------------------------------------
+   CHART CONTAINER
+--------------------------------------------------------- */
+[data-theme="light"] .chart-container {
+  background: linear-gradient(
+    180deg,
+    #f8fbff 0%,
+    #eef5ff 100%
+  ) !important;
+
+  border: 1px solid #dbeafe !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+}
+
+[data-theme="light"] .chart-container::before,
+[data-theme="light"] .chart-container::after {
+  display: none !important;
+}
+
+/* chart text */
+[data-theme="light"] .chart-container text {
+  fill: #64748b !important;
+}
+
+/* chart labels */
+[data-theme="light"] .chart-label {
+  color: #3b82f6 !important;
+}
+
+/* ---------------------------------------------------------
+   DESCRIPTION PANEL
+--------------------------------------------------------- */
+[data-theme="light"] .description-section {
+  background: #fcfdff;
+}
+
+/* ---------------------------------------------------------
+   REVIEW BUTTONS
+--------------------------------------------------------- */
+[data-theme="light"] .thumb-btn {
+  background: #ffffff !important;
+  color: #334155 !important;
+  border: 1px solid #dbeafe !important;
+}
+
+[data-theme="light"] .thumb-btn:hover,
+[data-theme="light"] .thumb-btn.active {
+  background: #eff6ff !important;
+  color: #2563eb !important;
+  border-color: #93c5fd !important;
+}
+
+/* ---------------------------------------------------------
+   REVIEW STARS
+--------------------------------------------------------- */
+[data-theme="light"] .review-stars button {
+  color: #3b82f6;
+}
+
+/* ---------------------------------------------------------
+   REMOVE RETRO EFFECTS INSIDE LIGHT MODAL
+--------------------------------------------------------- */
+[data-theme="light"] .game-main.crt::before,
+[data-theme="light"] .game-main.crt::after {
+  display: none !important;
+}
+
+/* TOOLTIP */
+
+[data-theme="light"] .tooltip::after {
+  background: #ffffff !important;
+  color: #0f172a !important;
+
+  border: 1px solid #dbeafe !important;
+  border-radius: 10px;
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.08),
+    0 2px 8px rgba(15, 23, 42, 0.04);
+
+  font-size: 12px;
+  line-height: 1.45;
+
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* subtle top arrow if you use one later */
+[data-theme="light"] .tooltip::before {
+  border-color: #ffffff transparent transparent transparent;
+}
+
+/* smoother appearance */
+[data-theme="light"] .tooltip:hover::after {
+  opacity: 1;
+}
+
+/* links / highlighted words inside tooltip if any */
+[data-theme="light"] .tooltip a {
+  color: #3b82f6;
+}
+
+[data-theme="light"] .dashboard-skeleton-title,
+[data-theme="light"] .dashboard-skeleton-subtitle,
+[data-theme="light"] .dashboard-skeleton-thumb,
+[data-theme="light"] .dashboard-skeleton-line,
+[data-theme="light"] .dashboard-skeleton-stat{
+  background:#dbe7f5;
+}
+
+/* DARK THEME*/
+
+[data-theme="dark"]{
+
+  /* refined palette */
+  --bg:#0f172a;
+  --panel:#111827;
+  --border:#273449;
+
+  --text-primary:#f8fafc;
+  --text-secondary:#94a3b8;
+
+  --accent:#60a5fa;
+  --accent-alt:#3b82f6;
+  --hover:#172133;
+
+  --chart-primary:#60a5fa;
+}
+
+/* ==========================================================
+APP BACKGROUND
+========================================================== */
+
+[data-theme="dark"] body,
+[data-theme="dark"] #root{
+  background:
+    linear-gradient(180deg,#0f172a 0%, #0b1220 100%);
+}
+
+/* ==========================================================
+PANELS / TABLES / SIDEBAR
+========================================================== */
+
+[data-theme="dark"] .panel,
+[data-theme="dark"] .sidebar,
+[data-theme="dark"] .topbar,
+[data-theme="dark"] .dashboard-panel{
+  background:rgba(17,24,39,.88);
+  backdrop-filter: blur(10px);
+
+  border:1px solid var(--border);
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.22);
+}
+
+/* ==========================================================
+TOPBAR
+========================================================== */
+
+[data-theme="dark"] .topbar{
+  border-radius:0 0 14px 14px;
+}
+
+[data-theme="dark"] .search-box,
+[data-theme="dark"] .login-btn{
+  background:#0f172a;
+  border:1px solid var(--border);
+}
+
+[data-theme="dark"] .login-btn:hover,
+[data-theme="dark"] .search-box:hover{
+  border-color:#3b82f6;
+  background:#172133;
+}
+
+/* =====================================
+PROFILE UI
+===================================== */
+
+.avatar-shell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  border: 1px solid var(--border);
+
+  background: var(--accent);
+  color: var(--accent-contrast);
+
+  
+  font-weight: 700;
+  letter-spacing: .04em;
+
+  overflow: hidden;
+}
+
+.avatar-sm { width: 32px; height: 32px; font-size: 18px; }
+
+.profile-wrap {
+  position: relative;
+  z-index: 600;
+}
+
+.profile-trigger {
+  height: 42px;
+  min-width: 140px;
+  max-width: 220px;
+
+  padding: 0 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: var(--panel);
+  color: var(--text-primary);
+
+  transition:
+    border-color .18s ease,
+    transform .18s ease;
+}
+
+/* hover */
+.profile-trigger:hover {
+  border-color: var(--accent);
+}
+
+/* username */
+.profile-trigger-name {
+  flex: 1;
+
+  text-align: left;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  font-size: .78rem;
+  letter-spacing: .08em;
+}
+
+/* arrow animation */
+.profile-trigger svg {
+  flex-shrink: 0;
+  transition: transform .18s ease;
+}
+
+.profile-trigger .rotate {
+  transform: rotate(180deg);
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 210px;
+  padding: 8px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: var(--panel);
+
+  z-index: 9999;
+
+  transform-origin: top right;
+
+  animation: profileMenuIn .18s ease forwards;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+}
+
+.profile-dropdown-item {
+  width: 100%;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 12px;
+  border-radius: 10px;
+
+  transition:
+    background .16s ease,
+    transform .16s ease,
+    color .16s ease;
+}
+
+.profile-dropdown-item:hover {
+  background: rgba(255,255,255,.04);
+  transform: translateX(2px);
+}
+
+.profile-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0,0,0,.65);
+}
+
+.profile-modal {
+  width: min(92vw, 560px);
+  overflow: hidden;
+}
+
+.profile-body {
+  padding: 26px;
+}
+
+.profile-modal-shell {
+  width: min(92vw, 760px);
+}
+
+.profile-modal-topbar {
+  height: 42px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-close-btn {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+}
+
+.profile-modal-body {
+  padding: 18px;
+}
+
+.profile-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.profile-tab {
+  height: 54px;
+  min-width: 132px;
+  padding: 0 18px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: transparent;
+  color: var(--text-primary);
+
+  transition:
+    border-color .16s ease,
+    background .16s ease;
+}
+
+.profile-tab:hover {
+  border-color: var(--accent);
+}
+
+.profile-tab.active {
+  background: rgba(147,197,253,.08);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.profile-body .auth-title {
+  margin-bottom: 24px;
+}
+
+/* modal buttons sharper */
+.profile-modal-shell .auth-submit-btn,
+.profile-modal-shell .auth-input {
+  border-radius: 8px;
+}
+
+.profile-heading {
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+.profile-input {
+  width: 100%;
+  height: 46px;
+
+  padding: 0 14px;
+  margin-bottom: 14px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: var(--bg);
+}
+
+.profile-save-btn {
+  width: 100%;
+  height: 46px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.profile-save-btn:hover {
+  opacity: .92;
+}
+
+/* Sidebar */
+
+.sidebar-root{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:var(--panel);
+  border-right:1px solid var(--border);
+  overflow:hidden;
+  flex-shrink:0;
+  position:relative;
+  z-index:50;
+}
+
+/* width states */
+.sidebar-root.w-16{
+  width:64px;
+  min-width:64px;
+}
+
+.sidebar-root.w-64{
+  width:256px;
+  min-width:256px;
+}
+
+/* generic section */
+.sidebar-section{
+  padding:14px 12px;
+  border-bottom:1px solid var(--border);
+}
+
+/* top block */
+.sidebar-top{
+  display:flex;
+  flex-direction:column;
+}
+
+/* profile */
+.sidebar-profile-section{
+  padding-bottom:14px;
+  margin-bottom:14px;
+  border-bottom:1px solid var(--border);
+}
+
+.sidebar-profile-display{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.sidebar-profile-collapsed{
+  display:flex;
+  justify-content:center;
+}
+
+.sidebar-profile-name{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+}
+
+.sidebar-profile-sub{
+  font-size:10px;
+  opacity:.65;
+  letter-spacing:.14em;
+  margin-top:2px;
+}
+
+/* nav button */
+.sidebar-nav-btn{
+  width:100%;
+  min-height:46px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:0 12px;
+  position:relative;
+  transition:.18s ease;
+}
+
+.sidebar-root.w-16 .sidebar-nav-btn{
+  justify-content:center;
+  padding:0;
+}
+
+.sidebar-nav-btn.active-item{
+  background:rgba(255,255,255,.03);
+}
+
+
+/* genres */
+.sidebar-genres-trigger{
+  min-height:42px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:0 10px;
+  opacity:.75;
+}
+
+.sidebar-root.w-16 .sidebar-genres-trigger{
+  justify-content:center;
+  padding:0;
+}
+
+/* bottom area */
+.sidebar-bottom{
+  margin-top:auto;
+  display:flex;
+  flex-direction:column;
+}
+
+/* auth row */
+.sidebar-auth{
+  padding:14px 12px;
+  border-bottom:1px solid var(--border);
+}
+
+/* collapse row */
+.sidebar-collapse{
+  min-height:54px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+.sidebar-root.w-64 .sidebar-collapse{
+  justify-content:space-between;
+  padding:0 16px;
+}
+
+/* arrows */
+.sidebar-toggle{
+  display:flex;
+  gap:4px;
+}
+
+
+.sidebar button {
+  align-items: center;
+}
+
+/* profile row text */
+.sidebar-profile-label {
+  line-height: 1;
+  transform: translateY(1px);
+}
+
+/* sidebar avatar tuned smaller */
+.sidebar .avatar-shell {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+}
+
+.sidebar-profile-active {
+  border-left: 3px solid var(--accent);
+  background: rgba(255,255,255,.04);
+}
+
+/* section wrapper */
+.sidebar-profile-section {
+  padding: 16px 14px;
+}
+
+/* expanded layout */
+.sidebar-profile-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* collapsed */
+.sidebar-profile-collapsed {
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* avatar sizing */
+.sidebar-profile-display .avatar-shell,
+.sidebar-profile-collapsed .avatar-shell {
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* text block */
+.sidebar-profile-meta {
+  min-width: 0;
+}
+
+/* username */
+.sidebar-profile-name {
+  font-size: .82rem;
+  letter-spacing: .08em;
+  line-height: 1.1;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  color: var(--text-primary);
+}
+
+/* small subtitle */
+.sidebar-profile-sub {
+  margin-top: 5px;
+
+  font-size: .58rem;
+  letter-spacing: .16em;
+
+  color: var(--text-secondary);
+  opacity: .8;
+}
+
+@keyframes profileMenuIn {
+  0% {
+    opacity: 0;
+    transform:
+      translateY(-8px)
+      scale(.96);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+.profile-wrap,
+.profile-wrap *,
+.profile-dropdown,
+.profile-dropdown *,
+.profile-modal-overlay,
+.profile-modal-overlay *,
+.profile-modal-shell,
+.profile-modal-shell *{
+  transition-property:
+    background-color,
+    color,
+    border-color,
+    box-shadow,
+    fill,
+    stroke !important;
+
+  transition-duration: 0s !important;
+}
+
+/* preserve hover feel only */
+.profile-trigger,
+.profile-dropdown-item,
+.profile-tab,
+.profile-save-btn,
+.profile-close-btn,
+.profile-modal-shell button{
+  transition:
+    transform .16s ease,
+    opacity .16s ease !important;
+}
+
+/* optional hover polish */
+.profile-dropdown-item:hover,
+.profile-tab:hover,
+.profile-trigger:hover{
+  transform: translateY(-1px);
+}
+
+.profile-modal-shell button:active{
+  transform: translateY(1px);
+}
+
+/* ==========================================================
+TABLE HEADER
+========================================================== */
+
+[data-theme="dark"] .table-head{
+  background:linear-gradient(
+    180deg,
+    #111827,
+    #0f172a
+  );
+}
+
+[data-theme="dark"] .table-header-row{
+  background:#111827;
+}
+
+/* ==========================================================
+ROWS
+========================================================== */
+
+[data-theme="dark"] .game-row{
+  background:transparent;
+  border: none;
+  transition:all .18s ease;
+}
+
+[data-theme="dark"] .game-row:hover{
+  background:#172133;
+}
+
+/* ==========================================================
+TEXT HIERARCHY
+========================================================== */
+
+[data-theme="dark"] .game-name,
+[data-theme="dark"] .table-title,
+[data-theme="dark"] .topbar-title{
+  color:#f8fafc;
+}
+
+[data-theme="dark"] .game-publisher,
+[data-theme="dark"] .table-subtitle,
+[data-theme="dark"] .topbar-subtitle,
+[data-theme="dark"] .table-header-row{
+  color:#94a3b8;
+}
+
+/* ==========================================================
+THUMBNAILS
+========================================================== */
+
+[data-theme="dark"] .game-thumb{
+  border:1px solid #334155;
+}
+
+/* ==========================================================
+SIDEBAR LINKS
+========================================================== */
+
+[data-theme="dark"] .sidebar button,
+[data-theme="dark"] .sidebar-item{
+  border-radius:10px;
+}
+
+[data-theme="dark"] .sidebar button:hover,
+[data-theme="dark"] .sidebar-item:hover{
+  background:#172133;
+}
+
+/* ==========================================================
+SPARKLINES
+========================================================== */
+
+[data-theme="dark"] svg{
+  filter: drop-shadow(0 0 2px rgba(96,165,250,.18));
+}
+
+/* ==========================================================
+GAME MODAL TOPBAR
+========================================================== */
+
+[data-theme="dark"] .modal-topbar{
+  position:relative;
+  padding-right:56px;
+  overflow:hidden;
+
+  background:linear-gradient(
+    90deg,
+    #1e3a8a 0%,
+    #2563eb 100%
+  ) !important;
+
+  border-bottom:1px solid #3b82f6;
+}
+
+/* ==========================================================
+LOGIN MODAL
+========================================================== */
+
+[data-theme="dark"] .auth-modal-overlay{
+  background:rgba(0,0,0,.55);
+}
+
+[data-theme="dark"] .auth-modal{
+  box-shadow:0 24px 60px rgba(0,0,0,.45);
+}
+
+[data-theme="dark"] .auth-modal-topbar{
+  background:linear-gradient(
+    180deg,
+    #1e40af 0%,
+    #2563eb 100%
+  );
+}
+
+[data-theme="dark"] .auth-close-btn{
+  background:#0f172a;
+  color:#93c5fd;
+  border-color:#3b82f6;
+}
+
+[data-theme="dark"] .auth-close-btn:hover{
+  background:#172133;
+  color:#ffffff;
+}
+
+[data-theme="dark"] .auth-submit-btn{
+  border-color:#2563eb;
+  background:linear-gradient(
+    180deg,
+    #3b82f6,
+    #2563eb
+  );
+  color:#ffffff;
+}
+
+[data-theme="dark"] .auth-submit-btn:hover{
+  background:#172133;
+  color:#ffffff;
+}
+
+[data-theme="dark"] .auth-google-btn{
+  background:#0f172a;
+  color:#e2e8f0;
+  border-color:#334155;
+}
+
+[data-theme="dark"] .auth-google-btn:hover{
+  border-color:#60a5fa;
+  color:#ffffff;
+}
+
+[data-theme="dark"] .auth-switch-action:hover{
+  color:#60a5fa;
+}
+
+[data-theme="dark"] .switch-on{
+  border-color:#60a5fa;
+  background:rgba(96,165,250,.16);
+}
+
+[data-theme="dark"] .switch-on .switch-thumb{
+  background:#60a5fa;
+}
+
+/* ==========================================================
+CLOSE BUTTON
+========================================================== */
+
+[data-theme="dark"] .modal-close-btn{
+  position:absolute;
+  top:50%;
+  right:4px;
+
+  background:#0f172a !important;
+  color:#93c5fd !important;
+
+  border:1px solid #3b82f6;
+
+  transform:translateY(-50%);
+  z-index:5;
+
+  width:22px;
+  height:22px;
+
+  display:grid;
+  place-items:center;
+
+  font-size:14px;
+  font-weight:700;
+}
+
+[data-theme="dark"] .modal-close-btn:hover{
+  background:#172133 !important;
+  color:#ffffff !important;
+}
+
+/* ==========================================================
+MODAL ROOT
+========================================================== */
+
+[data-theme="dark"] .game-modal-shell{
+  background:#111827;
+  border:1px solid #273449;
+  box-shadow:0 24px 60px rgba(0,0,0,.42);
+}
+
+/* ==========================================================
+ACTIVE LEFT GAME ITEM
+========================================================== */
+
+[data-theme="dark"] .game-list-item.active-item,
+[data-theme="dark"] .game-list-item.glow{
+  background:#172133 !important;
+  border-left:3px solid #60a5fa !important;
+}
+
+/* ==========================================================
+SECTION HEADERS
+========================================================== */
+
+[data-theme="dark"] .section-header{
+  background:#172133 !important;
+  color:#60a5fa !important;
+  border:1px solid #273449 !important;
+}
+
+/* ==========================================================
+PRICE BADGE
+========================================================== */
+
+[data-theme="dark"] .price{
+  background:#2563eb !important;
+  color:#ffffff !important;
+
+  border:1px solid #3b82f6 !important;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-weight:700;
+}
+
+/* ==========================================================
+STORE / STREAM BUTTONS
+========================================================== */
+
+[data-theme="dark"] .action-link-btn{
+  background:#0f172a !important;
+  color:#e2e8f0 !important;
+
+  border:1px solid #273449 !important;
+  border-radius:10px;
+}
+
+[data-theme="dark"] .action-link-btn:hover{
+  background:#172133 !important;
+  color:#60a5fa !important;
+  border-color:#3b82f6 !important;
+}
+
+/* ==========================================================
+FAVORITE BUTTON
+========================================================== */
+
+[data-theme="dark"] .favorite-btn{
+  background:linear-gradient(
+    180deg,
+    #3b82f6,
+    #2563eb
+  ) !important;
+
+  border:1px solid #3b82f6 !important;
+  color:#ffffff;
+  font-weight:700;
+}
+
+[data-theme="dark"] .favorite-btn:hover{
+  background:#172133 !important;
+  color:#ff7ad9;
+  border-color:#ff7ad9;
+}
+
+[data-theme="dark"] .favorite-btn.active{
+  background:linear-gradient(
+    180deg,
+    rgba(255,90,205,.55),
+    rgba(180,35,140,.42)
+  );
+
+  color:#ffffff;
+  border-color:#ff7ad9;
+}
+
+/* ==========================================================
+RATINGS
+========================================================== */
+
+[data-theme="dark"] .rating-number-inline,
+[data-theme="dark"] .stars-inline{
+  color:#60a5fa !important;
+}
+
+[data-theme="dark"] .rating-count-inline{
+  color:#94a3b8 !important;
+}
+
+/* ==========================================================
+RECOMMEND BAR
+========================================================== */
+
+[data-theme="dark"] .recommend-bar{
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid #273449;
+  background:#0f172a;
+}
+
+/* positive */
+[data-theme="dark"] .recommend-fill-positive{
+  background:#163624 !important;   /* muted green */
+  color:#7ee2a8 !important;
+  font-weight:700;
+}
+
+/* negative */
+[data-theme="dark"] .recommend-fill-negative{
+  background:#4a1717 !important;   /* muted red */
+  color:#f0a3a3 !important;
+  font-weight:700;
+}
+
+/* keep icons/text same tone */
+[data-theme="dark"] .recommend-fill-positive *,
+[data-theme="dark"] .recommend-fill-negative *{
+  color:inherit !important;
+}
+
+/* ==========================================================
+CHARTS
+========================================================== */
+
+[data-theme="dark"] .chart-panel{
+  background:#111827 !important;
+  border:1px solid #273449 !important;
+}
+
+[data-theme="dark"] .chart-container{
+  background:linear-gradient(
+    180deg,
+    #111827 0%,
+    #0f172a 100%
+  ) !important;
+
+  border:1px solid #273449 !important;
+}
+
+[data-theme="dark"] .chart-container text{
+  fill:#94a3b8 !important;
+}
+
+[data-theme="dark"] .chart-label{
+  color:#60a5fa !important;
+}
+
+/* ==========================================================
+DESCRIPTION
+========================================================== */
+
+[data-theme="dark"] .description-section{
+  background:#111827;
+}
+
+/* ==========================================================
+REVIEW BUTTONS
+========================================================== */
+
+[data-theme="dark"] .thumb-btn{
+  background:#0f172a !important;
+  color:#e2e8f0 !important;
+  border:1px solid #273449 !important;
+}
+
+[data-theme="dark"] .thumb-btn:hover,
+[data-theme="dark"] .thumb-btn.active{
+  background:#172133 !important;
+  color:#60a5fa !important;
+  border-color:#3b82f6 !important;
+}
+
+/* ==========================================================
+REVIEW STARS
+========================================================== */
+
+[data-theme="dark"] .review-stars button{
+  color:#60a5fa;
+}
+
+/* ==========================================================
+TOOLTIP
+========================================================== */
+
+[data-theme="dark"] .tooltip::after{
+  background:#111827 !important;
+  color:#f8fafc !important;
+
+  border:1px solid #273449 !important;
+  border-radius:10px;
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,.34);
+
+  white-space:normal;
+}
+
+[data-theme="dark"] .tooltip a{
+  color:#60a5fa;
+}
+
+[data-theme="dark"] .dashboard-skeleton-title,
+[data-theme="dark"] .dashboard-skeleton-subtitle,
+[data-theme="dark"] .dashboard-skeleton-thumb,
+[data-theme="dark"] .dashboard-skeleton-line,
+[data-theme="dark"] .dashboard-skeleton-stat{
+  background:#1e293b;
+}
+
+/* TRANSITION */
+
+/* remove physical borders on rows */
+[data-theme="dark"] .game-row,
+[data-theme="dark"] .dashboard-row,
+[data-theme="dark"] [class*="game-row"],
+[data-theme="dark"] [class*="table-row"]{
+  border: none !important;
+  box-shadow: inset 0 -1px 0 var(--border) !important;
+  background: transparent !important;
+}
+
+/* header separator */
+[data-theme="dark"] .game-table-header,
+[data-theme="dark"] .table-head,
+[data-theme="dark"] .table-header,
+[data-theme="dark"] [class*="header-row"]{
+  border: none !important;
+  box-shadow: inset 0 -1px 0 var(--border) !important;
+}
+
+/* panel outer frame */
+[data-theme="dark"] .panel,
+[data-theme="dark"] .game-table,
+[data-theme="dark"] .dashboard-table{
+  border: 1px solid var(--border) !important;
+  background: var(--panel) !important;
+}
+
+/* kill inline borderBottom styles from JSX */
+[data-theme="dark"] div[style*="borderBottom"],
+[data-theme="dark"] div[style*="border-bottom"]{
+  border-bottom: none !important;
+  box-shadow: inset 0 -1px 0 var(--border) !important;
+}
+
+/* make sure no bright seams from antialiasing */
+[data-theme="dark"] .panel *{
+  backface-visibility: hidden;
+}
+
+/*RETRO THEME*/
+
+[data-theme="retro"] {
+  --bg: #0a0f0d;
+  --panel: #0e1a17;
+  --border: #1c3a33;
+
+  --text-primary: #9cffcc;
+  --text-secondary: #4faf8c;
+
+  --accent: #33ff99;
+  --accent-alt: #00cc7a;
+  --accent-contrast: #001a12;
+
+  --chart-primary: #33ff99;
+
+  --shadow-glow: 0 0 8px rgba(51, 255, 153, 0.45);
+}
+
+/* backgrounds */
+[data-theme="light"] body,
+[data-theme="dark"] body {
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+/* panels */
+[data-theme="light"] .panel,
+[data-theme="dark"] .panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+/* hover rows */
+[data-theme="light"] .hover-retro:hover {
+  background: rgba(37, 99, 235, 0.05);
+}
+
+[data-theme="dark"] .hover-retro:hover {
+  background: rgba(59, 130, 246, 0.08);
+}
+
+/* disable special retro effects only in normal themes */
+[data-theme="light"] .crt::before,
+[data-theme="light"] .crt::after,
+[data-theme="dark"] .crt::before,
+[data-theme="dark"] .crt::after,
+[data-theme="light"] #root::before,
+[data-theme="dark"] #root::before,
+[data-theme="light"] .cursor-burn,
+[data-theme="dark"] .cursor-burn {
+  display: none !important;
+}
+
+/* arrows static in normal themes */
+[data-theme="light"] .arrow,
+[data-theme="dark"] .arrow {
+  animation: none !important;
+  opacity: 0.7;
+}
+

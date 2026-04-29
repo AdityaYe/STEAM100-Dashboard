@@ -1,0 +1,30 @@
+/* SPARKLINE */
+.sparkline-container{
+  --sparkline-color: var(--chart-primary);
+
+  position:relative;
+  width:100%;
+  min-width:120px;
+  height:36px;
+  min-height:36px;
+}
+
+.sparkline-container .recharts-responsive-container,
+.sparkline-container .recharts-wrapper,
+.sparkline-container svg{
+  display:block;
+  width:100% !important;
+  height:100% !important;
+}
+
+.sparkline-container svg{
+  overflow:visible;
+}
+
+.sparkline-container polyline{
+  stroke:var(--sparkline-color) !important;
+}
+
+[data-theme="retro"] .hover-retro:hover .sparkline-container{
+  --sparkline-color: var(--accent-contrast);
+}

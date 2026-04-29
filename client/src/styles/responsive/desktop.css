@@ -1,0 +1,150 @@
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes dockFadeIdle{
+  from{opacity:1;}
+  to{opacity:.18;}
+}
+
+@keyframes crtPulseIntro{
+  0%{opacity:0;transform:scale(.88);}
+  12%{opacity:1;transform:scale(1.02);}
+  30%{opacity:.55;transform:scale(1);}
+  45%{opacity:1;transform:scale(1.04);}
+  65%{opacity:.35;transform:scale(1);}
+  80%{opacity:.85;transform:scale(1.02);}
+  100%{opacity:0;transform:scale(1.08);}
+}
+
+/* =========================================================
+RESTORED STABLE + OPTIMIZED FINAL CSS
+Targeted cleanup only.
+Critical mobile overrides preserved.
+Matches screenshot target state.
+========================================================= */
+
+/* =========================================================
+DESKTOP
+========================================================= */
+
+@media (min-width:2200px) and (min-height:1300px){
+
+
+/* overall modal */
+.game-modal-shell{
+  width:min(2100px,94vw);
+  height:82vh;
+  max-height:58vh;
+}
+
+/* inner content */
+.game-modal-layout{
+  height:100%;
+}
+
+.game-main{
+  height:100%;
+}
+}
+
+@media (min-width:1600px) and (min-height:900px){
+.game-modal-shell{
+  width:min(1780px,96vw);
+  height:88vh;
+}
+
+}
+
+/* =========================================================
+LAPTOP
+========================================================= */
+
+@media (min-width:1024px) and (max-height:760px){
+
+/* allow page scroll */
+.modal-overlay{
+  align-items:flex-start !important;
+  overflow-y:auto !important;
+  padding:12px;
+}
+
+/* modal can grow naturally */
+.game-modal-shell{
+  height:auto !important;
+  min-height:88vh;
+  max-height:none !important;
+  margin:0 auto 20px;
+}
+
+/* stop clipping */
+.game-modal-layout{
+  overflow:visible !important;
+}
+
+.game-main{
+  overflow:visible !important;
+}
+
+.game-body{
+  flex:none !important;
+  min-height:auto !important;
+  overflow:visible !important;
+}
+
+/* review box taller */
+
+.review-section-body{
+  margin-top:10px;
+
+  display:grid;
+  grid-template-columns:auto 1fr;
+  row-gap:12px;
+  column-gap:10px;
+
+  align-items:center;
+}
+
+/* recommend goes next row full width */
+.review-thumbs{
+  grid-column:1 / span 2;
+
+   display:flex;
+  align-items:center;
+  justify-content:flex-start; /* key */
+  gap:8px;
+  flex-wrap:nowrap;
+
+  padding-left:0;
+  margin-left:0;
+  width:100%;
+}
+
+/* buttons */
+.review-stars button{
+  width:32px;
+  height:32px;
+  font-size:24px;
+  line-height:1;
+  padding:0;
+}
+
+
+.game-sidebar{
+  width:23%;
+
+  /* key fix */
+  align-self:flex-start;
+
+  /* remove forced full stretch look */
+  height:auto !important;
+  max-height:800px;   /* adjust if needed */
+
+  overflow-y:auto;
+  overflow-x:hidden;
+
+  border-right:1px solid var(--border);
+}
+
+}
+

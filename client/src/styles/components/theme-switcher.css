@@ -1,0 +1,270 @@
+/* =========================================================
+   THEME SWITCHER DOCK
+========================================================= */
+
+.theme-switcher{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:99999;
+
+  display:flex;
+  gap:8px;
+  padding:8px;
+
+  border-radius:16px;
+  backdrop-filter:blur(10px);
+  overflow:visible;
+
+  opacity:1;
+
+  animation:dockFadeIdle .45s ease forwards;
+  animation-delay:2.8s;
+
+  transition:
+    opacity .2s ease,
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+.theme-switcher:hover{
+  opacity:1 !important;
+  transform:translateY(-2px);
+  animation:none;
+}
+
+.theme-switcher:not(:hover){
+  transition:
+    opacity .45s ease 1s,
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+/* =========================================================
+   KEYCAP BASE
+========================================================= */
+
+.theme-key{
+  position:relative;
+
+  width:52px;
+  height:52px;
+
+  border:none;
+  border-radius:14px;
+
+  display:grid;
+  place-items:center;
+
+  background:none;
+  cursor:pointer;
+
+  transition:
+    transform .12s ease,
+    box-shadow .18s ease,
+    background .18s ease;
+}
+
+.theme-key img{
+  width:22px;
+  height:22px;
+  object-fit:contain;
+  image-rendering:auto;
+  position:relative;
+  z-index:5;
+  pointer-events:none;
+}
+
+/* key top */
+.theme-key::before{
+  content:"";
+  position:absolute;
+  inset:4px;
+  border-radius:11px;
+  transition:all .18s ease;
+}
+
+/* key lip */
+.theme-key::after{
+  content:"";
+  position:absolute;
+  left:7px;
+  right:7px;
+  bottom:4px;
+  height:6px;
+  border-radius:0 0 9px 9px;
+  opacity:.75;
+}
+
+.theme-key:hover{
+  transform:translateY(-2px);
+}
+
+.theme-key.active{
+  transform:translateY(2px) scale(.985);
+}
+
+.theme-key.active::before{
+  inset:6px;
+}
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+[data-theme="light"] .theme-switcher{
+  background:var(--theme-switcher-bg);
+  border:1px solid var(--theme-switcher-border);
+  box-shadow:var(--theme-switcher-shadow);
+}
+
+[data-theme="light"] .theme-key{
+  background:var(--theme-key-bg);
+  box-shadow:var(--theme-key-shadow);
+}
+
+[data-theme="light"] .theme-key::before{
+  background:var(--theme-key-top-bg);
+  border:1px solid var(--theme-key-top-border);
+}
+
+[data-theme="light"] .theme-key::after{
+  background:var(--theme-key-lip-bg);
+}
+
+[data-theme="light"] .theme-key.active{
+  box-shadow:var(--theme-key-active-shadow);
+}
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+[data-theme="dark"] .theme-switcher{
+  background:var(--theme-switcher-bg);
+  border:1px solid var(--theme-switcher-border);
+  box-shadow:var(--theme-switcher-shadow);
+}
+
+[data-theme="dark"] .theme-key{
+  background:var(--theme-key-bg);
+  box-shadow:var(--theme-key-shadow);
+}
+
+[data-theme="dark"] .theme-key::before{
+  background:var(--theme-key-top-bg);
+  border:1px solid var(--theme-key-top-border);
+}
+
+[data-theme="dark"] .theme-key::after{
+  background:var(--theme-key-lip-bg);
+}
+
+[data-theme="dark"] .theme-key.active{
+  box-shadow:var(--theme-key-active-shadow);
+}
+
+/* =========================================================
+   RETRO THEME
+========================================================= */
+
+[data-theme="retro"] .theme-switcher{
+  background:var(--theme-switcher-bg);
+  border:1px solid var(--theme-switcher-border);
+  box-shadow:var(--theme-switcher-shadow);
+}
+
+[data-theme="retro"] .theme-key{
+  background:var(--theme-key-bg);
+  box-shadow:var(--theme-key-shadow);
+}
+
+[data-theme="retro"] .theme-key::before{
+  background:var(--theme-key-top-bg);
+  border:1px solid var(--theme-key-top-border);
+}
+
+[data-theme="retro"] .theme-key::after{
+  background:var(--theme-key-lip-bg);
+}
+
+[data-theme="retro"] .theme-key.active{
+  box-shadow:var(--theme-key-active-shadow);
+}
+
+/* =========================================================
+   CRT BUTTON OPEN ATTENTION ANIMATION
+========================================================= */
+
+.theme-btn--retro{
+  position:relative;
+}
+
+.theme-btn--retro:not(.active) .crt-ring{
+  position:absolute;
+  inset:-4px;
+  border-radius:14px;
+  pointer-events:none;
+
+  border:1px solid rgba(0,255,140,.65);
+
+  box-shadow:
+    0 0 6px rgba(0,255,140,.55),
+    0 0 14px rgba(0,255,140,.30);
+
+  opacity:0;
+  transform:scale(.92);
+
+  animation:crtPulseIntro 2.8s ease-out .8s 1 forwards;
+}
+
+.theme-btn--retro.active .crt-ring{
+  position:absolute;
+  inset:-4px;
+  border-radius:14px;
+  border:1px solid #00ff88;
+
+  box-shadow:
+    0 0 8px rgba(0,255,140,.75),
+    0 0 18px rgba(0,255,140,.35);
+}
+
+/* =====================================================
+PROFILE MENU USERNAME HEADER
+===================================================== */
+
+.profile-dropdown-user{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+
+  padding:0 0 10px;
+  margin:0 0 10px;
+
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.06em;
+  color:var(--profile-menu-user-text);
+
+  border-bottom:1px solid var(--profile-menu-user-border);
+}
+
+/* retro theme optional glow */
+[data-theme="retro"] .profile-dropdown-user{
+  color:var(--profile-menu-user-text);
+  border-bottom:1px solid var(--profile-menu-user-border);
+  text-shadow:0 0 6px rgba(0,255,180,.18);
+}
+
+/* dark theme */
+[data-theme="dark"] .profile-dropdown-user{
+  color:var(--profile-menu-user-text);
+  border-bottom:1px solid var(--profile-menu-user-border);
+}
+
+/* light theme */
+[data-theme="light"] .profile-dropdown-user{
+  color:var(--profile-menu-user-text);
+  border-bottom:1px solid var(--profile-menu-user-border);
+}
+

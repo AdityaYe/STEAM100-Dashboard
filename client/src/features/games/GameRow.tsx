@@ -157,7 +157,6 @@ const GameRow = ({
     };
 
   return (
-    <div className="hover-retro">
       <div
         onClick={() =>
           onSelect(
@@ -167,7 +166,7 @@ const GameRow = ({
         onMouseEnter={
           prefetchGameData
         }
-        className={`game-row ${
+        className={`game-row hover-retro ${
           isFavorite
             ? "is-favorite"
             : ""
@@ -188,28 +187,30 @@ const GameRow = ({
             : "♡"}
         </div>
 
-        <div className="game-rank">
-          {rank}
-        </div>
+        <div className="game-mobile-title">
+          <div className="game-rank">
+            {rank}
+          </div>
 
-        <div className="game-info">
-          <img
-            src={getImage(
-              game.appId
-            )}
-            alt={game.name}
-            className="game-thumb"
-            loading="lazy"
-          />
+          <div className="game-info">
+            <img
+              src={getImage(
+                game.appId
+              )}
+              alt={game.name}
+              className="game-thumb"
+              loading="lazy"
+            />
 
-          <div className="game-meta">
-            <div className="game-name">
-              {game.name}
-            </div>
+            <div className="game-meta">
+              <div className="game-name">
+                {game.name}
+              </div>
 
-            <div className="game-publisher">
-              {game.publisher ||
-                "Unknown"}
+              <div className="game-publisher">
+                {game.publisher ||
+                  "Unknown"}
+              </div>
             </div>
           </div>
         </div>
@@ -226,17 +227,18 @@ const GameRow = ({
           )}
         </div>
 
-        <div className="game-ccu">
-          {formatNumber(
-            game.ccu
-          )}
-        </div>
+        <div className="game-mobile-stats">
+          <div className="game-ccu">
+            {formatNumber(
+              game.ccu
+            )}
+          </div>
 
-        <div className="game-eng">
-          {engagement}
+          <div className="game-eng">
+            {engagement}
+          </div>
         </div>
       </div>
-    </div>
   );
 };
 

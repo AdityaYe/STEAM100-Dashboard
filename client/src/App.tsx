@@ -7,13 +7,11 @@ import { useAuth } from "./features/auth/AuthContext";
 type Theme = "light" | "dark" | "retro";
 
 function App() {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("retro");
   const { authLoading } = useAuth();
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme") as Theme;
-    
-    const initial = saved || "light";
+    const initial: Theme = "retro";
 
     setTheme(initial);
     applyTheme(initial);
@@ -28,6 +26,79 @@ function App() {
     setTheme(t);
     applyTheme(t);
   };
+
+  const renderThemeSwitcher =
+    (placement: "desktop" | "mobile") => (
+      <div
+        className={`theme-switcher theme-switcher--${placement}`}
+      >
+
+        {/* LIGHT */}
+        <button
+          type="button"
+          onClick={() => changeTheme("light")}
+          className={`theme-key theme-btn--light ${
+            theme === "light" ? "active" : ""
+          }`}
+          aria-label="Light Theme"
+          title="Light Theme"
+        >
+          <img
+            src={
+              theme === "light"
+                ? "/icons/blue-sun.png"
+                : "/icons/white-sun.png"
+            }
+            alt=""
+          />
+        </button>
+
+        {/* DARK */}
+        <button
+          type="button"
+          onClick={() => changeTheme("dark")}
+          className={`theme-key theme-btn--dark ${
+            theme === "dark" ? "active" : ""
+          }`}
+          aria-label="Dark Theme"
+          title="Dark Theme"
+        >
+          <img
+            src={
+              theme === "dark"
+                ? "/icons/blue-moon.png"
+                : theme === "light"
+                ? "/icons/soft-blue-moon.png"
+                : "/icons/white-moon.png"
+            }
+            alt=""
+          />
+        </button>
+
+        {/* RETRO */}
+        <button
+          type="button"
+          onClick={() => changeTheme("retro")}
+          className={`theme-key theme-btn--retro ${
+            theme === "retro" ? "active" : ""
+          }`}
+          aria-label="Retro Theme"
+          title="Retro Theme"
+        >
+          <span className="crt-ring"></span>
+
+          <img
+            src={
+              theme === "retro"
+                ? "/icons/light-crt.png"
+                : "/icons/dark-crt.png"
+            }
+            alt=""
+          />
+        </button>
+
+      </div>
+    );
 
   useEffect(() => {
   const burn =
@@ -70,76 +141,19 @@ if (authLoading) {
     <>
     <div id="cursor-dot" className="arrow"></div>
     
-    <div className="theme-switcher">
-
-  {/* LIGHT */}
-  <button
-    type="button"
-    onClick={() => changeTheme("light")}
-    className={`theme-key theme-btn--light ${
-      theme === "light" ? "active" : ""
-    }`}
-    aria-label="Light Theme"
-    title="Light Theme"
-  >
-    <img
-      src={
-        theme === "light"
-          ? "/icons/blue-sun.png"
-          : "/icons/white-sun.png"
-      }
-      alt=""
-    />
-  </button>
-
-  {/* DARK */}
-  <button
-    type="button"
-    onClick={() => changeTheme("dark")}
-    className={`theme-key theme-btn--dark ${
-      theme === "dark" ? "active" : ""
-    }`}
-    aria-label="Dark Theme"
-    title="Dark Theme"
-  >
-    <img
-      src={
-        theme === "dark"
-          ? "/icons/blue-moon.png"
-          : theme === "light"
-          ? "/icons/soft-blue-moon.png"
-          : "/icons/white-moon.png"
-      }
-      alt=""
-    />
-  </button>
-
-  {/* RETRO */}
-  <button
-    type="button"
-    onClick={() => changeTheme("retro")}
-    className={`theme-key theme-btn--retro ${
-      theme === "retro" ? "active" : ""
-    }`}
-    aria-label="Retro Theme"
-    title="Retro Theme"
-  >
-    <span className="crt-ring"></span>
-
-    <img
-      src={
-        theme === "retro"
-          ? "/icons/light-crt.png"
-          : "/icons/dark-crt.png"
-      }
-      alt=""
-    />
-  </button>
-
-</div>
+    {renderThemeSwitcher("desktop")}
     
     <Routes>
-      <Route path="/" element={<MainLayout />}>
+      <Route
+        path="/"
+        element={
+          <MainLayout
+            mobileThemeSwitcher={
+              renderThemeSwitcher("mobile")
+            }
+          />
+        }
+      >
       <Route index element={<Dashboard />}/>
       <Route path="favorites" element={<Dashboard />}/>
       </Route>

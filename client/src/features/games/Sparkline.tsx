@@ -1,9 +1,4 @@
 import { memo } from "react";
-import {
-  LineChart,
-  Line,
-  ResponsiveContainer,
-} from "recharts";
 
 type SparkRow = {
   date: string;
@@ -18,14 +13,6 @@ interface Props {
 const Sparkline = ({
   data,
 }: Props) => {
-
-  if (
-    typeof window !== "undefined" &&
-    window.innerWidth <= 1100
-  ) {
-    return null;
-  }
-
   const values = data.map(
     (item) =>
       item.avgPlaytime > 0
@@ -54,37 +41,61 @@ const Sparkline = ({
       }
     );
 
+  const chartData =
+    transformed.length > 1 &&
+    max !== min
+      ? transformed
+      : [
+          { engagement: 0.35 },
+          { engagement: 0.68 },
+          { engagement: 0.48 },
+          { engagement: 0.78 },
+        ];
+
+  const points =
+    chartData
+      .map(
+        (item, index) => {
+          const x =
+            chartData.length > 1
+              ? (index /
+                  (chartData.length - 1)) *
+                100
+              : 50;
+
+          const y =
+            90 -
+            item.engagement * 80;
+
+          return `${x},${y}`;
+        }
+      )
+      .join(" ");
+
   return (
     <div className="sparkline-container">
-      <ResponsiveContainer
-        width="100%"
-        height="100%"
+      <svg
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        aria-hidden="true"
       >
-        <LineChart
-          data={transformed}
-        >
-          <Line
-            type="linear"
-            dataKey="engagement"
-            stroke="var(--sparkline-color)"
-            strokeWidth={5}
-            dot={false}
-            strokeOpacity={0.15}
-            isAnimationActive={false}
-          />
+        <polyline
+          points={points}
+          fill="none"
+          stroke="var(--sparkline-color)"
+          strokeWidth="8"
+          strokeOpacity="0.2"
+          vectorEffect="non-scaling-stroke"
+        />
 
-          <Line
-            type="linear"
-            dataKey="engagement"
-            stroke="var(--sparkline-color)"
-            strokeWidth={2}
-            dot={false}
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            isAnimationActive={false}
-          />
-        </LineChart>
-      </ResponsiveContainer>
+        <polyline
+          points={points}
+          fill="none"
+          stroke="var(--sparkline-color)"
+          strokeWidth="3"
+          vectorEffect="non-scaling-stroke"
+        />
+      </svg>
     </div>
   );
 };

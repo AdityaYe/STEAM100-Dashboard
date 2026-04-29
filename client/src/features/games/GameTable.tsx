@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { Filter } from "lucide-react";
+
 import GameRow from "./GameRow";
 import type { Game } from "../../types/api";
 
@@ -27,7 +30,22 @@ interface Props {
   ) => void;
   sortBy: SortKey;
   order: SortOrder;
+  selectedGenres: string[];
+  setSelectedGenres: React.Dispatch<
+    React.SetStateAction<string[]>
+  >;
 }
+
+const GENRES = [
+  "Action",
+  "Adventure",
+  "RPG",
+  "Strategy",
+  "Simulation",
+  "Sports",
+  "Indie",
+  "Casual",
+];
 
 const GameTable = ({
   games,
@@ -38,7 +56,14 @@ const GameTable = ({
   handleSort,
   sortBy,
   order,
+  selectedGenres,
+  setSelectedGenres,
 }: Props) => {
+  const [
+    genreOpen,
+    setGenreOpen,
+  ] = useState(false);
+
   const getArrow = (
     key: SortKey
   ) => {
@@ -47,21 +72,106 @@ const GameTable = ({
     }
 
     return order === "desc"
-      ? "↓"
-      : "↑";
+      ? "v"
+      : "^";
+  };
+
+  const toggleGenre = (
+    genre: string
+  ) => {
+    setSelectedGenres(
+      (current) =>
+        current.includes(
+          genre
+        )
+          ? current.filter(
+              (item) =>
+                item !== genre
+            )
+          : [
+              ...current,
+              genre,
+            ]
+    );
   };
 
   return (
     <div className="panel game-table-shell">
       <div className="game-table-inner">
         <div className="table-head">
-          <h2 className="table-title">
-            TOP 100 STEAM GAMES
-          </h2>
+          <div className="table-head-copy">
+            <h2 className="table-title">
+              TOP 100 STEAM GAMES
+            </h2>
 
-          <p className="table-subtitle">
-            LAST 14 DAYS OF ACTIVITY
-          </p>
+            <p className="table-subtitle">
+              LAST 14 DAYS OF ACTIVITY
+            </p>
+          </div>
+
+          <div className="mobile-table-tools">
+            <button
+              type="button"
+              className="mobile-genre-trigger"
+              onClick={() =>
+                setGenreOpen(
+                  (open) => !open
+                )
+              }
+              aria-expanded={
+                genreOpen
+              }
+            >
+              <Filter size={16} />
+              Genre
+            </button>
+
+            {genreOpen && (
+              <div className="mobile-genre-menu">
+                {GENRES.map(
+                  (genre) => {
+                    const checked =
+                      selectedGenres.includes(
+                        genre
+                      );
+
+                    return (
+                      <label
+                        key={genre}
+                        className="mobile-genre-option"
+                      >
+                        <span>
+                          {genre}
+                        </span>
+
+                        <input
+                          type="checkbox"
+                          checked={
+                            checked
+                          }
+                          onChange={() =>
+                            toggleGenre(
+                              genre
+                            )
+                          }
+                        />
+
+                        <span
+                          className={`switch ${
+                            checked
+                              ? "switch-on"
+                              : ""
+                          }`}
+                        >
+                          <span className="switch-thumb" />
+                        </span>
+                      </label>
+                    );
+                  }
+                )}
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="table-grid table-header-row">

@@ -19,11 +19,14 @@ interface Props {
   setSearch: React.Dispatch<
     React.SetStateAction<string>
   >;
+
+  mobileThemeSwitcher?: React.ReactNode;
 }
 
 const Topbar = ({
   search,
   setSearch,
+  mobileThemeSwitcher,
 }: Props) => {
   const { user } =
     useAuth();
@@ -93,6 +96,12 @@ const Topbar = ({
               className="search-input"
             />
           </div>
+
+          {mobileThemeSwitcher && (
+            <div className="mobile-theme-slot">
+              {mobileThemeSwitcher}
+            </div>
+          )}
 
           {user ? (
             <div className="profile-wrap">

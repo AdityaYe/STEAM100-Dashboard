@@ -1,0 +1,86 @@
+/* TOOLTIP */
+.tooltip {
+  position: relative;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+
+  position: fixed;
+  top: var(--tooltip-y);
+  left: var(--tooltip-x);
+
+  transform: translate(-50%, calc(-100% - 10px));
+
+  padding: 10px 12px;
+
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 24, 16, 0.98),
+      rgba(0, 14, 10, 0.98)
+    );
+  color: var(--text-primary);
+
+  font-size: 12px;
+  line-height: 1.45;
+  text-align: left;
+
+  width: max-content;
+  min-width: 120px;
+  max-width: min(320px, calc(100vw - 24px));
+
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  opacity: 0;
+  pointer-events: none;
+  z-index: 99999;
+
+  box-shadow:
+    0 0 10px rgba(0, 255, 170, 0.10),
+    inset 0 0 8px rgba(0, 255, 170, 0.04);
+
+  transition:
+    opacity 0.12s ease,
+    transform 0.12s ease;
+
+}
+
+.tooltip::before {
+  content: "";
+
+  position: fixed;
+  top: calc(var(--tooltip-y) - 8px);
+  left: var(--tooltip-x);
+
+  transform: translate(-50%, -8px) rotate(45deg);
+
+  width: 0px;
+  height: 0px;
+
+  background: rgba(0, 18, 12, 0.98);
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-top: 1px solid var(--panel);
+
+  opacity: 0;
+  pointer-events: none;
+  z-index: 99998;
+
+  transition: opacity 0.12s ease;
+}
+
+.tooltip:hover::after,
+.tooltip:hover::before {
+  opacity: 1;
+}
+
+.tooltip:hover::after {
+  transform: translate(-50%, calc(-100% - 14px));
+}
+
