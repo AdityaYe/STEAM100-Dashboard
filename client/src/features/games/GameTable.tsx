@@ -72,8 +72,8 @@ const GameTable = ({
     }
 
     return order === "desc"
-      ? "v"
-      : "^";
+      ? "▼"
+      : "▲";
   };
 
   const toggleGenre = (

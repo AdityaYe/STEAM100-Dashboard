@@ -1,4 +1,4 @@
-@media (min-width: 769px){
+@media (min-width: 768px){
   .mobile-theme-slot,
   .mobile-route-tabs,
   .mobile-table-tools{
@@ -6,7 +6,7 @@
   }
 }
 
-@media (max-width: 768px){
+@media (max-width: 767px){
   :root{
     --mobile-page-pad: 12px;
     --mobile-gap: 10px;
@@ -838,8 +838,6 @@ bottom: -15px
     row-gap:14px;
   }
 
-  /* direct text node can't be selected,
-     so use generated label and hide raw flow visually */
   .review-section-body{
     font-size:0;
   }
